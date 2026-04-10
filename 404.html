@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Page Not Found | MindCare</title>
+  <link rel="icon" href="assets/logo.png" type="image/jpeg">
+  <meta name="description" content="The page you're looking for couldn't be found. Let's get you back on track with MindCare.">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6FCF97',
+            accent: '#4A90E2',
+            secondary: '#111111',
+            offWhite: '#F8F9FA'
+          },
+          fontFamily: {
+            'display': ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    [dir="rtl"] .rtl-flip { transform: scaleX(-1); }
+    #mobileMenu { transition: all 0.3s ease-in-out; }
+    .glass-effect { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.05); }
+    
+    /* Floating animation for 404 number */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    .float-animation {
+      animation: float 4s ease-in-out infinite;
+    }
+    
+    /* Pulse animation for icon */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.05); }
+    }
+    .pulse-animation {
+      animation: pulse 2s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-secondary dark:bg-secondary dark:text-gray-100 transition-colors duration-300 min-h-screen flex flex-col" data-dir="ltr">
+
+  <!-- Navigation Bar -->
+  <nav id="navbar" class="sticky top-0 z-50 transition-colors duration-300 bg-white text-secondary border-b border-gray-100 dark:bg-secondary dark:text-white dark:border-white/10 backdrop-blur-md">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
+      <a href="index.html" class="flex items-center gap-2 shrink-0 group">
+        <span class="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-white shadow-lg group-hover:scale-110 transition-transform">
+          <i class="fas fa-brain text-lg"></i>
+        </span>
+        <div class="leading-tight">
+          <span class="block text-xl font-bold tracking-tight text-accent">MindCare</span>
+        </div>
+      </a>
+      <div class="flex items-center gap-3">
+        <button id="themeToggleDesktop" class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 dark:border-white/10 hover:bg-primary hover:text-white transition-all">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button id="rtlToggleDesktop" class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 dark:border-white/10 hover:bg-primary hover:text-white transition-all">
+          <i class="fas fa-exchange-alt"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main 404 Content -->
+  <main class="flex-1 flex items-center justify-center py-20 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <!-- Animated 404 Number -->
+      <div class="relative mb-8">
+        <div class="float-animation">
+          <div class="text-[120px] md:text-[180px] font-black leading-none tracking-tighter">
+            <span class="text-accent">4</span>
+            <span class="text-primary">0</span>
+            <span class="text-accent">4</span>
+          </div>
+        </div>
+        <!-- Decorative circles -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-96 md:h-96 rounded-full bg-accent/5 -z-10 pulse-animation"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-72 md:h-72 rounded-full bg-primary/5 -z-10" style="animation-delay: 1s;"></div>
+      </div>
+
+      <!-- Icon -->
+      <div class="mb-6">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-accent/10 pulse-animation">
+          <i class="fas fa-compass text-4xl text-accent"></i>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <h1 class="text-2xl md:text-3xl font-bold text-secondary dark:text-white mb-3">
+        Oops! Page Not Found
+      </h1>
+      
+      <!-- Description -->
+      <p class="text-gray-500 dark:text-gray-400 max-w-md mx-auto mb-8">
+        The page you're looking for seems to have wandered off. Don't worry, we'll help you find your way back.
+      </p>
+
+      <!-- Quick Links Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-2xl mx-auto mb-10">
+        <a href="index.html" class="group flex flex-col items-center gap-2 p-4 rounded-xl bg-gray-50 dark:bg-secondary/60 hover:bg-accent/10 transition-all">
+          <div class="w-10 h-10 rounded-full bg-accent/10 group-hover:bg-accent/20 flex items-center justify-center">
+            <i class="fas fa-home text-accent text-lg"></i>
+          </div>
+          <span class="text-xs font-medium text-gray-600 dark:text-gray-400">Home</span>
+        </a>
+        <a href="program.html" class="group flex flex-col items-center gap-2 p-4 rounded-xl bg-gray-50 dark:bg-secondary/60 hover:bg-accent/10 transition-all">
+          <div class="w-10 h-10 rounded-full bg-accent/10 group-hover:bg-accent/20 flex items-center justify-center">
+            <i class="fas fa-tasks text-accent text-lg"></i>
+          </div>
+          <span class="text-xs font-medium text-gray-600 dark:text-gray-400">Programs</span>
+        </a>
+        <a href="mindCare.html" class="group flex flex-col items-center gap-2 p-4 rounded-xl bg-gray-50 dark:bg-secondary/60 hover:bg-accent/10 transition-all">
+          <div class="w-10 h-10 rounded-full bg-accent/10 group-hover:bg-accent/20 flex items-center justify-center">
+            <i class="fas fa-heartbeat text-accent text-lg"></i>
+          </div>
+          <span class="text-xs font-medium text-gray-600 dark:text-gray-400">MindCare</span>
+        </a>
+        <a href="contact.html" class="group flex flex-col items-center gap-2 p-4 rounded-xl bg-gray-50 dark:bg-secondary/60 hover:bg-accent/10 transition-all">
+          <div class="w-10 h-10 rounded-full bg-accent/10 group-hover:bg-accent/20 flex items-center justify-center">
+            <i class="fas fa-envelope text-accent text-lg"></i>
+          </div>
+          <span class="text-xs font-medium text-gray-600 dark:text-gray-400">Contact</span>
+        </a>
+      </div>
+
+      <!-- Search Section -->
+      <div class="max-w-md mx-auto mb-8">
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Or try searching for what you need:</p>
+        <div class="relative">
+          <input type="text" id="searchInput" placeholder="Search articles, programs, or resources..." 
+            class="w-full px-5 py-3 pl-12 rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-secondary text-secondary dark:text-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent">
+          <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+        </div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="index.html" class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent/90 transition-all hover:scale-105">
+          <i class="fas fa-arrow-left"></i>
+          <span>Back to Home</span>
+        </a>
+        <a href="contact.html" class="inline-flex items-center gap-2 px-6 py-3 border border-accent text-accent rounded-lg font-semibold hover:bg-accent hover:text-white transition-all">
+          <i class="fas fa-headset"></i>
+          <span>Contact Support</span>
+        </a>
+      </div>
+
+      <!-- Fun Fact / Tip -->
+      <div class="mt-12 p-4 bg-gradient-to-r from-accent/5 to-primary/5 rounded-xl max-w-md mx-auto">
+        <div class="flex items-center justify-center gap-2">
+          <i class="fas fa-lightbulb text-accent"></i>
+          <p class="text-xs text-gray-500 dark:text-gray-400">
+            💡 Tip: Double-check the URL or use the navigation menu above to find what you're looking for.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-secondary pt-12 pb-8 text-white mt-auto">
+    <div class="mx-auto max-w-7xl px-4 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
+        <div>© 2026 MindCare Wellness Solutions. All rights reserved.</div>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-accent transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-accent transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-accent transition-colors">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme Toggle
+    const htmlEl = document.documentElement;
+    const bodyEl = document.body;
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const l1 = document.getElementById('line1');
+    const l2 = document.getElementById('line2');
+    const l3 = document.getElementById('line3');
+
+    // Menu Toggle Logic
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        if (!isHidden) {
+          l1.style.transform = 'translateY(8px) rotate(45deg)';
+          l2.style.opacity = '0';
+          l3.style.transform = 'translateY(-8px) rotate(-45deg)';
+        } else {
+          l1.style.transform = 'none';
+          l2.style.opacity = '1';
+          l3.style.transform = 'none';
+        }
+      });
+    }
+
+    // Theme Logic
+    const themeBtns = [document.getElementById('themeToggleDesktop'), document.getElementById('themeToggleMobile')];
+    function setTheme(isDark) {
+      if (isDark) {
+        htmlEl.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        themeBtns.forEach(btn => { if(btn) btn.innerHTML = '<i class="fas fa-sun"></i>'; });
+      } else {
+        htmlEl.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        themeBtns.forEach(btn => { if(btn) btn.innerHTML = '<i class="fas fa-moon"></i>'; });
+      }
+    }
+    themeBtns.forEach(btn => { if(btn) btn.addEventListener('click', () => setTheme(!htmlEl.classList.contains('dark'))); });
+    setTheme(localStorage.getItem('theme') === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+    // RTL Logic
+    const rtlBtns = [document.getElementById('rtlToggleDesktop'), document.getElementById('rtlToggleMobile')];
+    rtlBtns.forEach(btn => { if(btn) btn.addEventListener('click', () => {
+      const currentDir = bodyEl.getAttribute('dir') || 'ltr';
+      bodyEl.setAttribute('dir', currentDir === 'ltr' ? 'rtl' : 'ltr');
+    }); });
+
+    // Search functionality (demo)
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+      searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          const query = this.value.trim();
+          if (query) {
+            alert(`Searching for: "${query}"\n\nThis is a demo. In production, this would search your content.`);
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>
