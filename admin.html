@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="assets/logo.png" />
+    <title>MindCare | HR Admin Dashboard</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        /* --- Root Color Engine (MindCare Theme) --- */
+        :root, html[data-theme='light'] {
+            --color-background: #F5F5F5;
+            --color-primary-text: #0B0B0B;
+            --color-secondary-text: #4B5563;
+            --color-accent: #4A90E2; /* Soft Blue */
+            --color-accent-light: #6FCF97; /* Mint Green */
+            --color-border: #E5E7EB;
+            --color-hover: #F9FAF2;
+            --color-card-bg: #FFFFFF;
+            --color-sidebar-icon: #4A90E2;
+            --color-sidebar-bg: #FFFFFF;
+            --color-success: #10B981;
+            --color-warning: #F59E0B;
+            --color-danger: #EF4444;
+            --color-info: #3B82F6;
+        }
+        html[data-theme='dark'] {
+            --color-background: #0B0B0B;
+            --color-primary-text: #F5F5F5;
+            --color-secondary-text: #9CA3AF;
+            --color-accent: #4A90E2;
+            --color-accent-light: #6FCF97;
+            --color-border: #2A2A2A;
+            --color-hover: #1A1A1A;
+            --color-card-bg: #141414;
+            --color-sidebar-icon: #4A90E2;
+            --color-sidebar-bg: #0F0F0F;
+            --color-success: #059669;
+            --color-warning: #D97706;
+            --color-danger: #DC2626;
+            --color-info: #2563EB;
+        }
+
+        body {
+            background-color: var(--color-background);
+            color: var(--color-primary-text);
+            font-family: ui-sans-serif, system-ui, -apple-system, 'Inter', sans-serif;
+            transition: background-color 0.2s, color 0.2s;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* Helpers */
+        .text-gold { color: var(--color-accent); }
+        .text-burgundy { color: var(--color-accent-light); }
+        .bg-background { background-color: var(--color-background); }
+        .text-primary-text { color: var(--color-primary-text); }
+        .text-secondary-text { color: var(--color-secondary-text); }
+        .text-accent { color: var(--color-accent); }
+        .bg-hover { background-color: var(--color-hover); }
+        .border-border { border-color: var(--color-border); }
+        .card-bg { background-color: var(--color-card-bg); }
+        .bg-sidebar { background-color: var(--color-sidebar-bg); }
+        .bg-success { background-color: var(--color-success); }
+        .bg-warning { background-color: var(--color-warning); }
+        .bg-danger { background-color: var(--color-danger); }
+        .bg-info { background-color: var(--color-info); }
+        .text-success { color: var(--color-success); }
+        .text-warning { color: var(--color-warning); }
+        .text-danger { color: var(--color-danger); }
+        .text-info { color: var(--color-info); }
+
+        /* Dashboard Cards */
+        .dashboard-card {
+            background-color: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 1.25rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 8px 18px -8px rgba(0,0,0,0.04);
+            height: auto;
+        }
+        .dashboard-card:hover {
+            border-color: var(--color-accent);
+            box-shadow: 0 16px 24px -12px rgba(74,144,226,0.15);
+        }
+
+        /* Status Pulse */
+        .status-pulse {
+            width: 10px;
+            height: 10px;
+            background-color: var(--color-accent);
+            border-radius: 9999px;
+            box-shadow: 0 0 0 0 rgba(74,144,226,0.5);
+            animation: pulse2 2s infinite;
+        }
+        @keyframes pulse2 { 70% { box-shadow: 0 0 0 6px rgba(74,144,226,0); } }
+
+        /* Sidebar Links */
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            border-radius: 1rem;
+            color: var(--color-secondary-text);
+            transition: all 0.18s ease;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+        .sidebar-link:hover, .sidebar-link.active {
+            background-color: var(--color-accent);
+            color: #FFFFFF;
+            background: linear-gradient(145deg, var(--color-accent-light), var(--color-accent));
+        }
+        .sidebar-link:hover svg, .sidebar-link.active svg {
+            stroke: white;
+        }
+        .sidebar-link.logout:hover {
+            background: #d13b3b;
+            color: white;
+        }
+
+        /* RTL Handling */
+        html[dir="rtl"] .sidebar-link { flex-direction: row-reverse; }
+        html[dir="rtl"] .ml-auto { margin-right: auto; margin-left: 0; }
+        html[dir="rtl"] .sidebar-link svg { transform: scaleX(-1); }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.3, 1), transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .admin-section { display: block; }
+        .bg-accent-gradient {
+            background: linear-gradient(145deg, var(--color-accent-light) 0%, var(--color-accent) 100%);
+        }
+
+        /* Custom Scrollbar */
+        .custom-scrollbar::-webkit-scrollbar { 
+            height: 4px;
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { 
+            background: var(--color-border); 
+            border-radius: 10px; 
+        }
+
+        /* Mobile Overlay */
+        #mobile-overlay {
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            position: fixed;
+            inset: 0;
+            z-index: 55;
+        }
+        #mobile-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Chart Bars */
+        .chart-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--color-accent-light), var(--color-accent));
+            transition: width 0.3s ease;
+        }
+
+        /* Status Badges */
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .status-badge.active { background-color: var(--color-success); color: white; }
+        .status-badge.pending { background-color: var(--color-warning); color: white; }
+        .status-badge.cancelled { background-color: var(--color-danger); color: white; }
+        .status-badge.completed { background-color: var(--color-info); color: white; }
+    </style>
+</head>
+<body class="antialiased bg-background h-screen overflow-hidden w-full">
+    <!-- TOP BAR -->
+    <header class="border-b border-border bg-background sticky top-0 z-50 w-full">
+        <div class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-10 py-3 flex items-center justify-between gap-3">
+            
+            <!-- Hamburger + Brand -->
+            <div class="flex items-center gap-3">
+                <button id="mobile-menu-toggle" class="lg:hidden p-2 -ml-2 rounded-xl hover:bg-hover transition text-primary-text" title="Open Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                <div class="flex items-center gap-2 flex-shrink-0">
+                   <a href="index.html" class="flex items-center gap-2 shrink-0 group">
+                        <span class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-accent)] text-white shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fas fa-brain text-lg"></i>
+                        </span>
+                        <div class="leading-tight">
+                            <span class="block text-xl font-bold tracking-tight text-[var(--color-accent)]">MindCare</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Admin Utilities -->
+            <div class="flex items-center gap-2 sm:gap-4 shrink-0 rtl:flex-row-reverse">
+                <!-- Search -->
+                <div class="hidden md:flex items-center bg-hover rounded-full px-4 py-2 border border-border w-32 sm:w-40 lg:w-auto overflow-hidden">
+                    <i class="fas fa-search text-secondary-text text-sm mr-2"></i>
+                    <input type="text" placeholder="Search admin..." class="bg-transparent border-none outline-none text-sm w-48 text-primary-text placeholder-secondary-text/50">
+                </div>
+
+                <button id="lang-toggle" class="p-2 rounded-full hover:bg-hover transition text-primary-text" title="Toggle RTL/LTR">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-width="2" d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 0c2.5 2.8 2.5 12.2 0 15m0-15c-2.5 2.8-2.5 12.2 0 15M3 12h18" />
+                    </svg>
+                </button>
+
+                <button id="theme-toggle-user" class="p-2 rounded-full hover:bg-hover transition text-primary-text">
+                    <svg class="w-5 h-5 light-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="w-5 h-5 dark-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+
+                <!-- Notifications -->
+                <div class="relative">
+                    <button class="p-2 rounded-full hover:bg-hover transition text-primary-text relative">
+                        <i class="fas fa-bell"></i>
+                        <span class="absolute top-1 right-1 w-2 h-2 bg-danger rounded-full"></span>
+                    </button>
+                </div>
+
+                <!-- Admin Profile -->
+                <div class="relative flex items-center gap-2 pl-2 sm:pl-3 border-l border-border rtl:border-l-0 rtl:border-r min-w-0">
+                    <div class="relative flex-shrink-0">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-accent/10 border border-accent flex items-center justify-center text-accent font-bold">
+                            <i class="fas fa-user-shield text-xs"></i>
+                        </div>
+                        <span class="absolute bottom-0 right-0 status-pulse"></span>
+                    </div>
+                    <div class="hidden sm:block text-sm">
+                        <p class="font-bold leading-none">Jessica Davis</p>
+                        <p class="text-[10px] text-secondary-text mt-1 uppercase tracking-widest font-black">HR Admin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE OVERLAY -->
+    <div id="mobile-overlay" class="lg:hidden"></div>
+
+    <!-- MAIN LAYOUT -->
+    <main class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-10 py-6 h-[calc(100vh-64px)] w-full relative">      
+        <div class="flex flex-col lg:flex-row gap-4 lg:gap-6 xl:gap-10 h-full">
+            
+            <!-- SIDEBAR -->
+            <aside id="sidebar-container" class="fixed lg:static top-0 left-0 rtl:right-0 rtl:left-auto h-full lg:h-auto w-72 lg:w-72 xl:w-80 z-[60] lg:z-10 transform -translate-x-full rtl:translate-x-full lg:translate-x-0 lg:rtl:translate-x-0 transition-transform duration-300 ease-in-out bg-sidebar lg:bg-transparent flex-shrink-0">
+                <div class="dashboard-card p-5 bg-sidebar h-full overflow-y-auto custom-scrollbar border-r lg:border border-border lg:rounded-[1.25rem] rounded-none shadow-none lg:shadow-md">                    
+                    <!-- Mobile Sidebar Header -->
+                    <div class="flex lg:hidden justify-between items-center mb-6 px-2">
+                        <div class="flex items-center gap-2 text-gold">
+                            <i class="fas fa-bars-staggered"></i>
+                            <span class="text-xs font-black uppercase tracking-widest">Admin Menu</span>
+                        </div>
+                        <button id="close-sidebar" class="p-2 hover:bg-hover rounded-lg text-primary-text">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center gap-3 pb-5 mb-4 border-b border-border">
+                        <div class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold text-xl flex-shrink-0 border border-accent/30">
+                            JD
+                        </div>
+                        <div class="min-w-0">
+                            <p class="font-serif font-bold text-primary-text truncate">Jessica Davis</p>
+                            <p class="text-[11px] sm:text-xs text-secondary-text flex items-center gap-1 mt-1 font-bold">
+                                <span class="inline-block w-2 h-2 bg-emerald-400 rounded-full"></span> System Online
+                            </p>
+                        </div>
+                    </div>
+
+                    <nav class="flex flex-col gap-1">
+                        <p class="text-[10px] uppercase tracking-widest text-secondary-text font-black mt-2 mb-2 px-2">Main</p>
+                        <a href="#" onclick="activateSection('overview')" data-section="overview" class="sidebar-link active">
+                            <i class="fas fa-chart-pie w-5"></i>
+                            <span>Overview / Statistics</span>
+                        </a>
+                        <a href="#" onclick="activateSection('workshops')" data-section="workshops" class="sidebar-link">
+                            <i class="fas fa-calendar-alt w-5"></i>
+                            <span>Wellness Workshops</span>
+                        </a>
+                        <a href="#" onclick="activateSection('therapists')" data-section="therapists" class="sidebar-link">
+                            <i class="fas fa-user-md w-5"></i>
+                            <span>Therapist Profiles</span>
+                        </a>
+                        
+                        <p class="text-[10px] uppercase tracking-widest text-secondary-text font-black mt-4 mb-2 px-2">Engagement</p>
+                        <a href="#" onclick="activateSection('engagement')" data-section="engagement" class="sidebar-link">
+                            <i class="fas fa-chart-line w-5"></i>
+                            <span>Employee Engagement</span>
+                        </a>
+                        <a href="#" onclick="activateSection('resources')" data-section="resources" class="sidebar-link">
+                            <i class="fas fa-book-open w-5"></i>
+                            <span>Mental Health Resources</span>
+                        </a>
+
+                        <p class="text-[10px] uppercase tracking-widest text-secondary-text font-black mt-4 mb-2 px-2">Reports</p>
+                        <a href="#" onclick="activateSection('reports')" data-section="reports" class="sidebar-link">
+                            <i class="fas fa-file-alt w-5"></i>
+                            <span>Participation Reports</span>
+                        </a>
+                        <a href="#" onclick="activateSection('b2b')" data-section="b2b" class="sidebar-link">
+                            <i class="fas fa-briefcase w-5"></i>
+                            <span>B2B Program Mgmt</span>
+                            <span class="ml-auto bg-accent-light text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">12</span>
+                        </a>
+
+                        <p class="text-[10px] uppercase tracking-widest text-secondary-text font-black mt-4 mb-2 px-2">System</p>
+                        <a href="#" onclick="activateSection('settings')" data-section="settings" class="sidebar-link">
+                            <i class="fas fa-sliders w-5"></i>
+                            <span>Settings / Configuration</span>
+                        </a>
+                        <a href="#" onclick="activateSection('logout')" class="sidebar-link logout mt-2 text-red-500">
+                            <i class="fas fa-power-off w-5"></i>
+                            <span>Terminate Session</span>
+                        </a>
+                    </nav>
+
+                    <div class="mt-8 pt-4 border-t border-border text-[11px] text-secondary-text">
+                        <div class="flex justify-between"><span>System Status</span><span class="font-bold text-success">Operational</span></div>
+                        <div class="flex justify-between mt-1.5"><span>Last Backup</span><span class="font-medium text-gold">2 min ago</span></div>
+                        <div class="flex justify-between mt-1.5"><span>Active Employees</span><span class="font-medium">1,284</span></div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- CONTENT AREA -->
+            <div class="flex-1 min-w-0 overflow-y-auto custom-scrollbar pr-2">                
+                <!-- OVERVIEW / STATISTICS SECTION -->
+                <div id="overview" class="admin-section">
+                    <div class="dashboard-card p-5 sm:p-7 reveal active mb-6 bg-accent-gradient text-white">
+                        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                            <div>
+                                <h2 class="text-2xl sm:text-3xl font-black mb-2">Welcome back, Jessica</h2>
+                                <p class="text-white/80 text-sm">Here's what's happening with MindCare wellness programs today.</p>
+                            </div>
+                            <div class="flex gap-3">
+                                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">April 09, 2026</span>
+                                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-1">
+                                    <i class="fas fa-circle text-success text-[6px]"></i> Live
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 mb-6">
+                        <div class="dashboard-card p-6 reveal">
+                            <div class="flex justify-between items-start gap-4">
+                                <div>
+                                    <p class="text-secondary-text text-xs uppercase tracking-wider font-bold">Total Employees</p>
+                                    <p class="text-3xl font-black mt-2">1,284</p>
+                                    <p class="text-success text-xs font-bold mt-2 flex items-center gap-1">
+                                        <i class="fas fa-arrow-up"></i> +12.5%
+                                    </p>
+                                </div>
+                                <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                                    <i class="fas fa-users text-accent text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-border flex gap-4 text-xs">
+                                <span><span class="font-bold">847</span> <span class="text-secondary-text">active</span></span>
+                                <span><span class="font-bold">437</span> <span class="text-secondary-text">inactive</span></span>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card p-6 reveal">
+                            <div class="flex justify-between items-start gap-4">
+                                <div>
+                                    <p class="text-secondary-text text-xs uppercase tracking-wider font-bold">Active Participants</p>
+                                    <p class="text-3xl font-black mt-2">847</p>
+                                    <p class="text-success text-xs font-bold mt-2 flex items-center gap-1">
+                                        <i class="fas fa-arrow-up"></i> +8.2%
+                                    </p>
+                                </div>
+                                <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                                    <i class="fas fa-heartbeat text-accent text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-border flex gap-4 text-xs">
+                                <span><span class="font-bold">342</span> <span class="text-secondary-text">weekly check-ins</span></span>
+                                <span><span class="font-bold">66%</span> <span class="text-secondary-text">participation</span></span>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card p-6 reveal">
+                            <div class="flex justify-between items-start gap-4">
+                                <div>
+                                    <p class="text-secondary-text text-xs uppercase tracking-wider font-bold">Burnout Reduction</p>
+                                    <p class="text-3xl font-black mt-2">89%</p>
+                                    <p class="text-success text-xs font-bold mt-2 flex items-center gap-1">
+                                        <i class="fas fa-arrow-up"></i> +5.3%
+                                    </p>
+                                </div>
+                                <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                                    <i class="fas fa-brain text-accent text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-border flex gap-4 text-xs">
+                                <span><span class="font-bold">92%</span> <span class="text-secondary-text">satisfaction</span></span>
+                                <span><span class="font-bold">4.8/5</span> <span class="text-secondary-text">avg rating</span></span>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card p-6 reveal">
+                            <div class="flex justify-between items-start gap-4">
+                                <div>
+                                    <p class="text-secondary-text text-xs uppercase tracking-wider font-bold">Active Programs</p>
+                                    <p class="text-3xl font-black mt-2">8</p>
+                                    <p class="text-success text-xs font-bold mt-2 flex items-center gap-1">
+                                        <i class="fas fa-plus"></i> 2 new this month
+                                    </p>
+                                </div>
+                                <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                                    <i class="fas fa-calendar-check text-accent text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-border flex gap-4 text-xs">
+                                <span><span class="font-bold">24</span> <span class="text-secondary-text">upcoming sessions</span></span>
+                                <span><span class="font-bold">156</span> <span class="text-secondary-text">completed</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts & Recent Activity -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <div class="dashboard-card p-6 lg:col-span-2 reveal">
+                            <div class="flex justify-between items-center mb-6">
+                                <h3 class="font-black text-lg">Engagement Overview</h3>
+                                <select class="bg-hover border border-border rounded-full px-4 py-2 text-xs font-bold uppercase">
+                                    <option>Last 7 Days</option>
+                                    <option>Last 30 Days</option>
+                                    <option>This Year</option>
+                                </select>
+                            </div>
+                            <div class="h-64 flex items-end justify-between gap-2">
+                                <div class="flex-1 flex flex-col items-center gap-2">
+                                    <div class="w-full chart-bar" style="height: 40px; width: 60%;"></div>
+                                    <span class="text-xs text-secondary-text">Mon</span>
+                                </div>
+                                <div class="flex-1 flex flex-col items-center gap-2">
+                                    <div class="w-full chart-bar" style="height: 65px; width: 80%;"></div>
+                                    <span class="text-xs text-secondary-text">Tue</span>
+                                </div>
+                                <div class="flex-1 flex flex-col items-center gap-2">
+                                    <div class="w-full chart-bar" style="height: 45px; width: 70%;"></div>
+                                    <span class="text-xs text-secondary-text">Wed</span>
+                                </div>
+                                <div class="flex-1 flex flex-col items-center gap-2">
+                                    <div class="w-full chart-bar" style="height: 80px; width: 95%;"></div>
+                                    <span class="text-xs text-secondary-text">Thu</span>
+                                </div>
+                                <div class="flex-1 flex flex-col items-center gap-2">
+                                    <div class="w-full chart-bar" style="height: 95px; width: 100%;"></div>
+                                    <span class="text-xs text-secondary-text">Fri</span>
+                                </div>
+                                <div class="flex-1 flex flex-col items-center gap-2">
+                                    <div class="w-full chart-bar" style="height: 70px; width: 85%;"></div>
+                                    <span class="text-xs text-secondary-text">Sat</span>
+                                </div>
+                                <div class="flex-1 flex flex-col items-center gap-2">
+                                    <div class="w-full chart-bar" style="height: 55px; width: 75%;"></div>
+                                    <span class="text-xs text-secondary-text">Sun</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-border flex justify-between">
+                                <span class="text-secondary-text text-sm">Average Engagement Rate</span>
+                                <span class="font-black text-xl text-gold">68%</span>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card p-6 reveal">
+                            <h3 class="font-black text-lg mb-4">Recent Activity</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-success/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-user-plus text-success text-xs"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-sm font-bold">New employee enrolled</p>
+                                        <p class="text-xs text-secondary-text">Sarah Chen · 5 min ago</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-info/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-calendar-plus text-info text-xs"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-sm font-bold">Workshop registered</p>
+                                        <p class="text-xs text-secondary-text">Mindfulness Session · 12 min ago</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-warning/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-chart-line text-warning text-xs"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-sm font-bold">Monthly report generated</p>
+                                        <p class="text-xs text-secondary-text">Engagement up 8% · 1 hour ago</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-danger/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-message text-danger text-xs"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-sm font-bold">Support request</p>
+                                        <p class="text-xs text-secondary-text">#T-239 · 2 hours ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="w-full mt-6 py-3 text-xs font-black uppercase tracking-wider text-accent border border-accent/20 rounded-xl hover:bg-accent/5 transition">
+                                View All Activity
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WELLNESS WORKSHOPS SECTION -->
+                <div id="workshops" class="admin-section hidden">
+                    <div class="dashboard-card p-5 sm:p-7 reveal active">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+                            <h2 class="text-xl sm:text-2xl font-serif font-bold text-primary-text flex items-center gap-2">
+                                <span class="text-accent">🧘</span> Wellness Workshops
+                            </h2>
+                            <div class="flex gap-3">
+                                <button class="px-6 py-3 bg-accent-gradient text-white rounded-full text-xs font-black uppercase tracking-widest shadow-lg">
+                                    <i class="fas fa-plus mr-1"></i> Schedule Workshop
+                                </button>
+                                <button class="px-6 py-3 border border-border rounded-full text-xs font-black uppercase tracking-widest hover:bg-hover">
+                                    <i class="fas fa-filter mr-1"></i> Filter
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-4 bg-hover rounded-2xl">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                                        <i class="fas fa-spa text-accent text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-black">Mindfulness & Stress Reduction</p>
+                                        <p class="text-xs text-secondary-text mt-1">Dr. Sarah Johnson · 60 min · 45 registered</p>
+                                        <div class="flex gap-3 mt-1 text-xs text-secondary-text">
+                                            <span><i class="far fa-calendar-alt"></i> Apr 15, 2026</span>
+                                            <span><i class="far fa-clock"></i> 2:00 PM EST</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex gap-2">
+                                    <span class="status-badge active">Upcoming</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-hover rounded-2xl">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                                        <i class="fas fa-chalkboard-user text-accent text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-black">Burnout Prevention for Managers</p>
+                                        <p class="text-xs text-secondary-text mt-1">Michael Chen, LCSW · 90 min · 28 registered</p>
+                                        <div class="flex gap-3 mt-1 text-xs text-secondary-text">
+                                            <span><i class="far fa-calendar-alt"></i> Apr 18, 2026</span>
+                                            <span><i class="far fa-clock"></i> 11:00 AM EST</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex gap-2">
+                                    <span class="status-badge pending">Limited Spots</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-hover rounded-2xl">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                                        <i class="fas fa-heartbeat text-accent text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-black">Resilience Training</p>
+                                        <p class="text-xs text-secondary-text mt-1">Dr. Emily Rodriguez · 45 min · 52 registered</p>
+                                        <div class="flex gap-3 mt-1 text-xs text-secondary-text">
+                                            <span><i class="far fa-calendar-alt"></i> Apr 22, 2026</span>
+                                            <span><i class="far fa-clock"></i> 3:30 PM EST</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex gap-2">
+                                    <span class="status-badge active">Upcoming</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- THERAPIST PROFILES SECTION -->
+                <div id="therapists" class="admin-section hidden">
+                    <div class="dashboard-card p-5 sm:p-7 reveal active">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+                            <h2 class="text-xl sm:text-2xl font-serif font-bold text-primary-text flex items-center gap-2">
+                                <span class="text-accent">👩‍⚕️</span> Therapist Profiles
+                            </h2>
+                            <div class="flex gap-3">
+                                <button class="px-6 py-3 bg-accent-gradient text-white rounded-full text-xs font-black uppercase tracking-widest shadow-lg">
+                                    <i class="fas fa-plus mr-1"></i> Add Therapist
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="bg-hover rounded-2xl p-5 text-center">
+                                <img src="/assets/g1.jpg" class="w-24 h-24 rounded-full mx-auto object-cover border-2 border-accent">
+                                <h3 class="mt-3 font-black">Dr. Sarah Johnson</h3>
+                                <p class="text-xs text-accent font-semibold">Clinical Psychologist</p>
+                                <p class="text-xs text-secondary-text mt-2">Anxiety, Stress, Mindfulness</p>
+                                <div class="flex justify-center gap-1 mt-2 text-yellow-500">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <button class="mt-3 w-full py-2 border border-accent rounded-full text-xs font-bold text-accent hover:bg-accent hover:text-white transition">View Profile</button>
+                            </div>
+                            <div class="bg-hover rounded-2xl p-5 text-center">
+                                <img src="/assets/b1.jpg" class="w-24 h-24 rounded-full mx-auto object-cover border-2 border-accent">
+                                <h3 class="mt-3 font-black">Michael Chen, LCSW</h3>
+                                <p class="text-xs text-accent font-semibold">Burnout Specialist</p>
+                                <p class="text-xs text-secondary-text mt-2">Workplace Wellness, Burnout</p>
+                                <div class="flex justify-center gap-1 mt-2 text-yellow-500">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <button class="mt-3 w-full py-2 border border-accent rounded-full text-xs font-bold text-accent hover:bg-accent hover:text-white transition">View Profile</button>
+                            </div>
+                            <div class="bg-hover rounded-2xl p-5 text-center">
+                                <img src="/assets/g2.jpg" class="w-24 h-24 rounded-full mx-auto object-cover border-2 border-accent">
+                                <h3 class="mt-3 font-black">Dr. Emily Rodriguez</h3>
+                                <p class="text-xs text-accent font-semibold">Psychiatrist</p>
+                                <p class="text-xs text-secondary-text mt-2">Medication Management, OCD</p>
+                                <div class="flex justify-center gap-1 mt-2 text-yellow-500">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <button class="mt-3 w-full py-2 border border-accent rounded-full text-xs font-bold text-accent hover:bg-accent hover:text-white transition">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EMPLOYEE ENGAGEMENT SECTION -->
+                <div id="engagement" class="admin-section hidden">
+                    <div class="dashboard-card p-5 sm:p-7 reveal active">
+                        <h2 class="text-xl sm:text-2xl font-serif font-bold text-primary-text mb-8 flex items-center gap-2">
+                            <span class="text-accent">📈</span> Employee Engagement Tracking
+                        </h2>
+
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span>Overall Participation Rate</span>
+                                    <span class="font-bold">66%</span>
+                                </div>
+                                <div class="w-full h-2 bg-border rounded-full overflow-hidden">
+                                    <div class="h-full bg-accent rounded-full" style="width: 66%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span>Weekly Check-in Completion</span>
+                                    <span class="font-bold">78%</span>
+                                </div>
+                                <div class="w-full h-2 bg-border rounded-full overflow-hidden">
+                                    <div class="h-full bg-accent rounded-full" style="width: 78%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span>Session Satisfaction Rate</span>
+                                    <span class="font-bold">92%</span>
+                                </div>
+                                <div class="w-full h-2 bg-border rounded-full overflow-hidden">
+                                    <div class="h-full bg-accent rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span>Resource Library Usage</span>
+                                    <span class="font-bold">54%</span>
+                                </div>
+                                <div class="w-full h-2 bg-border rounded-full overflow-hidden">
+                                    <div class="h-full bg-accent rounded-full" style="width: 54%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-6 border-t border-border grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <p class="text-2xl font-bold text-accent">847</p>
+                                <p class="text-xs text-secondary-text">Active Users</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold text-accent">2,341</p>
+                                <p class="text-xs text-secondary-text">Sessions Completed</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold text-accent">4.85</p>
+                                <p class="text-xs text-secondary-text">Avg Rating</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MENTAL HEALTH RESOURCES SECTION -->
+                <div id="resources" class="admin-section hidden">
+                    <div class="dashboard-card p-5 sm:p-7 reveal active">
+                        <div class="flex justify-between items-center mb-8">
+                            <h2 class="text-xl sm:text-2xl font-serif font-bold text-primary-text flex items-center gap-2">
+                                <span class="text-accent">📚</span> Mental Health Resources
+                            </h2>
+                            <button class="px-6 py-3 bg-accent-gradient text-white rounded-full text-xs font-black uppercase tracking-widest shadow-lg">
+                                <i class="fas fa-upload mr-1"></i> Upload Resource
+                            </button>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-4 bg-hover rounded-2xl">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-file-pdf text-red-500 text-lg"></i>
+                                    <span class="font-medium">Employee Mental Health Guide</span>
+                                </div>
+                                <button class="text-accent"><i class="fas fa-download"></i></button>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-hover rounded-2xl">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-chart-line text-accent text-lg"></i>
+                                    <span class="font-medium">Quarterly Wellness Report Template</span>
+                                </div>
+                                <button class="text-accent"><i class="fas fa-download"></i></button>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-hover rounded-2xl">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-video text-accent text-lg"></i>
+                                    <span class="font-medium">Wellness Workshop Toolkit</span>
+                                </div>
+                                <button class="text-accent"><i class="fas fa-download"></i></button>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-hover rounded-2xl">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-head-side-medical text-accent text-lg"></i>
+                                    <span class="font-medium">Crisis Response Protocol</span>
+                                </div>
+                                <button class="text-accent"><i class="fas fa-download"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PARTICIPATION REPORTS SECTION -->
+                <div id="reports" class="admin-section hidden">
+                    <div class="dashboard-card p-5 sm:p-7 reveal active">
+                        <div class="flex justify-between items-center mb-8">
+                            <h2 class="text-xl sm:text-2xl font-serif font-bold text-primary-text flex items-center gap-2">
+                                <span class="text-accent">📊</span> Participation Reports
+                            </h2>
+                            <button class="px-6 py-3 bg-accent-gradient text-white rounded-full text-xs font-black uppercase tracking-widest shadow-lg">
+                                Download Report
+                            </button>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="dashboard-card p-5">
+                                <h3 class="font-black mb-4">Engagement by Department</h3>
+                                <div class="space-y-3">
+                                    <div>
+                                        <div class="flex justify-between text-sm">
+                                            <span>Engineering</span>
+                                            <span class="font-bold">72%</span>
+                                        </div>
+                                        <div class="w-full h-1.5 bg-border rounded-full mt-1"><div class="h-full bg-accent rounded-full" style="width: 72%"></div></div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between text-sm">
+                                            <span>Marketing</span>
+                                            <span class="font-bold">81%</span>
+                                        </div>
+                                        <div class="w-full h-1.5 bg-border rounded-full mt-1"><div class="h-full bg-accent rounded-full" style="width: 81%"></div></div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between text-sm">
+                                            <span>Sales</span>
+                                            <span class="font-bold">64%</span>
+                                        </div>
+                                        <div class="w-full h-1.5 bg-border rounded-full mt-1"><div class="h-full bg-accent rounded-full" style="width: 64%"></div></div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between text-sm">
+                                            <span>HR</span>
+                                            <span class="font-bold">88%</span>
+                                        </div>
+                                        <div class="w-full h-1.5 bg-border rounded-full mt-1"><div class="h-full bg-accent rounded-full" style="width: 88%"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dashboard-card p-5">
+                                <h3 class="font-black mb-4">Quick Export</h3>
+                                <div class="space-y-3">
+                                    <button class="w-full py-3 bg-hover rounded-xl text-sm font-medium text-left px-4 flex justify-between items-center">
+                                        <span>Monthly Summary (CSV)</span>
+                                        <i class="fas fa-download text-accent"></i>
+                                    </button>
+                                    <button class="w-full py-3 bg-hover rounded-xl text-sm font-medium text-left px-4 flex justify-between items-center">
+                                        <span>Quarterly Impact Report (PDF)</span>
+                                        <i class="fas fa-download text-accent"></i>
+                                    </button>
+                                    <button class="w-full py-3 bg-hover rounded-xl text-sm font-medium text-left px-4 flex justify-between items-center">
+                                        <span>Participation by Program (Excel)</span>
+                                        <i class="fas fa-download text-accent"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- B2B PROGRAM MANAGEMENT SECTION -->
+                <div id="b2b" class="admin-section hidden">
+                    <div class="dashboard-card p-5 sm:p-7 reveal active">
+                        <div class="flex justify-between items-center mb-8">
+                            <h2 class="text-xl sm:text-2xl font-serif font-bold text-primary-text flex items-center gap-2">
+                                <span class="text-accent">🏢</span> B2B Program Management
+                            </h2>
+                            <button class="px-6 py-3 bg-accent-gradient text-white rounded-full text-xs font-black uppercase tracking-widest shadow-lg">
+                                <i class="fas fa-plus mr-1"></i> Add Client
+                            </button>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-4 bg-hover rounded-2xl">
+                                <div>
+                                    <p class="font-black">TechFlow Inc.</p>
+                                    <p class="text-xs text-secondary-text mt-1">342 employees · Active since Jan 2026</p>
+                                </div>
+                                <div class="flex gap-2">
+                                    <span class="status-badge active">Active</span>
+                                    <button class="text-accent"><i class="fas fa-chart-line"></i></button>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-hover rounded-2xl">
+                                <div>
+                                    <p class="font-black">ScaleUp Solutions</p>
+                                    <p class="text-xs text-secondary-text mt-1">128 employees · Active since Feb 2026</p>
+                                </div>
+                                <div class="flex gap-2">
+                                    <span class="status-badge active">Active</span>
+                                    <button class="text-accent"><i class="fas fa-chart-line"></i></button>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-hover rounded-2xl">
+                                <div>
+                                    <p class="font-black">InnovateCo</p>
+                                    <p class="text-xs text-secondary-text mt-1">89 employees · Pending onboarding</p>
+                                </div>
+                                <div class="flex gap-2">
+                                    <span class="status-badge pending">Pending</span>
+                                    <button class="text-accent"><i class="fas fa-chevron-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SETTINGS SECTION -->
+                <div id="settings" class="admin-section hidden">
+                    <div class="dashboard-card p-5 sm:p-7 reveal active">
+                        <h2 class="text-xl sm:text-2xl font-serif font-bold text-primary-text mb-8 flex items-center gap-2">
+                            <span class="text-accent">⚙️</span> Settings & Configuration
+                        </h2>
+
+                        <div class="space-y-8">
+                            <div>
+                                <h3 class="font-black text-lg mb-4 pb-2 border-b border-border">General Settings</h3>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="text-xs uppercase tracking-wider font-bold text-secondary-text block mb-2">Organization Name</label>
+                                        <input type="text" value="MindCare Wellness Solutions" class="w-full bg-hover border border-border rounded-xl px-4 py-3 text-primary-text">
+                                    </div>
+                                    <div>
+                                        <label class="text-xs uppercase tracking-wider font-bold text-secondary-text block mb-2">Contact Email</label>
+                                        <input type="email" value="hr@mindcare.io" class="w-full bg-hover border border-border rounded-xl px-4 py-3 text-primary-text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="font-black text-lg mb-4 pb-2 border-b border-border">System Preferences</h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between p-4 bg-hover rounded-2xl">
+                                        <div>
+                                            <p class="font-bold">Email Notifications</p>
+                                            <p class="text-xs text-secondary-text">Receive alerts about workshop registrations</p>
+                                        </div>
+                                        <div class="w-12 h-6 bg-accent rounded-full p-1 cursor-pointer">
+                                            <span class="block w-4 h-4 bg-white rounded-full ml-auto"></span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between p-4 bg-hover rounded-2xl">
+                                        <div>
+                                            <p class="font-bold">Weekly Reports</p>
+                                            <p class="text-xs text-secondary-text">Auto-generate engagement summary every Monday</p>
+                                        </div>
+                                        <div class="w-12 h-6 bg-border rounded-full p-1 cursor-pointer">
+                                            <span class="block w-4 h-4 bg-white rounded-full"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-4 flex gap-4">
+                                <button class="bg-accent-gradient text-white px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest shadow-xl">Save Changes</button>
+                                <button class="border border-border px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:bg-hover">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LOGOUT SECTION -->
+                <div id="logout" class="admin-section hidden">
+                    <div class="dashboard-card p-10 reveal active text-center max-w-lg mx-auto border-red-500/20">
+                        <div class="w-20 h-20 mx-auto bg-red-100 dark:bg-red-900/20 rounded-full flex items-center justify-center text-red-500 text-3xl mb-6">
+                            <i class="fas fa-door-open"></i>
+                        </div>
+                        <h2 class="text-2xl font-serif font-bold text-primary-text tracking-tighter">Terminate Admin Session?</h2>
+                        <p class="text-secondary-text mt-3 text-sm leading-relaxed italic">All unsaved changes will be lost.</p>
+                        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="login.html">
+                                <button class="bg-red-500 hover:bg-red-600 text-white font-black uppercase tracking-widest px-8 py-3 rounded-full text-[10px] transition shadow-lg shadow-red-200 dark:shadow-none">
+                                    Terminate
+                                </button>
+                            </a>
+                            <button onclick="activateSection('overview')" class="bg-hover border border-border px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SYSTEM STATUS -->
+                <div class="bg-accent-gradient rounded-3xl p-6 sm:p-8 mt-10 text-white reveal flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl shadow-gold/20">
+                    <div class="flex items-center gap-4 text-center sm:text-left">
+                        <span class="w-3 h-3 bg-white rounded-full animate-ping flex-shrink-0"></span>
+                        <div>
+                            <p class="font-black text-lg tracking-tighter uppercase">Admin System Online</p>
+                            <p class="text-xs text-white/70 italic">Secure connection · 256-bit encryption active</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="bg-white/20 backdrop-blur-md px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest">1,284 Active Users</span>
+                    </div>
+                </div>
+
+                <!-- FOOTER -->
+                <footer class="mt-12 text-center text-[10px] text-secondary-text border-t border-border pt-8 pb-12 w-full">
+                    <p class="uppercase tracking-[0.3em] font-black opacity-40">© 2026 MindCare · HR Admin Control Panel v2.4</p>
+                    <div class="flex justify-center gap-8 mt-4 font-bold uppercase opacity-60">
+                        <span class="hover:text-accent cursor-pointer transition">System Logs</span>
+                        <span class="hover:text-accent cursor-pointer transition">Audit Trail</span>
+                        <span class="hover:text-accent cursor-pointer transition">Security</span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        (function() {
+            'use strict';
+
+            const htmlEl = document.documentElement;
+
+            // ----- 1. MOBILE MENU ENGINE -----
+            const menuToggle = document.getElementById('mobile-menu-toggle');
+            const closeSidebar = document.getElementById('close-sidebar');
+            const sidebar = document.getElementById('sidebar-container');
+            const overlay = document.getElementById('mobile-overlay');
+
+            function toggleMobileMenu(isOpen) {
+                if (isOpen) {
+                    sidebar.classList.remove('-translate-x-full');
+                    overlay.classList.add('active');
+                    document.body.classList.toggle('overflow-hidden', isOpen);
+                } else {
+                    sidebar.classList.add('-translate-x-full');
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            if (menuToggle) menuToggle.addEventListener('click', () => toggleMobileMenu(true));
+            if (closeSidebar) closeSidebar.addEventListener('click', () => toggleMobileMenu(false));
+            if (overlay) overlay.addEventListener('click', () => toggleMobileMenu(false));
+
+            // ----- 2. THEME ENGINE -----
+            const themeBtn = document.getElementById('theme-toggle-user');
+            const lightIcons = document.querySelectorAll('.light-icon');
+            const darkIcons = document.querySelectorAll('.dark-icon');
+
+            function setTheme(theme) {
+                htmlEl.setAttribute('data-theme', theme);
+                localStorage.setItem('mindcare_theme', theme);
+                lightIcons.forEach(icon => icon.classList.toggle('hidden', theme === 'dark'));
+                darkIcons.forEach(icon => icon.classList.toggle('hidden', theme === 'light'));
+            }
+            const savedTheme = localStorage.getItem('mindcare_theme') || 'light';
+            setTheme(savedTheme);
+            if (themeBtn) {
+                themeBtn.addEventListener('click', () => {
+                    const current = htmlEl.getAttribute('data-theme');
+                    setTheme(current === 'light' ? 'dark' : 'light');
+                });
+            }
+
+            // ----- 3. RTL ENGINE -----
+            const langBtn = document.getElementById('lang-toggle');
+            function setDirection(dir) {
+                htmlEl.setAttribute('dir', dir);
+                localStorage.setItem('mindcare_lang', dir === 'rtl' ? 'ar' : 'en');
+            }
+            const savedLang = localStorage.getItem('mindcare_lang') || 'en';
+            setDirection(savedLang === 'ar' ? 'rtl' : 'ltr');
+            if (langBtn) {
+                langBtn.addEventListener('click', () => {
+                    const currentDir = htmlEl.getAttribute('dir') || 'ltr';
+                    setDirection(currentDir === 'ltr' ? 'rtl' : 'ltr');
+                });
+            }
+
+            // ----- 4. REVEAL SCROLL ENGINE -----
+            function checkReveal() {
+                const reveals = document.querySelectorAll('.reveal');
+                reveals.forEach(el => {
+                    const windowHeight = window.innerHeight;
+                    const revealTop = el.getBoundingClientRect().top;
+                    if (revealTop < windowHeight - 50) {
+                        el.classList.add('active');
+                    }
+                });
+            }
+            window.addEventListener('scroll', checkReveal);
+            window.addEventListener('load', checkReveal);
+
+            // ----- 5. NAVIGATION ENGINE -----
+            const sections = ['overview', 'workshops', 'therapists', 'engagement', 'resources', 'reports', 'b2b', 'settings', 'logout'];
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+            
+            window.activateSection = function(sectionId) {
+                sections.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.classList.add('hidden');
+                });
+                const activeEl = document.getElementById(sectionId);
+                if (activeEl) {
+                    activeEl.classList.remove('hidden');
+                    activeEl.classList.add('active');
+                }
+
+                sidebarLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.section === sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+
+                if (window.innerWidth < 1024) {
+                    toggleMobileMenu(false);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            };
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const section = this.dataset.section;
+                    if (section) activateSection(section);
+                });
+            });
+
+            // Default to overview
+            activateSection('overview');
+        })();
+    </script>
+</body>
+</html>

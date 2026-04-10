@@ -1,0 +1,800 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MindCare | Corporate Wellness & MindCare</title>          <link rel="icon" href="assets/logo.png" type="image/jpeg">
+<meta name="description" content="Science-backed MindCare tools for resilient corporate teams.">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<script src="tailwind.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6FCF97',    // (Mint Green)
+            accent: '#4A90E2',     // (Soft Blue)
+            secondary: '#111111',  // Deep Black
+            offWhite: '#F8F9FA'
+          },
+          fontFamily: {
+            'display': ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    [dir="rtl"] .rtl-flip { transform: scaleX(-1); }
+    #mobileMenu { transition: all 0.3s ease-in-out; }
+    .glass-effect { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.05); }
+
+    .before-after-card:hover .after-image {
+  clip-path: inset(0 0 0 0);
+}
+
+.after-image {
+  clip-path: inset(0 0 0 100%);
+  transition: clip-path 0.8s cubic-bezier(0.77,0,0.175,1);
+}
+  </style>
+</head>
+
+<body class="bg-white text-secondary dark:bg-secondary dark:text-gray-100 transition-colors duration-300" data-dir="ltr">
+
+  <nav id="navbar" class="sticky top-0 z-50 transition-colors duration-300 bg-white text-secondary border-b border-gray-100 dark:bg-secondary dark:text-white dark:border-white/10 backdrop-blur-md">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
+      <a href="index.html" class="flex items-center gap-2 shrink-0 group">
+        <span class="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-white shadow-lg group-hover:scale-110 transition-transform">
+<i class="fas fa-brain text-lg"></i>    </span>
+
+        <div class="leading-tight">
+<span class="block text-xl font-bold tracking-tight text-accent">MindCare</span></span>
+        </div>
+      </a>
+      <div class="hidden lg:flex items-center gap-2">
+     <ul class="flex items-center gap-0.5 text-xs font-semibold">
+  
+  <!-- Home -->
+  <li class="relative group">
+    <button class="home-trigger flex items-center gap-1 rounded-md px-3 py-1.5 hover:text-primary dark:hover:text-accent transition-colors">
+      <span>Home</span>
+      <i class="fas fa-chevron-down text-[9px]"></i>
+    </button>
+    <ul class="invisible absolute left-0 mt-1.5 w-44 rounded-md bg-white border border-gray-100 dark:bg-secondary dark:border-white/10 p-1.5 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100 z-50">
+      <li>
+        <a href="index.html" class="block rounded-md px-3 py-1.5 hover:bg-primary hover:text-white transition-colors">
+          Home 1
+        </a>
+      </li>
+      <li>
+        <a href="homepage2.html" class="block rounded-md px-3 py-1.5 hover:bg-primary hover:text-white transition-colors">
+          Home 2
+        </a>
+      </li>
+    </ul>
+  </li>
+
+  <!-- Programs -->
+  <li>
+    <a href="program.html" class="block rounded-md px-3 py-1.5 hover:text-primary dark:hover:text-accent transition-colors">
+      Programs
+    </a>
+  </li>
+
+  <!-- MindCare -->
+  <li>
+    <a href="mindCare.html" class="block rounded-md px-2.5 py-1.5 bg-accent text-white font-bold shadow-sm transition-colors">
+      MindCare
+    </a>
+  </li>  <!-- MindCare -->
+ 
+  <!-- About -->
+  <li>
+    <a href="aboutus.html" class="block rounded-md px-3 py-1.5 hover:text-primary dark:hover:text-accent transition-colors">
+      About
+    </a>
+  </li>
+
+  <!-- Contact -->
+  <li>
+    <a href="contact.html" class="block rounded-md px-3 py-1.5 hover:text-primary dark:hover:text-accent transition-colors">
+      Contact
+    </a>
+  </li>
+
+  <!-- Dashboard -->
+  <li class="relative group">
+    <button class="flex items-center gap-1 rounded-md px-2.5 py-1.5 hover:text-primary dark:hover:text-accent transition-colors">
+      <span>Dashboard</span>
+      <i class="fas fa-chevron-down text-[9px] group-hover:rotate-180 transition-transform"></i>
+    </button>
+    <ul class="invisible absolute left-0 mt-1.5 w-48 rounded-md bg-white border border-gray-100 dark:bg-secondary dark:border-white/10 p-1.5 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100 z-50">
+      <li>
+        <a href="admin.html" class="block rounded-md px-3 py-1.5 hover:bg-primary hover:text-white transition-colors">
+          Admin Panel
+        </a>
+      </li>
+      <li>
+        <a href="user.html" class="block rounded-md px-3 py-1.5 hover:bg-primary hover:text-white transition-colors">
+          User Dashboard
+        </a>
+      </li>
+    </ul>
+  </li>
+
+</ul>
+        <div class="ml-4 flex items-center gap-3 border-l border-gray-200 dark:border-white/10 pl-4">
+          <button id="themeToggleDesktop" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 dark:border-white/10 hover:bg-primary hover:text-white transition-all">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button id="rtlToggleDesktop" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 dark:border-white/10 hover:bg-primary hover:text-white transition-all">
+            <i class="fas fa-exchange-alt"></i>
+          </button>
+        <div class="ml-2 flex items-center gap-2">
+
+  <!-- Login Button -->
+  <a href="login.html"
+     class="inline-flex items-center gap-2 rounded-md border border-accent text-accent px-5 py-2 text-sm font-bold hover:bg-accent hover:text-white transition-all active:scale-95">
+    <i class="fas fa-sign-in-alt text-xs"></i>
+  </a>
+
+  <!-- Signup Button -->
+  <a href="signup.html"
+     class="inline-flex items-center gap-2 rounded-md bg-accent px-5 py-2 text-sm font-bold text-white hover:opacity-90 transition-transform active:scale-95 shadow-lg shadow-accent/20">
+    <i class="fas fa-user-plus text-xs"></i>
+    <span>Register</span>
+  </a>
+
+</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 lg:hidden">
+        <button id="themeToggleMobile" class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 dark:border-white/10">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button id="hamburger" class="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-md bg-gray-100 dark:bg-white/5" aria-label="Toggle Menu">
+          <span id="line1" class="h-0.5 w-6 bg-current transition-all duration-300"></span>
+          <span id="line2" class="h-0.5 w-6 bg-current transition-all duration-300"></span>
+          <span id="line3" class="h-0.5 w-6 bg-current transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden border-t border-gray-100 bg-white dark:bg-secondary dark:border-white/5 lg:hidden overflow-hidden transition-all duration-300">
+      <div class="flex flex-col gap-1 p-4">
+        <details class="group">
+          <summary class="flex cursor-pointer items-center justify-between rounded-lg px-4 py-3 text-lg font-medium list-none hover:bg-gray-50 dark:hover:bg-white/5 transition">
+            <div class="flex items-center gap-4"><i class="fas fa-home text-accent w-6"></i><span>Home</span></div>
+            <i class="fas fa-chevron-down text-xs group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <div class="mt-1 flex flex-col gap-1 pl-14 text-gray-500 dark:text-gray-400">
+            <a href="index.html" class="py-2 hover:text-accent">Home 1</a>
+            <a href="homepage2.html" class="py-2 hover:text-accent">Home 2</a>
+          </div>
+        </details>
+        <a href="program.html" class="block items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5">
+          <i class="fas fa-tasks text-accent w-6"></i> Programs
+        </a>
+        <a href="mindCare.html" class="flex items-center gap-4 rounded-lg px-4 py-3 text-lg font-bold bg-accent text-white shadow-md">
+          <i class="fas fa-heartbeat w-6"></i> MindCare
+        </a>
+      
+        <a href="aboutus.html" class="block items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5">
+          <i class="fas fa-info-circle text-accent w-6"></i> About
+        </a>
+        <a href="contact.html" class="flex items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5">
+          <i class="fas fa-envelope text-accent w-6"></i> Contact
+        </a>
+        <details class="group">
+  <summary class="flex cursor-pointer items-center justify-between rounded-lg px-4 py-3 text-lg font-medium list-none hover:bg-gray-50 dark:hover:bg-white/5 transition">
+    <div class="flex items-center gap-4">
+<i class="fas fa-tachometer-alt text-accent w-6"></i>      <span>Dashboard</span>
+    </div>
+    <i class="fas fa-chevron-down text-xs group-open:rotate-180 transition-transform"></i>
+  </summary>
+
+  <div class="mt-1 flex flex-col gap-1 pl-14 text-gray-500 dark:text-gray-400">
+    <a href="admin.html" class="flex items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5 transition">
+      <i class="fas fa-user-shield text-accent w-6"></i>
+      Admin Panel
+    </a>
+
+    <a href="user.html" class="flex items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5 transition">
+      <i class="fas fa-user text-accent w-6"></i>
+      User Dashboard
+    </a>
+  </div>
+</details>
+        <div class="mt-4 pt-4 border-t border-gray-100 dark:border-white/10">
+          <button id="rtlToggleMobile" class="flex w-full items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5">
+            <i class="fas fa-exchange-alt text-accent w-6"></i> Switch Direction (RTL)
+          </button>
+          <div class="mt-4 flex gap-3">
+
+  <!-- LOGIN -->
+  <a href="login.html"
+     class="flex-1 flex items-center justify-center gap-2 rounded-lg border border-antiqueGold py-4 text-lg font-bold text-antiqueGold hover:bg-antiqueGold hover:text-blackMain transition-all">
+     
+     <i class="fas fa-right-to-bracket"></i>
+     Login
+  </a>
+
+  <!-- CREATE -->
+  <a href="signup.html"
+     class="flex-1 flex items-center justify-center gap-2 rounded-lg bg-accent py-4 text-lg font-bold text-white hover:opacity-90 transition-all">
+     
+     <i class="fas fa-user-plus"></i>
+     SignUp
+  </a>
+
+</div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="min-h-screen">
+    
+<!-- ================= MINDCARE PAGE - SECTION 1: Hero ================= -->
+<section class="relative overflow-hidden bg-gradient-to-br from-secondary to-secondary/95 text-white py-20 md:py-28">
+  <div class="absolute inset-0 opacity-15">
+    <img src="https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="MindCare mental health" class="h-full w-full object-cover">
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/80 to-transparent"></div>
+  
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+    <div class="inline-flex items-center rounded-full bg-accent/20 px-4 py-1.5 text-sm font-medium backdrop-blur-sm">
+      <i class="fas fa-brain mr-2 text-accent text-xs"></i>
+      <span>Your Mental Health Companion</span>
+    </div>
+    <h1 class="mt-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+      MindCare — <span class="text-accent">Science-backed</span> mental wellness
+    </h1>
+    <p class="mx-auto mt-6 max-w-2xl text-lg text-gray-300">
+      Personalized mental health support, anytime, anywhere. Clinically validated tools, licensed therapists, and a community that cares.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-4">
+      <a href="#" class="inline-flex items-center rounded-lg bg-accent px-6 py-3 font-semibold text-white shadow-lg shadow-accent/30 transition hover:bg-accent/90 hover:scale-105">
+        <i class="fas fa-heartbeat mr-2"></i> Start your journey
+      </a>
+      <a href="#" class="inline-flex items-center rounded-lg border border-white/30 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-sm transition hover:bg-white/20">
+        <i class="fas fa-play-circle mr-2"></i> Watch intro
+      </a>
+    </div>
+    <div class="mt-8 flex justify-center gap-6 text-sm text-gray-300">
+      <span><i class="fas fa-shield-alt text-accent mr-1"></i> 100% Confidential</span>
+      <span><i class="fas fa-user-md text-accent mr-1"></i> Licensed Therapists</span>
+      <span><i class="fas fa-clock text-accent mr-1"></i> 24/7 Access</span>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white py-20 dark:bg-secondary">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-secondary dark:text-white">
+        Everything you need in one 
+        <span class="text-accent">mental health app</span>
+      </h2>
+      <p class="mt-4 text-gray-500 dark:text-gray-400">
+        Powerful tools designed to support your mental wellbeing journey.
+      </p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Card -->
+      <div class="group rounded-2xl border border-gray-100 dark:border-white/10 p-6 
+                  hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-secondary flex flex-col">
+
+        <div class="flex items-center gap-4">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-white">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-secondary dark:text-white">
+            AI Mental Health Assistant
+          </h3>
+        </div>
+
+        <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 flex-1">
+          24/7 conversational AI for instant support, coping strategies, and guidance.
+        </p>
+
+        <a href="mindcaredetails.html?id=ai-assistant" class="mt-4 inline-flex items-center text-accent text-sm font-semibold">
+  Learn more <i class="fas fa-arrow-right ml-1 text-xs"></i>
+</a>
+      </div>
+
+      <!-- Card -->
+      <div class="group rounded-2xl border border-gray-100 dark:border-white/10 p-6 
+                  hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-secondary flex flex-col">
+
+        <div class="flex items-center gap-4">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-white">
+            <i class="fas fa-video"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-secondary dark:text-white">
+            Video Therapy Sessions
+          </h3>
+        </div>
+
+        <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 flex-1">
+          Connect with licensed therapists through secure and flexible sessions.
+        </p>
+
+   <a href="mindcaredetails.html?id=video-therapy" class="mt-4 inline-flex items-center text-accent text-sm font-semibold">
+  Learn more <i class="fas fa-arrow-right ml-1 text-xs"></i>
+</a>
+      </div>
+
+      <!-- Card -->
+      <div class="group rounded-2xl border border-gray-100 dark:border-white/10 p-6 
+                  hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-secondary flex flex-col">
+
+        <div class="flex items-center gap-4">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-white">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-secondary dark:text-white">
+            Daily Mood Tracking
+          </h3>
+        </div>
+
+        <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 flex-1">
+          Track emotions, understand patterns, and improve mental awareness.
+        </p>
+
+    <a href="mindcaredetails.html?id=mood-tracking" class="mt-4 inline-flex items-center text-accent text-sm font-semibold">
+  Learn more <i class="fas fa-arrow-right ml-1 text-xs"></i>
+</a>
+      </div>
+
+      <!-- Card -->
+      <div class="group rounded-2xl border border-gray-100 dark:border-white/10 p-6 
+                  hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-secondary flex flex-col">
+
+        <div class="flex items-center gap-4">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-white">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-secondary dark:text-white">
+            Self-Help Library
+          </h3>
+        </div>
+
+        <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 flex-1">
+          Access curated content for stress, anxiety, and personal growth.
+        </p>
+
+        <a href="mindcaredetails.html?id=self-help-library" class="mt-4 inline-flex items-center text-accent text-sm font-semibold">
+  Learn more <i class="fas fa-arrow-right ml-1 text-xs"></i>
+</a>
+      </div>
+
+      <!-- Card -->
+      <div class="group rounded-2xl border border-gray-100 dark:border-white/10 p-6 
+                  hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-secondary flex flex-col">
+
+        <div class="flex items-center gap-4">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-white">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-secondary dark:text-white">
+            Support Communities
+          </h3>
+        </div>
+
+        <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 flex-1">
+          Join safe, moderated spaces with people on similar journeys.
+        </p>
+
+       <a href="mindcaredetails.html?id=support-communities" class="mt-4 inline-flex items-center text-accent text-sm font-semibold">
+  Learn more <i class="fas fa-arrow-right ml-1 text-xs"></i>
+</a>
+      </div>
+
+      <!-- Card -->
+      <div class="group rounded-2xl border border-gray-100 dark:border-white/10 p-6 
+                  hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-secondary flex flex-col">
+
+        <div class="flex items-center gap-4">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-white">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-secondary dark:text-white">
+            Progress Analytics
+          </h3>
+        </div>
+
+        <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 flex-1">
+          Visualize growth with insights and track your mental progress.
+        </p>
+
+       <a href="mindcaredetails.html?id=progress-analytics" class="mt-4 inline-flex items-center text-accent text-sm font-semibold">
+  Learn more <i class="fas fa-arrow-right ml-1 text-xs"></i>
+</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= MINDCARE PAGE - SECTION 3: How It Works ================= -->
+<section class="bg-gradient-to-r from-accent/5 to-primary/5 py-20 dark:from-secondary/40 dark:to-secondary/40">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold text-secondary dark:text-white sm:text-4xl">Your journey to <span class="text-accent">better mental health</span></h2>
+      <p class="mx-auto mt-4 max-w-2xl text-gray-500 dark:text-gray-400">Simple steps to get the support you need</p>
+    </div>
+
+    <div class="mt-16 grid gap-8 md:grid-cols-4">
+      <div class="text-center group">
+        <div class="relative mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-white shadow-md text-accent group-hover:bg-accent group-hover:text-white transition dark:bg-secondary">
+          <i class="fas fa-clipboard-list text-3xl"></i>
+        </div>
+        <h3 class="mt-4 text-lg font-bold text-secondary dark:text-white">Take Assessment</h3>
+        <p class="mt-2 text-sm text-gray-500">15-min confidential check-in</p>
+      </div>
+      <div class="text-center group">
+        <div class="relative mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-white shadow-md text-accent group-hover:bg-accent group-hover:text-white transition dark:bg-secondary">
+          <i class="fas fa-chart-line text-3xl"></i>
+        </div>
+        <h3 class="mt-4 text-lg font-bold text-secondary dark:text-white">Get Personalized</h3>
+        <p class="mt-2 text-sm text-gray-500">AI-recommended resources & tools</p>
+      </div>
+      <div class="text-center group">
+        <div class="relative mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-white shadow-md text-accent group-hover:bg-accent group-hover:text-white transition dark:bg-secondary">
+          <i class="fas fa-hand-holding-heart text-3xl"></i>
+        </div>
+        <h3 class="mt-4 text-lg font-bold text-secondary dark:text-white">Connect care</h3>
+        <p class="mt-2 text-sm text-gray-500">Therapist, coach, or self-guided</p>
+      </div>
+      <div class="text-center group">
+        <div class="relative mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-white shadow-md text-accent group-hover:bg-accent group-hover:text-white transition dark:bg-secondary">
+          <i class="fas fa-chart-simple text-3xl"></i>
+        </div>
+        <h3 class="mt-4 text-lg font-bold text-secondary dark:text-white">Track & Thrive</h3>
+        <p class="mt-2 text-sm text-gray-500">Monitor progress over time</p>
+      </div>
+    </div>
+
+    <div class="mt-12 flex justify-center">
+      <img src="/assets/fd.jpeg" alt="MindCare app interface" class="rounded-2xl shadow-lg max-h-64 w-full object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- ================= MINDCARE PAGE - SECTION 4: Therapist Network ================= -->
+<section class="bg-white py-20 dark:bg-secondary">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold text-secondary dark:text-white sm:text-4xl">Meet our <span class="text-accent">licensed therapists</span></h2>
+      <p class="mx-auto mt-4 max-w-2xl text-gray-500 dark:text-gray-400">Highly qualified professionals specialized in various areas of mental health</p>
+    </div>
+
+    <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div class="rounded-2xl bg-gray-50 p-6 text-center transition hover:shadow-lg dark:bg-secondary/60 flex flex-col">
+        <img src="/assets/g1.jpg" alt="Therapist" class="mx-auto h-24 w-24 rounded-full object-cover ring-2 ring-accent">
+        <h3 class="mt-4 text-xl font-bold text-secondary dark:text-white">Dr. Sarah Johnson</h3>
+        <p class="text-sm text-accent">Clinical Psychologist, PhD</p>
+        <p class="mt-2 text-sm text-gray-500 flex-1">Specializes in anxiety, trauma, and PTSD. 12+ years experience.</p>
+        <div class="mt-3 flex justify-center gap-1 text-accent">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <a href="#" class="mt-4 inline-block rounded-lg border border-accent px-4 py-1.5 text-sm font-semibold text-accent transition hover:bg-accent hover:text-white">Book session</a>
+      </div>
+      <div class="rounded-2xl bg-gray-50 p-6 text-center transition hover:shadow-lg dark:bg-secondary/60 flex flex-col">
+        <img src="/assets/b1.jpg" alt="Therapist" class="mx-auto h-24 w-24 rounded-full object-cover ring-2 ring-accent">
+        <h3 class="mt-4 text-xl font-bold text-secondary dark:text-white">Michael Chen, LCSW</h3>
+        <p class="text-sm text-accent">Licensed Clinical Social Worker</p>
+        <p class="mt-2 text-sm text-gray-500 flex-1">Specializes in depression, grief, and life transitions.</p>
+        <div class="mt-3 flex justify-center gap-1 text-accent">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <a href="#" class="mt-4 inline-block rounded-lg border border-accent px-4 py-1.5 text-sm font-semibold text-accent transition hover:bg-accent hover:text-white">Book session</a>
+      </div>
+      <div class="rounded-2xl bg-gray-50 p-6 text-center transition hover:shadow-lg dark:bg-secondary/60 flex flex-col">
+        <img src="/assets/g2.jpg" alt="Therapist" class="mx-auto h-24 w-24 rounded-full object-cover ring-2 ring-accent">
+        <h3 class="mt-4 text-xl font-bold text-secondary dark:text-white">Dr. Emily Rodriguez</h3>
+        <p class="text-sm text-accent">Psychiatrist, MD</p>
+        <p class="mt-2 text-sm text-gray-500 flex-1">Medication management, bipolar disorder, OCD.</p>
+        <div class="mt-3 flex justify-center gap-1 text-accent">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        </div>
+        <a href="#" class="mt-4 inline-block rounded-lg border border-accent px-4 py-1.5 text-sm font-semibold text-accent transition hover:bg-accent hover:text-white">Book session</a>
+      </div>
+    </div>
+    <div class="mt-10 text-center">
+      <a href="#" class="inline-flex items-center gap-2 text-accent font-semibold hover:gap-3 transition-all">
+        <span>View all 50+ therapists</span>
+        <i class="fas fa-arrow-right text-sm"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MINDCARE PAGE - SECTION 5: Testimonials ================= -->
+<section class="bg-gray-50 py-20 dark:bg-secondary/60">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold text-secondary dark:text-white sm:text-4xl">What our <span class="text-accent">community</span> says</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-gray-500 dark:text-gray-400">Real stories from people who found support through MindCare</p>
+    </div>
+
+    <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div class="rounded-2xl bg-white p-6 shadow-sm transition hover:shadow-md dark:bg-secondary">
+        <div class="flex items-center gap-1 text-accent">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="mt-4 text-gray-600 dark:text-gray-300">"MindCare changed my life. The AI companion helped me through panic attacks at 3am, and my therapist gave me tools I use every day."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <img src="/assets/g1.jpg" class="h-10 w-10 rounded-full object-cover">
+          <div>
+            <div class="font-medium text-secondary dark:text-white">Jessica M.</div>
+            <div class="text-xs text-gray-400">Anxiety recovery</div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-2xl bg-white p-6 shadow-sm transition hover:shadow-md dark:bg-secondary">
+        <div class="flex items-center gap-1 text-accent">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="mt-4 text-gray-600 dark:text-gray-300">"The daily mood tracking and insights helped me understand my depression patterns. Finally, a platform that actually works."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <img src="/assets/b1.jpg" class="h-10 w-10 rounded-full object-cover">
+          <div>
+            <div class="font-medium text-secondary dark:text-white">David K.</div>
+            <div class="text-xs text-gray-400">Depression support</div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-2xl bg-white p-6 shadow-sm transition hover:shadow-md dark:bg-secondary">
+        <div class="flex items-center gap-1 text-accent">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="mt-4 text-gray-600 dark:text-gray-300">"As a busy professional, having 24/7 access to mental health support is invaluable. The video therapy fits perfectly into my schedule."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <img src="/assets/g2.jpg" class="h-10 w-10 rounded-full object-cover">
+          <div>
+            <div class="font-medium text-secondary dark:text-white">Priya S.</div>
+            <div class="text-xs text-gray-400">Stress management</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MINDCARE PAGE - SECTION 6: Pricing & CTA ================= -->
+<section class="bg-white py-20 dark:bg-secondary">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">    <div class="rounded-3xl bg-secondary p-8 text-white dark:bg-white/5 dark:border dark:border-white/10 md:p-12">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold sm:text-4xl">Start your <span class="text-accent">mental wellness</span> journey today</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-gray-300 dark:text-gray-400">Affordable plans for every need. No hidden fees. Cancel anytime.</p>
+      </div>
+
+      <div class="mt-12 grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl bg-white p-6 text-secondary dark:bg-secondary dark:text-white dark:border dark:border-white/10 flex flex-col">
+          <h3 class="text-xl font-bold">Basic</h3>
+          <div class="mt-4 flex items-baseline gap-1">
+            <span class="text-4xl font-black text-accent">$0</span>
+            <span class="text-gray-500 dark:text-gray-400">/month</span>
+          </div>
+          <ul class="mt-6 space-y-3 text-sm flex-1">
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> Mood tracking</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> Self-help library</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> Community access</li>
+            <li class="flex items-center gap-2 text-gray-400 dark:text-gray-500"><i class="fas fa-circle-notch"></i> AI companion (limited)</li>
+          </ul>
+          <a href="#" class="mt-8 block w-full rounded-lg border border-accent py-2.5 text-center font-semibold text-accent transition hover:bg-accent hover:text-white">Get started</a>
+        </div>
+
+        <div class="relative rounded-2xl bg-white p-6 text-secondary shadow-xl ring-2 ring-accent dark:bg-secondary dark:text-white flex flex-col">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-3 py-0.5 text-xs font-bold text-white">Most Popular</div>
+          <h3 class="text-xl font-bold">Professional</h3>
+          <div class="mt-4 flex items-baseline gap-1">
+            <span class="text-4xl font-black text-accent">$49</span>
+            <span class="text-gray-500 dark:text-gray-400">/month</span>
+          </div>
+          <ul class="mt-6 space-y-3 text-sm flex-1">
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> Everything in Basic</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> Unlimited AI companion</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> 4 therapy sessions/month</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> Progress analytics</li>
+          </ul>
+          <a href="#" class="mt-8 block w-full rounded-lg bg-accent py-2.5 text-center font-semibold text-white transition hover:opacity-90">Start free trial</a>
+        </div>
+
+        <div class="rounded-2xl bg-white p-6 text-secondary dark:bg-secondary dark:text-white dark:border dark:border-white/10 flex flex-col">
+          <h3 class="text-xl font-bold">Enterprise</h3>
+          <div class="mt-4 flex items-baseline gap-1">
+            <span class="text-4xl font-black text-accent">Custom</span>
+          </div>
+          <ul class="mt-6 space-y-3 text-sm flex-1">
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> Everything in Professional</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> Dedicated account manager</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> HR analytics dashboard</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> SSO & API integration</li>
+          </ul>
+          <a href="#" class="mt-8 block w-full rounded-lg border border-accent py-2.5 text-center font-semibold text-accent transition hover:bg-accent hover:text-white">Contact sales</a>
+        </div>
+      </div>
+
+      <div class="mt-10 text-center">
+        <p class="text-sm text-gray-400 dark:text-gray-500">🎯 All plans include a 7-day free trial. No commitment required.</p>
+        <div class="mt-6 flex justify-center gap-4 text-sm">
+          <span class="text-white/70 dark:text-gray-400"><i class="fas fa-lock text-accent mr-1"></i> HIPAA Compliant</span>
+          <span class="text-white/70 dark:text-gray-400"><i class="fas fa-shield-alt text-accent mr-1"></i> 256-bit Encryption</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer class="bg-secondary pt-20 pb-10 text-white">
+  <div class="mx-auto max-w-7xl px-4 lg:px-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-white/10 pb-16">
+      
+      <div>
+        <a href="index.html" class="flex items-center gap-3 mb-6">
+          <span class="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-white shadow-lg">
+            <i class="fas fa-brain text-lg"></i>
+          </span>
+          <div class="leading-tight">
+            <span class="block text-xl font-bold tracking-tight text-accent">MindCare</span>
+          </div>
+        </a>
+        <p class="text-gray-400 mb-6">
+          Building resilient teams and fostering a culture of mental wellbeing through science-backed corporate wellness tools.
+        </p>
+        <div class="flex gap-3">
+          <a href="#" class="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent hover:text-secondary transition-all"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent hover:text-secondary transition-all"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent hover:text-secondary transition-all"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Navigation</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="index.html" class="block hover:text-accent transition-colors text-accent">Home</a></li>
+          <li><a href="program.html" class="block hover:text-accent transition-colors">Programs</a></li>
+          <li><a href="mindCare.html" class="block hover:text-accent transition-colors">MindCare</a></li>
+          <li><a href="aboutus.html" class="block hover:text-accent transition-colors">About</a></li>
+          <li><a href="contact.html" class="block hover:text-accent transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-bold mb-6">Get in Touch</h4>
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center">
+              <i class="fas fa-map-marker-alt text-accent"></i>
+            </div>
+            <div class="text-gray-400">
+              No. 24, Mindset Uk<br>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center">
+              <i class="fas fa-phone text-accent"></i>
+            </div>
+            <div class="text-gray-400">+91 80 1234 5678</div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center">
+              <i class="fas fa-envelope text-accent"></i>
+            </div>
+            <div class="text-gray-400">support@mindcare.io</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-bold mb-6">Weekly Wellbeing</h4>
+        <p class="text-gray-400 mb-4">
+          Get expert tips on preventing burnout and boosting team productivity delivered to your inbox.
+        </p>
+        <form class="space-y-4">
+          <input type="email" placeholder="Work email address" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-accent focus:outline-none text-white">
+          <button type="submit" class="w-full bg-accent text-white font-bold py-3 rounded-lg hover:opacity-90 transition-colors">
+            Subscribe Now
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
+      <div>© 2026 MindCare Wellness Solutions. All rights reserved.</div>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-accent transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-accent transition-colors">Terms of Service</a>
+        <a href="#" class="hover:text-accent transition-colors">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script>
+    const htmlEl = document.documentElement;
+    const bodyEl = document.body;
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const l1 = document.getElementById('line1');
+    const l2 = document.getElementById('line2');
+    const l3 = document.getElementById('line3');
+
+    // Menu Toggle Logic
+    hamburger.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      if (!isHidden) {
+        l1.style.transform = 'translateY(8px) rotate(45deg)';
+        l2.style.opacity = '0';
+        l3.style.transform = 'translateY(-8px) rotate(-45deg)';
+      } else {
+        l1.style.transform = 'none';
+        l2.style.opacity = '1';
+        l3.style.transform = 'none';
+      }
+    });
+
+    // Theme Logic
+    const themeBtns = [document.getElementById('themeToggleDesktop'), document.getElementById('themeToggleMobile')];
+    function setTheme(isDark) {
+      if (isDark) {
+        htmlEl.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        themeBtns.forEach(btn => btn.innerHTML = '<i class="fas fa-sun"></i>');
+      } else {
+        htmlEl.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        themeBtns.forEach(btn => btn.innerHTML = '<i class="fas fa-moon"></i>');
+      }
+    }
+    themeBtns.forEach(btn => btn.addEventListener('click', () => setTheme(!htmlEl.classList.contains('dark'))));
+    setTheme(localStorage.getItem('theme') === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+    // RTL Logic
+    const rtlBtns = [document.getElementById('rtlToggleDesktop'), document.getElementById('rtlToggleMobile')];
+    rtlBtns.forEach(btn => btn.addEventListener('click', () => {
+      const currentDir = bodyEl.getAttribute('dir') || 'ltr';
+      bodyEl.setAttribute('dir', currentDir === 'ltr' ? 'rtl' : 'ltr');
+    }));
+
+    // Calculator Logic
+    function calculateCost() {
+        const sqft = document.getElementById('sqft').value;
+        const grade = document.getElementById('grade').value;
+        const total = document.getElementById('totalCost');
+        
+        if(sqft > 0) {
+            const calculation = sqft * grade;
+            // Animate number
+            let current = 0;
+            const step = calculation / 20;
+            const timer = setInterval(() => {
+                current += step;
+                if(current >= calculation) {
+                    total.innerText = calculation.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    total.innerText = Math.floor(current).toLocaleString();
+                }
+            }, 30);
+        } else {
+            alert("Please enter a valid area size.");
+        }
+    }
+  </script>
+</body>
+</html>

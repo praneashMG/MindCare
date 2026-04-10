@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindCare | Program Details</title>
+  <link rel="icon" href="assets/logo.png" type="image/jpeg">
+  <meta name="description" content="Explore MindCare mental health programs - detailed information about each wellness program.">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6FCF97',
+            accent: '#4A90E2',
+            secondary: '#111111',
+            offWhite: '#F8F9FA'
+          },
+          fontFamily: {
+            'display': ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    [dir="rtl"] .rtl-flip { transform: scaleX(-1); }
+    #mobileMenu { transition: all 0.3s ease-in-out; }
+    .glass-effect { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.05); }
+  </style>
+</head>
+
+<body class="bg-white text-secondary dark:bg-secondary dark:text-gray-100 transition-colors duration-300" data-dir="ltr">
+
+  <!-- Navigation Bar (Same as index.html) -->
+  <nav id="navbar" class="sticky top-0 z-50 transition-colors duration-300 bg-white text-secondary border-b border-gray-100 dark:bg-secondary dark:text-white dark:border-white/10 backdrop-blur-md">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
+      <a href="index.html" class="flex items-center gap-2 shrink-0 group">
+        <span class="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-white shadow-lg group-hover:scale-110 transition-transform">
+          <i class="fas fa-brain text-lg"></i>
+        </span>
+        <div class="leading-tight">
+          <span class="block text-xl font-bold tracking-tight text-accent">MindCare</span>
+        </div>
+      </a>
+      <div class="hidden lg:flex items-center gap-2">
+        <ul class="flex items-center gap-0.5 text-xs font-semibold">
+          <li class="relative group">
+            <button class="home-trigger flex items-center gap-1 rounded-md px-2.5 py-1.5 hover:text-primary transition-colors">
+              <span>Home</span>
+              <i class="fas fa-chevron-down text-[9px]"></i>
+            </button>
+            <ul class="invisible absolute left-0 mt-1.5 w-44 rounded-md bg-white border border-gray-100 dark:bg-secondary dark:border-white/10 p-1.5 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100 z-50">
+              <li><a href="index.html" class="block rounded-md px-3 py-1.5 hover:bg-primary hover:text-white transition-colors">Home 1</a></li>
+              <li><a href="homepage2.html" class="block rounded-md px-3 py-1.5 hover:bg-primary hover:text-white transition-colors">Home 2</a></li>
+            </ul>
+          </li>
+          <li><a href="program.html" class="block rounded-md px-2.5 py-1.5 bg-accent text-white font-bold shadow-sm transition-colors">Programs</a></li>
+          <li><a href="mindCare.html" class="block rounded-md px-3 py-1.5 hover:text-primary transition-colors">MindCare</a></li>
+          <li><a href="aboutus.html" class="block rounded-md px-3 py-1.5 hover:text-primary transition-colors">About</a></li>
+          <li><a href="contact.html" class="block rounded-md px-3 py-1.5 hover:text-primary transition-colors">Contact</a></li>
+          <li class="relative group">
+            <button class="flex items-center gap-1 rounded-md px-2.5 py-1.5 hover:text-primary transition-colors">
+              <span>Dashboard</span>
+              <i class="fas fa-chevron-down text-[9px] group-hover:rotate-180 transition-transform"></i>
+            </button>
+            <ul class="invisible absolute left-0 mt-1.5 w-48 rounded-md bg-white border border-gray-100 dark:bg-secondary dark:border-white/10 p-1.5 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100 z-50">
+              <li><a href="admin.html" class="block rounded-md px-3 py-1.5 hover:bg-primary hover:text-white transition-colors">Admin Panel</a></li>
+              <li><a href="user.html" class="block rounded-md px-3 py-1.5 hover:bg-primary hover:text-white transition-colors">User Dashboard</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="ml-4 flex items-center gap-3 border-l border-gray-200 dark:border-white/10 pl-4">
+          <button id="themeToggleDesktop" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 dark:border-white/10 hover:bg-primary hover:text-white transition-all">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button id="rtlToggleDesktop" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 dark:border-white/10 hover:bg-primary hover:text-white transition-all">
+            <i class="fas fa-exchange-alt"></i>
+          </button>
+          <div class="ml-2 flex items-center gap-2">
+            <a href="login.html" class="inline-flex items-center gap-2 rounded-md border border-accent text-accent px-5 py-2 text-sm font-bold hover:bg-accent hover:text-white transition-all active:scale-95">
+              <i class="fas fa-sign-in-alt text-xs"></i>
+            </a>
+            <a href="signup.html" class="inline-flex items-center gap-2 rounded-md bg-accent px-5 py-2 text-sm font-bold text-white hover:opacity-90 transition-transform active:scale-95 shadow-lg shadow-accent/20">
+              <i class="fas fa-user-plus text-xs"></i>
+              <span>Register</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 lg:hidden">
+        <button id="themeToggleMobile" class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 dark:border-white/10">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button id="hamburger" class="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-md bg-gray-100 dark:bg-white/5">
+          <span id="line1" class="h-0.5 w-6 bg-current transition-all duration-300"></span>
+          <span id="line2" class="h-0.5 w-6 bg-current transition-all duration-300"></span>
+          <span id="line3" class="h-0.5 w-6 bg-current transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden border-t border-gray-100 bg-white dark:bg-secondary dark:border-white/5 lg:hidden overflow-hidden transition-all duration-300">
+      <div class="flex flex-col gap-1 p-4">
+        <details class="group">
+          <summary class="flex cursor-pointer items-center justify-between rounded-lg px-4 py-3 text-lg font-medium list-none hover:bg-gray-50 dark:hover:bg-white/5 transition">
+            <div class="flex items-center gap-4"><i class="fas fa-home text-accent w-6"></i><span>Home</span></div>
+            <i class="fas fa-chevron-down text-xs group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <div class="mt-1 flex flex-col gap-1 pl-14 text-gray-500 dark:text-gray-400">
+            <a href="index.html" class="py-2 hover:text-accent">Home 1</a>
+            <a href="homepage2.html" class="py-2 hover:text-accent">Home 2</a>
+          </div>
+        </details>
+        <a href="program.html" class="flex items-center gap-4 rounded-lg px-4 py-3 text-lg font-bold bg-accent text-white shadow-md">
+          <i class="fas fa-tasks w-6"></i> Programs
+        </a>
+        <a href="mindCare.html" class="block items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5">
+          <i class="fas fa-heartbeat text-accent w-6"></i> MindCare
+        </a>
+        <a href="aboutus.html" class="block items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5">
+          <i class="fas fa-info-circle text-accent w-6"></i> About
+        </a>
+        <a href="contact.html" class="flex items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5">
+          <i class="fas fa-envelope text-accent w-6"></i> Contact
+        </a>
+        <details class="group">
+          <summary class="flex cursor-pointer items-center justify-between rounded-lg px-4 py-3 text-lg font-medium list-none hover:bg-gray-50 dark:hover:bg-white/5 transition">
+            <div class="flex items-center gap-4"><i class="fas fa-tachometer-alt text-accent w-6"></i><span>Dashboard</span></div>
+            <i class="fas fa-chevron-down text-xs group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <div class="mt-1 flex flex-col gap-1 pl-14 text-gray-500 dark:text-gray-400">
+            <a href="admin.html" class="flex items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5 transition">
+              <i class="fas fa-user-shield text-accent w-6"></i> Admin Panel
+            </a>
+            <a href="user.html" class="flex items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5 transition">
+              <i class="fas fa-user text-accent w-6"></i> User Dashboard
+            </a>
+          </div>
+        </details>
+        <div class="mt-4 pt-4 border-t border-gray-100 dark:border-white/10">
+          <button id="rtlToggleMobile" class="flex w-full items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5">
+            <i class="fas fa-exchange-alt text-accent w-6"></i> Switch Direction (RTL)
+          </button>
+          <div class="mt-4 flex gap-3">
+            <a href="login.html" class="flex-1 flex items-center justify-center gap-2 rounded-lg border border-antiqueGold py-4 text-lg font-bold text-antiqueGold hover:bg-antiqueGold hover:text-blackMain transition-all">
+              <i class="fas fa-right-to-bracket"></i> Login
+            </a>
+            <a href="signup.html" class="flex-1 flex items-center justify-center gap-2 rounded-lg bg-accent py-4 text-lg font-bold text-white hover:opacity-90 transition-all">
+              <i class="fas fa-user-plus"></i> SignUp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="min-h-screen">
+    <!-- Program Details Content - Dynamically Loaded -->
+    <div id="programDetailsContainer"></div>
+  </main>
+
+  <!-- Footer (Same as index.html) -->
+  <footer class="bg-secondary pt-20 pb-10 text-white">
+    <div class="mx-auto max-w-7xl px-4 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-white/10 pb-16">
+        <div>
+          <a href="index.html" class="flex items-center gap-3 mb-6">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-white shadow-lg">
+              <i class="fas fa-brain text-lg"></i>
+            </span>
+            <div class="leading-tight">
+              <span class="block text-xl font-bold tracking-tight text-accent">MindCare</span>
+            </div>
+          </a>
+          <p class="text-gray-400 mb-6">Building resilient teams and fostering a culture of mental wellbeing through science-backed corporate wellness tools.</p>
+          <div class="flex gap-3">
+            <a href="#" class="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent hover:text-secondary transition-all"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent hover:text-secondary transition-all"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent hover:text-secondary transition-all"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Navigation</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="index.html" class="block hover:text-accent transition-colors">Home</a></li>
+            <li><a href="program.html" class="block hover:text-accent transition-colors text-accent">Programs</a></li>
+            <li><a href="mindCare.html" class="block hover:text-accent transition-colors">MindCare</a></li>
+            <li><a href="aboutus.html" class="block hover:text-accent transition-colors">About</a></li>
+            <li><a href="contact.html" class="block hover:text-accent transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6">Get in Touch</h4>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center">
+                <i class="fas fa-map-marker-alt text-accent"></i>
+              </div>
+              <div class="text-gray-400">No. 24, Mindset Uk</div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center">
+                <i class="fas fa-phone text-accent"></i>
+              </div>
+              <div class="text-gray-400">+91 80 1234 5678</div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center">
+                <i class="fas fa-envelope text-accent"></i>
+              </div>
+              <div class="text-gray-400">support@mindcare.io</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6">Weekly Wellbeing</h4>
+          <p class="text-gray-400 mb-4">Get expert tips on preventing burnout and boosting team productivity delivered to your inbox.</p>
+          <form class="space-y-4">
+            <input type="email" placeholder="Work email address" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-accent focus:outline-none text-white">
+            <button type="submit" class="w-full bg-accent text-white font-bold py-3 rounded-lg hover:opacity-90 transition-colors">Subscribe Now</button>
+          </form>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
+        <div>© 2026 MindCare Wellness Solutions. All rights reserved.</div>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-accent transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-accent transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-accent transition-colors">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Programs Database
+    const programsData = {
+      // Stress & Anxiety
+      'stress-reset': {
+        id: 'stress-reset',
+        name: 'Stress Reset',
+        category: 'Stress & Anxiety',
+        duration: '4 weeks',
+        timePerDay: '15 min/day',
+        format: 'Self-paced',
+        icon: 'leaf',
+        color: '#4A90E2',
+        longDescription: 'The Stress Reset program is designed to help you manage daily stress using science-backed techniques. You\'ll learn to identify stress triggers, practice relaxation exercises, and build emotional resilience.',
+        whatYouWillLearn: [
+          'Identify personal stress triggers and patterns',
+          'Practice deep breathing and progressive muscle relaxation',
+          'Develop a personalized stress management toolkit',
+          'Build long-term emotional resilience strategies',
+          'Create sustainable daily wellness habits'
+        ],
+        programStructure: [
+          'Week 1: Understanding Your Stress Response',
+          'Week 2: Breathing Techniques for Instant Calm',
+          'Week 3: Mindfulness-Based Stress Reduction',
+          'Week 4: Building Your Resilience Plan'
+        ],
+        includes: ['Daily guided exercises', 'Stress tracking journal', 'Weekly check-ins', 'Audio meditations', 'Printable worksheets'],
+        testimonial: '"This program completely changed how I handle work pressure. I feel calmer and more in control." - Sarah M.',
+        image: 'https://images.pexels.com/photos/4050312/pexels-photo-4050312.jpeg?auto=compress&cs=tinysrgb&w=600'
+      },
+      'anxiety-management': {
+        id: 'anxiety-management',
+        name: 'Anxiety Management',
+        category: 'Stress & Anxiety',
+        duration: '8 weeks',
+        timePerDay: '20 min/day',
+        format: 'With coach',
+        icon: 'brain',
+        color: '#4A90E2',
+        longDescription: 'Evidence-based CBT techniques to understand and reduce anxiety symptoms. This comprehensive program helps you break the cycle of anxious thoughts and build confidence.',
+        whatYouWillLearn: [
+          'Understand the science of anxiety',
+          'Identify and challenge anxious thoughts',
+          'Practice exposure techniques safely',
+          'Develop coping strategies for panic attacks',
+          'Build long-term anxiety management skills'
+        ],
+        programStructure: [
+          'Week 1-2: Understanding Anxiety Patterns',
+          'Week 3-4: Cognitive Restructuring Techniques',
+          'Week 5-6: Exposure Therapy Principles',
+          'Week 7-8: Relapse Prevention & Maintenance'
+        ],
+        includes: ['Weekly coaching sessions', 'CBT worksheets', 'Anxiety tracking tools', 'Guided exposures', 'Community support'],
+        testimonial: '"The CBT techniques I learned here have been life-changing. I finally feel like I have control over my anxiety." - Michael T.',
+        image: 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=600'
+      },
+      'calm-under-pressure': {
+        id: 'calm-under-pressure',
+        name: 'Calm Under Pressure',
+        category: 'Stress & Anxiety',
+        duration: '3 weeks',
+        timePerDay: '10 min/day',
+        format: 'Self-paced',
+        icon: 'wind',
+        color: '#4A90E2',
+        longDescription: 'Breathing exercises and somatic practices to defuse tension and perform at your best, even in high-pressure situations.',
+        whatYouWillLearn: ['Quick stress reduction techniques', 'Somatic awareness practices', 'Performance anxiety management'],
+        programStructure: ['Week 1: Breath Control', 'Week 2: Body Awareness', 'Week 3: Integration'],
+        includes: ['Audio guides', 'Quick reference cards', 'Practice tracker'],
+        testimonial: '"Perfect for high-stress moments at work. The breathing techniques work instantly." - David K.',
+        image: 'https://images.pexels.com/photos/3768126/pexels-photo-3768126.jpeg?auto=compress&cs=tinysrgb&w=600'
+      },
+      // Depression
+      'depression-support': {
+        id: 'depression-support',
+        name: 'Depression Support',
+        category: 'Depression',
+        duration: '12 weeks',
+        timePerDay: '30 min/day',
+        format: 'With therapist',
+        icon: 'hand-holding-heart',
+        color: '#6FCF97',
+        longDescription: 'Comprehensive program combining therapy, lifestyle changes, and community support to help manage depression symptoms.',
+        whatYouWillLearn: ['Understanding depression patterns', 'Behavioral activation techniques', 'Building social connections', 'Lifestyle medicine principles'],
+        programStructure: ['Phase 1: Assessment & Stabilization', 'Phase 2: Active Treatment', 'Phase 3: Relapse Prevention'],
+        includes: ['Weekly therapy sessions', 'Mood tracking', 'Peer support groups', 'Crisis resources'],
+        testimonial: '"This program gave me my life back. The combination of therapy and community support was exactly what I needed." - Emma L.',
+        image: 'https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=600'
+      },
+      'mood-lift': {
+        id: 'mood-lift',
+        name: 'Mood Lift Program',
+        category: 'Depression',
+        duration: '6 weeks',
+        timePerDay: '20 min/day',
+        format: 'Group sessions',
+        icon: 'sun',
+        color: '#6FCF97',
+        longDescription: 'Daily mood-boosting habits, journaling and behavioral activation to combat low mood and increase positive emotions.',
+        whatYouWillLearn: ['Habit formation for mood', 'Gratitude practices', 'Behavioral activation', 'Social connection strategies'],
+        programStructure: ['Week 1-2: Foundation Habits', 'Week 3-4: Building Momentum', 'Week 5-6: Sustainable Change'],
+        includes: ['Daily journal prompts', 'Group discussion forums', 'Weekly live calls', 'Progress tracking'],
+        testimonial: '"The daily practices became my lifeline. I look forward to my morning journaling now." - Rachel P.',
+        image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600'
+      },
+      'resilience-rebuild': {
+        id: 'resilience-rebuild',
+        name: 'Resilience Rebuild',
+        category: 'Depression',
+        duration: '8 weeks',
+        timePerDay: '25 min/day',
+        format: 'With therapist',
+        icon: 'seedling',
+        color: '#6FCF97',
+        longDescription: 'Rebuild self-worth and emotional strength through structured therapy and peer coaching.',
+        whatYouWillLearn: ['Self-esteem building', 'Emotional regulation', 'Goal setting', 'Future planning'],
+        programStructure: ['Phase 1: Foundation', 'Phase 2: Active Growth', 'Phase 3: Integration'],
+        includes: ['One-on-one coaching', 'Workbook exercises', 'Video lessons', 'Accountability partner'],
+        testimonial: '"I finally feel like myself again. This program helped me rebuild from the ground up." - James W.',
+        image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600'
+      },
+      // Burnout
+      'burnout-recovery': {
+        id: 'burnout-recovery',
+        name: 'Burnout Recovery',
+        category: 'Burnout Prevention',
+        duration: '6 weeks',
+        timePerDay: '30 min/day',
+        format: 'Group sessions',
+        icon: 'battery-full',
+        color: '#6FCF97',
+        longDescription: 'Comprehensive program to identify, address, and recover from workplace burnout, restoring energy and purpose.',
+        whatYouWillLearn: ['Burnout warning signs', 'Energy management', 'Boundary setting', 'Purpose rediscovery'],
+        programStructure: ['Week 1: Assessment', 'Week 2-3: Recovery Phase', 'Week 4-6: Sustainable Habits'],
+        includes: ['Burnout assessment', 'Rest protocols', 'Weekly group coaching', 'Energy tracker'],
+        testimonial: '"I was completely burned out. This program helped me recover and rebuild my relationship with work." - Lisa R.',
+        image: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=600'
+      },
+      'work-life-balance': {
+        id: 'work-life-balance',
+        name: 'Work-Life Balance',
+        category: 'Burnout Prevention',
+        duration: '4 weeks',
+        timePerDay: '15 min/day',
+        format: 'Self-paced',
+        icon: 'balance-scale',
+        color: '#6FCF97',
+        longDescription: 'Build sustainable boundaries and routines to prevent overwork and protect your personal energy.',
+        whatYouWillLearn: ['Boundary setting skills', 'Time management', 'Guilt-free rest', 'Priority alignment'],
+        programStructure: ['Week 1: Audit', 'Week 2: Boundary Building', 'Week 3: Routine Design', 'Week 4: Maintenance'],
+        includes: ['Boundary worksheets', 'Template schedules', 'Rest protocols', 'Weekly reflections'],
+        testimonial: '"Finally learned to say no without guilt. My weekends are actually restful now." - Tom H.',
+        image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600'
+      },
+      'energy-management': {
+        id: 'energy-management',
+        name: 'Energy Management',
+        category: 'Burnout Prevention',
+        duration: '5 weeks',
+        timePerDay: '20 min/day',
+        format: 'With coach',
+        icon: 'fire-extinguisher',
+        color: '#6FCF97',
+        longDescription: 'Optimize your physical and mental energy reserves to sustain peak performance long-term without burning out.',
+        whatYouWillLearn: ['Energy auditing', 'Peak performance cycles', 'Recovery strategies', 'Sustainable productivity'],
+        programStructure: ['Week 1: Energy Audit', 'Week 2-3: Optimization', 'Week 4-5: Integration'],
+        includes: ['Energy tracking app', 'Coach calls', 'Personalized plan', 'Recovery protocols'],
+        testimonial: '"I have more energy now than I\'ve had in years. This should be required for every manager." - Priya S.',
+        image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=600'
+      },
+      // Mindfulness & Sleep
+      'mindfulness-foundations': {
+        id: 'mindfulness-foundations',
+        name: 'Mindfulness Foundations',
+        category: 'Mindfulness',
+        duration: '4 weeks',
+        timePerDay: '10 min/day',
+        format: 'Self-paced',
+        icon: 'heart',
+        color: '#4A90E2',
+        longDescription: 'Learn to live in the present moment with guided meditations and mindful living practices.',
+        whatYouWillLearn: ['Mindful breathing', 'Body scan meditation', 'Mindful daily activities', 'Present moment awareness'],
+        programStructure: ['Week 1: Breath', 'Week 2: Body', 'Week 3: Emotions', 'Week 4: Integration'],
+        includes: ['Daily meditations', 'Mindfulness journal', 'Walking meditations', 'Living guides'],
+        testimonial: '"My racing thoughts have slowed down. I feel more present with my family and at work." - Anna K.',
+        image: 'https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg?auto=compress&cs=tinysrgb&w=600'
+      },
+      'sleep-better': {
+        id: 'sleep-better',
+        name: 'Sleep Better',
+        category: 'Sleep & Recovery',
+        duration: '5 weeks',
+        timePerDay: '15 min/day',
+        format: 'Audio guides',
+        icon: 'moon',
+        color: '#4A90E2',
+        longDescription: 'Cognitive and behavioral techniques to overcome insomnia and improve sleep quality naturally.',
+        whatYouWillLearn: ['Sleep hygiene principles', 'Cognitive restructuring for sleep', 'Relaxation techniques', 'Circadian rhythm optimization'],
+        programStructure: ['Week 1: Sleep Assessment', 'Week 2-3: CBT-I Techniques', 'Week 4-5: Maintenance'],
+        includes: ['Sleep tracking', 'Bedtime audio guides', 'Sleep journal', 'Expert tips'],
+        testimonial: '"After years of insomnia, I\'m finally sleeping through the night. This program is a miracle." - Mark B.',
+        image: 'https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg?auto=compress&cs=tinysrgb&w=600'
+      },
+      'mindful-leadership': {
+        id: 'mindful-leadership',
+        name: 'Mindful Leadership',
+        category: 'Mindfulness',
+        duration: '6 weeks',
+        timePerDay: '20 min/day',
+        format: 'With coach',
+        icon: 'yin-yang',
+        color: '#4A90E2',
+        longDescription: 'Develop presence, clarity, and compassion as a leader through mindfulness-based practices. Learn to lead with emotional intelligence and create a thriving team culture.',
+        whatYouWillLearn: [
+            'Mindful communication techniques',
+            'Emotional regulation under pressure',
+            'Compassionate leadership principles',
+            'Stress management for leaders',
+            'Building psychologically safe teams'
+        ],
+        programStructure: [
+            'Week 1: Foundations of Mindful Leadership',
+            'Week 2-3: Emotional Intelligence & Self-Awareness',
+            'Week 4-5: Compassionate Communication',
+            'Week 6: Leading with Purpose & Integration'
+        ],
+        includes: [
+            'Weekly 1:1 coaching sessions',
+            'Guided leadership meditations',
+            'Leadership reflection journal',
+            'Team assessment tools',
+            'Peer feedback sessions'
+        ],
+        testimonial: '"This program transformed how I lead my team. I\'m calmer, more present, and my team feels more supported than ever." - David K., VP of Engineering',
+        image: 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=600'
+    },
+    'body-scan-awareness': {
+        id: 'body-scan-awareness',
+        name: 'Body Scan & Awareness',
+        category: 'Mindfulness',
+        duration: '3 weeks',
+        timePerDay: '12 min/day',
+        format: 'Audio guides',
+        icon: 'spa',
+        color: '#4A90E2',
+        longDescription: 'Reconnect with your body and release stored tension through progressive relaxation techniques. Learn to listen to your body\'s signals and respond with compassion rather than stress.',
+        whatYouWillLearn: [
+            'Progressive muscle relaxation techniques',
+            'Body scanning meditation practice',
+            'Recognizing physical signs of stress',
+            'Releasing chronic muscle tension',
+            'Developing body-mind connection'
+        ],
+        programStructure: [
+            'Week 1: Introduction to Body Scanning',
+            'Week 2: Deepening Body Awareness',
+            'Week 3: Integrating Body Wisdom into Daily Life'
+        ],
+        includes: [
+            'Daily guided audio meditations',
+            'Body scan scripts (printable)',
+            'Tension tracking journal',
+            'Evening relaxation exercises',
+            'Quick 5-min practice guides'
+        ],
+        testimonial: '"I never realized how much tension I was holding in my body until this program. I feel so much lighter and at ease now." - Rachel T., Marketing Director',
+        image: 'https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=600'
+    },
+    'deep-rest-rituals': {
+        id: 'deep-rest-rituals',
+        name: 'Deep Rest Rituals',
+        category: 'Sleep & Recovery',
+        duration: '4 weeks',
+        timePerDay: '20 min/day',
+        format: 'Self-paced',
+        icon: 'star-and-crescent',
+        color: '#4A90E2',
+        longDescription: 'Build a personalized evening wind-down routine using sleep hygiene and relaxation science. Transform your nights from restless to restorative with sustainable bedtime rituals.',
+        whatYouWillLearn: [
+            'Creating a personalized evening routine',
+            'Digital detox and blue light management',
+            'Relaxation techniques for better sleep',
+            'Optimizing your sleep environment',
+            'Consistency and habit formation'
+        ],
+        programStructure: [
+            'Week 1: Assessing Your Current Sleep Habits',
+            'Week 2: Building Your Evening Sanctuary',
+            'Week 3: Deepening Rest Practices',
+            'Week 4: Maintaining Long-term Sleep Health'
+        ],
+        includes: [
+            'Evening ritual planner',
+            'Guided relaxation audios',
+            'Sleep environment checklist',
+            'Digital sunset guide',
+            'Printable routine cards'
+        ],
+        testimonial: '"My sleep has completely transformed. I actually look forward to my evening wind-down now. This program is a game-changer." - Lisa M., HR Manager',
+        image: 'https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg?auto=compress&cs=tinysrgb&w=600'
+    },
+    'recovery-reset': {
+        id: 'recovery-reset',
+        name: 'Recovery Reset',
+        category: 'Sleep & Recovery',
+        duration: '3 weeks',
+        timePerDay: '10 min/day',
+        format: 'Audio guides',
+        icon: 'cloud-moon',
+        color: '#4A90E2',
+        longDescription: 'Accelerate physical and mental recovery from fatigue using restorative sleep strategies. Perfect for athletes, high-performers, or anyone feeling chronically tired.',
+        whatYouWillLearn: [
+            'Understanding sleep cycles and recovery',
+            'Active rest techniques for energy restoration',
+            'Napping strategies for maximum benefit',
+            'Recovery nutrition and hydration basics',
+            'Signs of overtraining and burnout'
+        ],
+        programStructure: [
+            'Week 1: Assessing Your Recovery Needs',
+            'Week 2: Implementing Restorative Practices',
+            'Week 3: Optimizing Long-term Recovery'
+        ],
+        includes: [
+            'Guided recovery meditations',
+            'Restorative yoga audios',
+            'Recovery tracking log',
+            'Power nap guides',
+            'Morning refresh routines'
+        ],
+        testimonial: '"I was constantly exhausted. This program taught me how to truly rest and recover. My energy levels have never been better." - James P., Professional Athlete',
+        image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600'
+    }
+      
+    };
+
+    // Get program ID from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const programId = urlParams.get('id');
+
+    // Render program details
+    function renderProgramDetails() {
+      const container = document.getElementById('programDetailsContainer');
+      const program = programsData[programId];
+
+      if (!program) {
+        container.innerHTML = `
+          <div class="min-h-screen flex items-center justify-center py-20">
+            <div class="text-center">
+              <i class="fas fa-exclamation-triangle text-6xl text-accent mb-4"></i>
+              <h2 class="text-2xl font-bold text-secondary dark:text-white">Program Not Found</h2>
+              <p class="text-gray-500 mt-2">The program you're looking for doesn't exist.</p>
+              <a href="program.html" class="inline-block mt-6 px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:opacity-90 transition">Back to Programs</a>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = `
+        <!-- Program Hero -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-secondary to-secondary/95 text-white py-20 md:py-28">
+          <div class="absolute inset-0 opacity-20">
+            <img src="${program.image}" class="h-full w-full object-cover">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/80 to-transparent"></div>
+          <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center rounded-full bg-accent/20 px-4 py-1.5 text-sm font-medium backdrop-blur-sm">
+              <i class="fas ${getIconClass(program.icon)} mr-2 text-accent text-xs"></i>
+              <span>${program.category}</span>
+            </div>
+            <h1 class="mt-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">${program.name}</h1>
+            <p class="mx-auto mt-6 max-w-2xl text-lg text-gray-300">${program.longDescription}</p>
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+              <a href="#" class="inline-flex items-center rounded-lg bg-accent px-8 py-3 font-semibold text-white shadow-lg shadow-accent/30 transition hover:bg-accent/90">
+                <i class="fas fa-play-circle mr-2"></i> Enroll Now
+              </a>
+              <a href="program.html" class="inline-flex items-center rounded-lg border border-white/30 bg-white/10 px-8 py-3 font-semibold text-white backdrop-blur-sm transition hover:bg-white/20">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Programs
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Program Details Content -->
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+          <div class="grid lg:grid-cols-3 gap-12">
+            <!-- Main Content -->
+            <div class="lg:col-span-2 space-y-8">
+              <!-- What You'll Learn -->
+              <div class="bg-white dark:bg-secondary/80 rounded-2xl p-8 shadow-sm">
+                <h2 class="text-2xl font-bold text-secondary dark:text-white mb-6 flex items-center gap-2">
+                  <i class="fas fa-graduation-cap text-accent"></i> What You'll Learn
+                </h2>
+                <ul class="grid md:grid-cols-2 gap-3">
+                  ${program.whatYouWillLearn.map(item => `<li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> <span>${item}</span></li>`).join('')}
+                </ul>
+              </div>
+
+              <!-- Program Structure -->
+              <div class="bg-white dark:bg-secondary/80 rounded-2xl p-8 shadow-sm">
+                <h2 class="text-2xl font-bold text-secondary dark:text-white mb-6 flex items-center gap-2">
+                  <i class="fas fa-calendar-alt text-accent"></i> Program Structure
+                </h2>
+                <div class="space-y-3">
+                  ${program.programStructure.map(week => `<div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-secondary/40 rounded-xl"><i class="fas fa-circle text-accent text-xs"></i> <span>${week}</span></div>`).join('')}
+                </div>
+              </div>
+
+              <!-- What's Included -->
+              <div class="bg-white dark:bg-secondary/80 rounded-2xl p-8 shadow-sm">
+                <h2 class="text-2xl font-bold text-secondary dark:text-white mb-6 flex items-center gap-2">
+                  <i class="fas fa-gift text-accent"></i> What's Included
+                </h2>
+                <div class="flex flex-wrap gap-3">
+                  ${program.includes.map(item => `<span class="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium">${item}</span>`).join('')}
+                </div>
+              </div>
+
+              <!-- Testimonial -->
+              <div class="bg-gradient-to-r from-accent/5 to-primary/5 rounded-2xl p-8">
+                <i class="fas fa-quote-left text-3xl text-accent/30 mb-4"></i>
+                <p class="text-lg italic text-secondary dark:text-white">${program.testimonial}</p>
+              </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Benefits Card -->
+<div class="bg-white dark:bg-secondary/80 rounded-2xl p-6 shadow-sm">
+  <h3 class="text-lg font-bold mb-4">Why Choose This?</h3>
+  <ul class="space-y-3 text-sm">
+    <li class="flex items-center gap-2">
+      <i class="fas fa-check text-accent"></i> Expert-designed program
+    </li>
+    <li class="flex items-center gap-2">
+      <i class="fas fa-check text-accent"></i> Flexible schedule
+    </li>
+    <li class="flex items-center gap-2">
+      <i class="fas fa-check text-accent"></i> Proven mental wellness results
+    </li>
+  </ul>
+</div>
+
+<!-- Progress Tracker -->
+<div class="bg-gradient-to-r from-accent/10 to-primary/10 rounded-2xl p-6">
+  <h3 class="text-lg font-bold mb-3">Your Progress</h3>
+  <div class="w-full bg-gray-200 rounded-full h-2">
+    <div class="bg-accent h-2 rounded-full w-1/3"></div>
+  </div>
+  <p class="text-sm mt-2 text-gray-500">Start your journey today 🚀</p>
+</div>
+
+<!-- Support Card -->
+<div class="bg-white dark:bg-secondary/80 rounded-2xl p-6 shadow-sm">
+  <h3 class="text-lg font-bold mb-4">Need Help?</h3>
+  <p class="text-sm text-gray-500 mb-4">
+    Talk to our wellness experts anytime.
+  </p>
+  <button class="w-full bg-accent text-white py-2 rounded-lg hover:opacity-90">
+    Contact Support
+  </button>
+</div>
+              <!-- Quick Info Card -->
+              <div class="bg-white dark:bg-secondary/80 rounded-2xl p-6 shadow-sm sticky top-24">
+                <h3 class="text-xl font-bold text-secondary dark:text-white mb-4">Program Info</h3>
+                <div class="space-y-3 border-b border-gray-100 dark:border-white/10 pb-4">
+                  <div class="flex justify-between"><span class="text-gray-500">Duration</span><span class="font-semibold">${program.duration}</span></div>
+                  <div class="flex justify-between"><span class="text-gray-500">Daily Time</span><span class="font-semibold">${program.timePerDay}</span></div>
+                  <div class="flex justify-between"><span class="text-gray-500">Format</span><span class="font-semibold">${program.format}</span></div>
+                </div>
+                <div class="mt-4">
+                  <a href="#" class="block w-full text-center bg-accent text-white py-3 rounded-xl font-semibold hover:opacity-90 transition">Enroll Now - Free Trial</a>
+                  <p class="text-xs text-center text-gray-500 mt-3">Start your 14-day free trial. No commitment required.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function getIconClass(iconName) {
+      const icons = {
+        leaf: 'fa-leaf',
+        brain: 'fa-brain',
+        wind: 'fa-wind',
+        'hand-holding-heart': 'fa-hand-holding-heart',
+        sun: 'fa-sun',
+        seedling: 'fa-seedling',
+        'battery-full': 'fa-battery-full',
+        'balance-scale': 'fa-balance-scale',
+        'fire-extinguisher': 'fa-fire-extinguisher',
+        heart: 'fa-heart',
+        moon: 'fa-moon'
+      };
+      return icons[iconName] || 'fa-heartbeat';
+    }
+
+    // Initialize
+    renderProgramDetails();
+
+    // Theme and Menu Scripts (same as index.html)
+    const htmlEl = document.documentElement;
+    const bodyEl = document.body;
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const l1 = document.getElementById('line1');
+    const l2 = document.getElementById('line2');
+    const l3 = document.getElementById('line3');
+
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        if (!isHidden) {
+          l1.style.transform = 'translateY(8px) rotate(45deg)';
+          l2.style.opacity = '0';
+          l3.style.transform = 'translateY(-8px) rotate(-45deg)';
+        } else {
+          l1.style.transform = 'none';
+          l2.style.opacity = '1';
+          l3.style.transform = 'none';
+        }
+      });
+    }
+
+    const themeBtns = [document.getElementById('themeToggleDesktop'), document.getElementById('themeToggleMobile')];
+    function setTheme(isDark) {
+      if (isDark) {
+        htmlEl.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        themeBtns.forEach(btn => { if(btn) btn.innerHTML = '<i class="fas fa-sun"></i>'; });
+      } else {
+        htmlEl.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        themeBtns.forEach(btn => { if(btn) btn.innerHTML = '<i class="fas fa-moon"></i>'; });
+      }
+    }
+    themeBtns.forEach(btn => { if(btn) btn.addEventListener('click', () => setTheme(!htmlEl.classList.contains('dark'))); });
+    setTheme(localStorage.getItem('theme') === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+    const rtlBtns = [document.getElementById('rtlToggleDesktop'), document.getElementById('rtlToggleMobile')];
+    rtlBtns.forEach(btn => { if(btn) btn.addEventListener('click', () => {
+      const currentDir = bodyEl.getAttribute('dir') || 'ltr';
+      bodyEl.setAttribute('dir', currentDir === 'ltr' ? 'rtl' : 'ltr');
+    }); });
+  </script>
+</body>
+</html>
