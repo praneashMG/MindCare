@@ -1,14 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>MindCare | Corporate Wellness & MindCare</title>          <link rel="icon" href="assets/logo.png" type="image/jpeg">
-<meta name="description" content="Science-backed MindCare tools for resilient corporate teams.">
+  <title>MindCare | Corporate Wellness & MindCare</title>
+  <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+  <meta name="description" content="Science-backed MindCare tools for resilient corporate teams.">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-<script src="tailwind.js"></script>
+  <script src="tailwind.js"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -27,148 +28,183 @@
       }
     };
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <style>
-    * { font-family: 'Inter', sans-serif; }
-    [dir="rtl"] .rtl-flip { transform: scaleX(-1); }
-    #mobileMenu { transition: all 0.3s ease-in-out; }
-    .glass-effect { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.05); }
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+
+    [dir="rtl"] .rtl-flip {
+      transform: scaleX(-1);
+    }
+
+    #mobileMenu {
+      transition: all 0.3s ease-in-out;
+    }
+
+    .glass-effect {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.05);
+    }
 
     .before-after-card:hover .after-image {
-  clip-path: inset(0 0 0 0);
-}
+      clip-path: inset(0 0 0 0);
+    }
 
-.after-image {
-  clip-path: inset(0 0 0 100%);
-  transition: clip-path 0.8s cubic-bezier(0.77,0,0.175,1);
-}
+    .after-image {
+      clip-path: inset(0 0 0 100%);
+      transition: clip-path 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    }
   </style>
 </head>
 
-<body class="bg-white text-secondary dark:bg-secondary dark:text-gray-100 transition-colors duration-300" data-dir="ltr">
+<body class="bg-white text-secondary dark:bg-secondary dark:text-gray-100 transition-colors duration-300"
+  data-dir="ltr">
 
-  <nav id="navbar" class="sticky top-0 z-50 transition-colors duration-300 bg-white text-secondary border-b border-gray-100 dark:bg-secondary dark:text-white dark:border-white/10 backdrop-blur-md">
+  <nav id="navbar"
+    class="sticky top-0 z-50 transition-colors duration-300 bg-white text-secondary border-b border-gray-100 dark:bg-secondary dark:text-white dark:border-white/10 backdrop-blur-md">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
       <a href="index.html" class="flex items-center gap-2 shrink-0 group">
-        <span class="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-white shadow-lg group-hover:scale-110 transition-transform">
-<i class="fas fa-brain text-lg"></i>    </span>
+        <span
+          class="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-white shadow-lg group-hover:scale-110 transition-transform">
+          <i class="fas fa-brain text-lg"></i> </span>
 
         <div class="leading-tight">
-<span class="block text-xl font-bold tracking-tight text-accent">MindCare</span></span>
+          <span class="block text-xl font-bold tracking-tight text-accent">MindCare</span></span>
         </div>
       </a>
       <div class="hidden lg:flex items-center gap-2">
-     <ul class="flex items-center gap-0.5 text-xs font-semibold">
-  
-  <!-- Home -->
-  <li class="relative group">
-    <button class="home-trigger flex items-center gap-1 rounded-md px-2.5 py-1.5 bg-accent text-white font-bold shadow-sm transition-colors">
-      <span>Home</span>
-      <i class="fas fa-chevron-down text-[9px]"></i>
-    </button>
-    <ul class="invisible absolute left-0 mt-1.5 w-44 rounded-md bg-white border border-gray-100 dark:bg-secondary dark:border-white/10 p-1.5 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100 z-50">
-      <li>
-        <a href="index.html" class="block rounded-md px-3 py-1.5 hover:bg-primary hover:text-white transition-colors">
-          Home 1
-        </a>
-      </li>
-      <li>
-        <a href="homepage2.html" class="block rounded-md px-3 py-1.5 hover:bg-primary hover:text-white transition-colors">
-          Home 2
-        </a>
-      </li>
-    </ul>
-  </li>
+        <ul class="flex items-center gap-0.5 text-xs font-semibold">
 
-  <!-- Programs -->
-  <li>
-    <a href="program.html" class="block rounded-md px-3 py-1.5 hover:text-primary dark:hover:text-accent transition-colors">
-      Programs
-    </a>
-  </li>
+          <!-- Home -->
+          <li class="relative group">
+            <button
+              class="home-trigger flex items-center gap-1 rounded-md px-2.5 py-1.5 bg-accent text-white font-bold shadow-sm transition-colors">
+              <span>Home</span>
+              <i class="fas fa-chevron-down text-[9px]"></i>
+            </button>
+            <ul
+              class="invisible absolute left-0 mt-1.5 w-44 rounded-md bg-white border border-gray-100 dark:bg-secondary dark:border-white/10 p-1.5 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100 z-50">
+              <li>
+                <a href="index.html"
+                  class="block rounded-md px-3 py-1.5 hover:bg-primary hover:text-white transition-colors">
+                  Home 1
+                </a>
+              </li>
+              <li>
+                <a href="homepage2.html"
+                  class="block rounded-md px-3 py-1.5 hover:bg-primary hover:text-white transition-colors">
+                  Home 2
+                </a>
+              </li>
+            </ul>
+          </li>
 
-  <!-- MindCare -->
-  <li>
-    <a href="mindCare.html" class="block rounded-md px-3 py-1.5 hover:text-primary dark:hover:text-accent transition-colors">
-      MindCare
-    </a>
-  </li>  <!-- MindCare -->
- 
-  <!-- About -->
-  <li>
-    <a href="aboutus.html" class="block rounded-md px-3 py-1.5 hover:text-primary dark:hover:text-accent transition-colors">
-      About
-    </a>
-  </li>
+          <!-- Programs -->
+          <li>
+            <a href="program.html"
+              class="block rounded-md px-3 py-1.5 hover:text-primary dark:hover:text-accent transition-colors">
+              Programs
+            </a>
+          </li>
 
-  <!-- Contact -->
-  <li>
-    <a href="contact.html" class="block rounded-md px-3 py-1.5 hover:text-primary dark:hover:text-accent transition-colors">
-      Contact
-    </a>
-  </li>
+          <!-- MindCare -->
+          <li>
+            <a href="mindCare.html"
+              class="block rounded-md px-3 py-1.5 hover:text-primary dark:hover:text-accent transition-colors">
+              MindCare
+            </a>
+          </li> <!-- MindCare -->
 
-  <!-- Dashboard -->
-  <li class="relative group">
-    <button class="flex items-center gap-1 rounded-md px-2.5 py-1.5 hover:text-primary dark:hover:text-accent transition-colors">
-      <span>Dashboard</span>
-      <i class="fas fa-chevron-down text-[9px] group-hover:rotate-180 transition-transform"></i>
-    </button>
-    <ul class="invisible absolute left-0 mt-1.5 w-48 rounded-md bg-white border border-gray-100 dark:bg-secondary dark:border-white/10 p-1.5 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100 z-50">
-      <li>
-        <a href="admin.html" class="block rounded-md px-3 py-1.5 hover:bg-primary hover:text-white transition-colors">
-          Admin Panel
-        </a>
-      </li>
-      <li>
-        <a href="user.html" class="block rounded-md px-3 py-1.5 hover:bg-primary hover:text-white transition-colors">
-          User Dashboard
-        </a>
-      </li>
-    </ul>
-  </li>
+          <!-- About -->
+          <li>
+            <a href="aboutus.html"
+              class="block rounded-md px-3 py-1.5 hover:text-primary dark:hover:text-accent transition-colors">
+              About
+            </a>
+          </li>
 
-</ul>
+          <!-- Contact -->
+          <li>
+            <a href="contact.html"
+              class="block rounded-md px-3 py-1.5 hover:text-primary dark:hover:text-accent transition-colors">
+              Contact
+            </a>
+          </li>
+
+          <!-- Dashboard -->
+          <li class="relative group">
+            <button
+              class="flex items-center gap-1 rounded-md px-2.5 py-1.5 hover:text-primary dark:hover:text-accent transition-colors">
+              <span>Dashboard</span>
+              <i class="fas fa-chevron-down text-[9px] group-hover:rotate-180 transition-transform"></i>
+            </button>
+            <ul
+              class="invisible absolute left-0 mt-1.5 w-48 rounded-md bg-white border border-gray-100 dark:bg-secondary dark:border-white/10 p-1.5 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100 z-50">
+              <li>
+                <a href="admin.html"
+                  class="block rounded-md px-3 py-1.5 hover:bg-primary hover:text-white transition-colors">
+                  Admin Panel
+                </a>
+              </li>
+              <li>
+                <a href="user.html"
+                  class="block rounded-md px-3 py-1.5 hover:bg-primary hover:text-white transition-colors">
+                  User Dashboard
+                </a>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
         <div class="ml-4 flex items-center gap-3 border-l border-gray-200 dark:border-white/10 pl-4">
-          <button id="themeToggleDesktop" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 dark:border-white/10 hover:bg-primary hover:text-white transition-all">
+          <button id="themeToggleDesktop"
+            class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 dark:border-white/10 hover:bg-primary hover:text-white transition-all">
             <i class="fas fa-moon"></i>
           </button>
-          <button id="rtlToggleDesktop" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 dark:border-white/10 hover:bg-primary hover:text-white transition-all">
+          <button id="rtlToggleDesktop"
+            class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 dark:border-white/10 hover:bg-primary hover:text-white transition-all">
             <i class="fas fa-exchange-alt"></i>
           </button>
-        <div class="ml-2 flex items-center gap-2">
+          <div class="ml-2 flex items-center gap-2">
 
-  <!-- Login Button -->
-  <a href="login.html"
-     class="inline-flex items-center gap-2 rounded-md border border-accent text-accent px-5 py-2 text-sm font-bold hover:bg-accent hover:text-white transition-all active:scale-95">
-    <i class="fas fa-sign-in-alt text-xs"></i>
-  </a>
+            <!-- Login Button -->
+            <a href="login.html"
+              class="inline-flex items-center gap-2 rounded-md border border-accent text-accent px-5 py-2 text-sm font-bold hover:bg-accent hover:text-white transition-all active:scale-95">
+              <i class="fas fa-sign-in-alt text-xs"></i>
+            </a>
 
-  <!-- Signup Button -->
-  <a href="signup.html"
-     class="inline-flex items-center gap-2 rounded-md bg-accent px-5 py-2 text-sm font-bold text-white hover:opacity-90 transition-transform active:scale-95 shadow-lg shadow-accent/20">
-    <i class="fas fa-user-plus text-xs"></i>
-    <span>Register</span>
-  </a>
+            <!-- Signup Button -->
+            <a href="signup.html"
+              class="inline-flex items-center gap-2 rounded-md bg-accent px-5 py-2 text-sm font-bold text-white hover:opacity-90 transition-transform active:scale-95 shadow-lg shadow-accent/20">
+              <i class="fas fa-user-plus text-xs"></i>
+              <span>Register</span>
+            </a>
 
-</div>
+          </div>
         </div>
       </div>
       <div class="flex items-center gap-3 lg:hidden">
-        <button id="themeToggleMobile" class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 dark:border-white/10">
+        <button id="themeToggleMobile"
+          class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 dark:border-white/10">
           <i class="fas fa-moon"></i>
         </button>
-        <button id="hamburger" class="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-md bg-gray-100 dark:bg-white/5" aria-label="Toggle Menu">
+        <button id="hamburger"
+          class="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-md bg-gray-100 dark:bg-white/5"
+          aria-label="Toggle Menu">
           <span id="line1" class="h-0.5 w-6 bg-current transition-all duration-300"></span>
           <span id="line2" class="h-0.5 w-6 bg-current transition-all duration-300"></span>
           <span id="line3" class="h-0.5 w-6 bg-current transition-all duration-300"></span>
         </button>
       </div>
     </div>
-    <div id="mobileMenu" class="hidden border-t border-gray-100 bg-white dark:bg-secondary dark:border-white/5 lg:hidden overflow-hidden transition-all duration-300">
+    <div id="mobileMenu"
+      class="hidden border-t border-gray-100 bg-white dark:bg-secondary dark:border-white/5 lg:hidden overflow-hidden transition-all duration-300">
       <div class="flex flex-col gap-1 p-4">
         <details class="group">
-          <summary class="flex cursor-pointer items-center justify-between rounded-lg px-4 py-3 text-lg font-bold list-none bg-accent text-white shadow-md">
+          <summary
+            class="flex cursor-pointer items-center justify-between rounded-lg px-4 py-3 text-lg font-bold list-none bg-accent text-white shadow-md">
             <div class="flex items-center gap-4"><i class="fas fa-home w-6"></i><span>Home</span></div>
             <i class="fas fa-chevron-down text-xs group-open:rotate-180 transition-transform"></i>
           </summary>
@@ -177,434 +213,507 @@
             <a href="homepage2.html" class="py-2 hover:text-accent">Home 2</a>
           </div>
         </details>
-        <a href="program.html" class="block items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5">
+        <a href="program.html"
+          class="block items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5">
           <i class="fas fa-tasks text-accent w-6"></i> Programs
         </a>
-        <a href="mindCare.html" class="block items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5">
+        <a href="mindCare.html"
+          class="block items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5">
           <i class="fas fa-heartbeat text-accent w-6"></i> MindCare
         </a>
-      
-        <a href="aboutus.html" class="block items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5">
+
+        <a href="aboutus.html"
+          class="block items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5">
           <i class="fas fa-info-circle text-accent w-6"></i> About
         </a>
-        <a href="contact.html" class="flex items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5">
+        <a href="contact.html"
+          class="flex items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5">
           <i class="fas fa-envelope text-accent w-6"></i> Contact
         </a>
         <details class="group">
-  <summary class="flex cursor-pointer items-center justify-between rounded-lg px-4 py-3 text-lg font-medium list-none hover:bg-gray-50 dark:hover:bg-white/5 transition">
-    <div class="flex items-center gap-4">
-<i class="fas fa-tachometer-alt text-accent w-6"></i>      <span>Dashboard</span>
-    </div>
-    <i class="fas fa-chevron-down text-xs group-open:rotate-180 transition-transform"></i>
-  </summary>
+          <summary
+            class="flex cursor-pointer items-center justify-between rounded-lg px-4 py-3 text-lg font-medium list-none hover:bg-gray-50 dark:hover:bg-white/5 transition">
+            <div class="flex items-center gap-4">
+              <i class="fas fa-tachometer-alt text-accent w-6"></i> <span>Dashboard</span>
+            </div>
+            <i class="fas fa-chevron-down text-xs group-open:rotate-180 transition-transform"></i>
+          </summary>
 
-  <div class="mt-1 flex flex-col gap-1 pl-14 text-gray-500 dark:text-gray-400">
-    <a href="admin.html" class="flex items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5 transition">
-      <i class="fas fa-user-shield text-accent w-6"></i>
-      Admin Panel
-    </a>
+          <div class="mt-1 flex flex-col gap-1 pl-14 text-gray-500 dark:text-gray-400">
+            <a href="admin.html"
+              class="flex items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5 transition">
+              <i class="fas fa-user-shield text-accent w-6"></i>
+              Admin Panel
+            </a>
 
-    <a href="user.html" class="flex items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5 transition">
-      <i class="fas fa-user text-accent w-6"></i>
-      User Dashboard
-    </a>
-  </div>
-</details>
+            <a href="user.html"
+              class="flex items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5 transition">
+              <i class="fas fa-user text-accent w-6"></i>
+              User Dashboard
+            </a>
+          </div>
+        </details>
         <div class="mt-4 pt-4 border-t border-gray-100 dark:border-white/10">
-          <button id="rtlToggleMobile" class="flex w-full items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5">
+          <button id="rtlToggleMobile"
+            class="flex w-full items-center gap-4 rounded-lg px-4 py-3 text-lg font-medium hover:bg-gray-50 dark:hover:bg-white/5">
             <i class="fas fa-exchange-alt text-accent w-6"></i> Switch Direction (RTL)
           </button>
           <div class="mt-4 flex gap-3">
 
-  <!-- LOGIN -->
-  <a href="login.html"
-     class="flex-1 flex items-center justify-center gap-2 rounded-lg border border-antiqueGold py-4 text-lg font-bold text-antiqueGold hover:bg-antiqueGold hover:text-blackMain transition-all">
-     
-     <i class="fas fa-right-to-bracket"></i>
-     Login
-  </a>
+            <!-- LOGIN -->
+            <a href="login.html"
+              class="flex-1 flex items-center justify-center gap-2 rounded-lg border border-antiqueGold py-4 text-lg font-bold text-antiqueGold hover:bg-antiqueGold hover:text-blackMain transition-all">
 
-  <!-- CREATE -->
-  <a href="signup.html"
-     class="flex-1 flex items-center justify-center gap-2 rounded-lg bg-accent py-4 text-lg font-bold text-white hover:opacity-90 transition-all">
-     
-     <i class="fas fa-user-plus"></i>
-     SignUp
-  </a>
+              <i class="fas fa-right-to-bracket"></i>
+              Login
+            </a>
 
-</div>
+            <!-- CREATE -->
+            <a href="signup.html"
+              class="flex-1 flex items-center justify-center gap-2 rounded-lg bg-accent py-4 text-lg font-bold text-white hover:opacity-90 transition-all">
+
+              <i class="fas fa-user-plus"></i>
+              SignUp
+            </a>
+
+          </div>
         </div>
       </div>
     </div>
   </nav>
 
   <main class="min-h-screen">
-    
-<!-- ================= HOME 2 - SECTION 1: HERO with Video Thumbnail ================= -->
-<section class="relative overflow-hidden bg-gradient-to-br from-secondary to-secondary/95 text-white py-20 md:py-28">
-  <div class="absolute inset-0 opacity-20">
-    <img src="https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Mental health background" class="h-full w-full object-cover">
-  </div>
-  <div class="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/80 to-transparent"></div>
-  
-  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="grid items-center gap-12 lg:grid-cols-2">
-      <div>
-        <div class="inline-flex items-center rounded-full bg-accent/20 px-4 py-1.5 text-sm font-medium backdrop-blur-sm">
-          <i class="fas fa-heartbeat mr-2 text-accent text-xs"></i>
-          <span>#1 Mental Health Platform 2026</span>
-        </div>
-        <h1 class="mt-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-          Your team's <span class="text-accent">mental health</span> is our priority
-        </h1>
-        <p class="mt-6 text-lg text-gray-300">
-          A confidential, science-backed mental health platform that helps employees thrive. Reduce stress, prevent burnout, and build emotional resilience.
-        </p>
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href="#" class="inline-flex items-center rounded-lg bg-accent px-6 py-3 font-semibold text-white shadow-lg shadow-accent/30 transition hover:bg-accent/90 hover:scale-105">
-            <i class="fas fa-gem mr-2"></i> Start free trial
-          </a>
-          <a href="#" class="inline-flex items-center rounded-lg border border-white/30 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-sm transition hover:bg-white/20">
-            <i class="fas fa-play-circle mr-2"></i> Watch demo
-          </a>
-        </div>
-        <div class="mt-8 flex items-center gap-4">
-          <div class="flex -space-x-2">
-            <img src="https://randomuser.me/api/portraits/men/15.jpg" class="h-10 w-10 rounded-full border-2 border-secondary">
-            <img src="https://randomuser.me/api/portraits/women/22.jpg" class="h-10 w-10 rounded-full border-2 border-secondary">
-            <img src="https://randomuser.me/api/portraits/men/41.jpg" class="h-10 w-10 rounded-full border-2 border-secondary">
-            <img src="https://randomuser.me/api/portraits/women/56.jpg" class="h-10 w-10 rounded-full border-2 border-secondary">
+
+    <!-- ================= HOME 2 - SECTION 1: HERO with Video Thumbnail ================= -->
+    <section
+      class="relative overflow-hidden bg-gradient-to-br from-secondary to-secondary/95 text-white py-20 md:py-28">
+      <div class="absolute inset-0 opacity-20">
+        <img src="https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          alt="Mental health background" class="h-full w-full object-cover">
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/80 to-transparent"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <div
+              class="inline-flex items-center rounded-full bg-accent/20 px-4 py-1.5 text-sm font-medium backdrop-blur-sm">
+              <i class="fas fa-heartbeat mr-2 text-accent text-xs"></i>
+              <span>#1 Mental Health Platform 2026</span>
+            </div>
+            <h1 class="mt-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+              Your team's <span class="text-accent">mental health</span> is our priority
+            </h1>
+            <p class="mt-6 text-lg text-gray-300">
+              A confidential, science-backed mental health platform that helps employees thrive. Reduce stress, prevent
+              burnout, and build emotional resilience.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="#"
+                class="inline-flex items-center rounded-lg bg-accent px-6 py-3 font-semibold text-white shadow-lg shadow-accent/30 transition hover:bg-accent/90 hover:scale-105">
+                <i class="fas fa-gem mr-2"></i> Start free trial
+              </a>
+              <a href="#"
+                class="inline-flex items-center rounded-lg border border-white/30 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-sm transition hover:bg-white/20">
+                <i class="fas fa-play-circle mr-2"></i> Watch demo
+              </a>
+            </div>
+            <div class="mt-8 flex items-center gap-4">
+              <div class="flex -space-x-2">
+                <img src="https://randomuser.me/api/portraits/men/15.jpg"
+                  class="h-10 w-10 rounded-full border-2 border-secondary">
+                <img src="https://randomuser.me/api/portraits/women/22.jpg"
+                  class="h-10 w-10 rounded-full border-2 border-secondary">
+                <img src="https://randomuser.me/api/portraits/men/41.jpg"
+                  class="h-10 w-10 rounded-full border-2 border-secondary">
+                <img src="https://randomuser.me/api/portraits/women/56.jpg"
+                  class="h-10 w-10 rounded-full border-2 border-secondary">
+              </div>
+              <div class="text-sm text-gray-300">
+                <span class="font-bold text-white">50,000+</span> employees already thriving
+              </div>
+            </div>
           </div>
-          <div class="text-sm text-gray-300">
-            <span class="font-bold text-white">50,000+</span> employees already thriving
+          <div class="relative">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src="https://images.pexels.com/photos/3768126/pexels-photo-3768126.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Mental health session" class="w-full object-cover">
+              <div class="absolute inset-0 flex items-center justify-center bg-black/30">
+                <div
+                  class="flex h-16 w-16 items-center justify-center rounded-full bg-accent/90 text-white shadow-xl cursor-pointer hover:scale-110 transition">
+                  <i class="fas fa-play text-xl ml-1"></i>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
-      <div class="relative">
-        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-          <img src="https://images.pexels.com/photos/3768126/pexels-photo-3768126.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Mental health session" class="w-full object-cover">
-          <div class="absolute inset-0 flex items-center justify-center bg-black/30">
-            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-accent/90 text-white shadow-xl cursor-pointer hover:scale-110 transition">
-              <i class="fas fa-play text-xl ml-1"></i>
+    </section>
+
+    <!-- ================= HOME 2 - SECTION 2: Trusted Companies + Key Benefits ================= -->
+    <section class="bg-white py-16 dark:bg-secondary">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <p class="text-sm font-semibold uppercase tracking-wider text-accent">Trusted by industry leaders</p>
+          <div class="mt-6 flex flex-wrap items-center justify-center gap-8 opacity-60">
+            <img src="https://placehold.co/120x40/4A90E2/FFFFFF?text=Google" alt="Google"
+              class="h-8 w-auto grayscale hover:grayscale-0 transition">
+            <img src="https://placehold.co/120x40/6FCF97/FFFFFF?text=Microsoft" alt="Microsoft"
+              class="h-8 w-auto grayscale hover:grayscale-0 transition">
+            <img src="https://placehold.co/120x40/FFB347/FFFFFF?text=Salesforce" alt="Salesforce"
+              class="h-8 w-auto grayscale hover:grayscale-0 transition">
+            <img src="https://placehold.co/120x40/4A90E2/FFFFFF?text=Amazon" alt="Amazon"
+              class="h-8 w-auto grayscale hover:grayscale-0 transition">
+            <img src="https://placehold.co/120x40/6FCF97/FFFFFF?text=Netflix" alt="Netflix"
+              class="h-8 w-auto grayscale hover:grayscale-0 transition">
+          </div>
+        </div>
+
+        <div class="mt-20 grid gap-8 lg:grid-cols-3">
+          <div class="group text-center flex flex-col">
+            <div
+              class="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition">
+              <i class="fas fa-brain text-3xl"></i>
+            </div>
+            <h3 class="mt-4 text-xl font-bold text-secondary dark:text-white">Evidence-based care</h3>
+            <p class="mt-2 text-gray-500 dark:text-gray-400 flex-1">Clinically validated mental health programs</p>
+          </div>
+          <div class="group text-center flex flex-col">
+            <div
+              class="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition">
+              <i class="fas fa-user-shield text-3xl"></i>
+            </div>
+            <h3 class="mt-4 text-xl font-bold text-secondary dark:text-white">100% confidential</h3>
+            <p class="mt-2 text-gray-500 dark:text-gray-400 flex-1">Privacy-first platform with enterprise security</p>
+          </div>
+          <div class="group text-center flex flex-col">
+            <div
+              class="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition">
+              <i class="fas fa-clock text-3xl"></i>
+            </div>
+            <h3 class="mt-4 text-xl font-bold text-secondary dark:text-white">24/7 access</h3>
+            <p class="mt-2 text-gray-500 dark:text-gray-400 flex-1">Support whenever and wherever needed</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOME 2 - SECTION 3: Platform Features with Split Layout ================= -->
+    <section class="bg-gray-50 py-20 dark:bg-secondary/60">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold text-secondary dark:text-white sm:text-4xl">Comprehensive <span
+              class="text-accent">mental health</span> support</h2>
+          <p class="mx-auto mt-4 max-w-2xl text-gray-500 dark:text-gray-400">Everything your team needs to prioritize
+            mental wellbeing</p>
+        </div>
+
+        <div class="mt-16 space-y-16">
+          <div class="grid items-center gap-8 lg:grid-cols-2">
+            <div>
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent">
+                <i class="fas fa-robot text-xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-secondary dark:text-white">AI Mental Health Companion</h3>
+              <p class="mt-4 text-gray-500 dark:text-gray-400">24/7 conversational AI that provides evidence-based
+                mental health support, coping strategies, and crisis resources. Trained on clinical data and available
+                in 20+ languages.</p>
+              <ul class="mt-6 space-y-2">
+                <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> <span>Instant mood
+                    tracking & insights</span></li>
+                <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> <span>Personalized
+                    coping strategies</span></li>
+                <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> <span>Crisis
+                    escalation & emergency contacts</span></li>
+              </ul>
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-xl">
+              <img src="/assets/mental.jpeg" alt="AI Mental Health Assistant" class="w-full object-cover">
+            </div>
+          </div>
+
+          <div class="grid items-center gap-8 lg:grid-cols-2">
+            <div class="order-2 lg:order-1 rounded-2xl overflow-hidden shadow-xl">
+              <img src="/assets/re.jpeg" alt="Therapy Session" class="w-full object-cover">
+            </div>
+            <div class="order-1 lg:order-2">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent">
+                <i class="fas fa-user-md text-xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-secondary dark:text-white">Licensed Therapy & Coaching</h3>
+              <p class="mt-4 text-gray-500 dark:text-gray-400">Connect with licensed therapists and certified coaches
+                through video, chat, or phone. Specialized support for anxiety, depression, trauma, and workplace
+                stress.</p>
+              <ul class="mt-6 space-y-2">
+                <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> <span>Unlimited
+                    messaging with therapists</span></li>
+                <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> <span>Live video
+                    sessions (30/60 min)</span></li>
+                <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> <span>Specialized
+                    care for diverse needs</span></li>
+              </ul>
             </div>
           </div>
         </div>
-      
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ================= HOME 2 - SECTION 2: Trusted Companies + Key Benefits ================= -->
-<section class="bg-white py-16 dark:bg-secondary">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="text-center">
-      <p class="text-sm font-semibold uppercase tracking-wider text-accent">Trusted by industry leaders</p>
-      <div class="mt-6 flex flex-wrap items-center justify-center gap-8 opacity-60">
-        <img src="https://placehold.co/120x40/4A90E2/FFFFFF?text=Google" alt="Google" class="h-8 w-auto grayscale hover:grayscale-0 transition">
-        <img src="https://placehold.co/120x40/6FCF97/FFFFFF?text=Microsoft" alt="Microsoft" class="h-8 w-auto grayscale hover:grayscale-0 transition">
-        <img src="https://placehold.co/120x40/FFB347/FFFFFF?text=Salesforce" alt="Salesforce" class="h-8 w-auto grayscale hover:grayscale-0 transition">
-        <img src="https://placehold.co/120x40/4A90E2/FFFFFF?text=Amazon" alt="Amazon" class="h-8 w-auto grayscale hover:grayscale-0 transition">
-        <img src="https://placehold.co/120x40/6FCF97/FFFFFF?text=Netflix" alt="Netflix" class="h-8 w-auto grayscale hover:grayscale-0 transition">
-      </div>
-    </div>
-
-    <div class="mt-20 grid gap-8 lg:grid-cols-3">
-      <div class="group text-center flex flex-col">
-        <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition">
-          <i class="fas fa-brain text-3xl"></i>
+    <!-- ================= HOME 2 - SECTION 4: Testimonials Grid ================= -->
+    <section class="bg-white py-20 dark:bg-secondary">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold text-secondary dark:text-white sm:text-4xl">Real stories, real recovery</h2>
+          <p class="mx-auto mt-4 max-w-2xl text-gray-500 dark:text-gray-400">How mental health support transformed these
+            teams</p>
         </div>
-        <h3 class="mt-4 text-xl font-bold text-secondary dark:text-white">Evidence-based care</h3>
-        <p class="mt-2 text-gray-500 dark:text-gray-400 flex-1">Clinically validated mental health programs</p>
-      </div>
-      <div class="group text-center flex flex-col">
-        <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition">
-          <i class="fas fa-user-shield text-3xl"></i>
-        </div>
-        <h3 class="mt-4 text-xl font-bold text-secondary dark:text-white">100% confidential</h3>
-        <p class="mt-2 text-gray-500 dark:text-gray-400 flex-1">Privacy-first platform with enterprise security</p>
-      </div>
-      <div class="group text-center flex flex-col">
-        <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition">
-          <i class="fas fa-clock text-3xl"></i>
-        </div>
-        <h3 class="mt-4 text-xl font-bold text-secondary dark:text-white">24/7 access</h3>
-        <p class="mt-2 text-gray-500 dark:text-gray-400 flex-1">Support whenever and wherever needed</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ================= HOME 2 - SECTION 3: Platform Features with Split Layout ================= -->
-<section class="bg-gray-50 py-20 dark:bg-secondary/60">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="text-center">
-      <h2 class="text-3xl font-bold text-secondary dark:text-white sm:text-4xl">Comprehensive <span class="text-accent">mental health</span> support</h2>
-      <p class="mx-auto mt-4 max-w-2xl text-gray-500 dark:text-gray-400">Everything your team needs to prioritize mental wellbeing</p>
-    </div>
-
-    <div class="mt-16 space-y-16">
-      <div class="grid items-center gap-8 lg:grid-cols-2">
-        <div>
-          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent">
-            <i class="fas fa-robot text-xl"></i>
+        <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div
+            class="rounded-2xl bg-gray-50 p-6 shadow-sm transition hover:shadow-md dark:bg-secondary/60 flex flex-col">
+            <div class="flex items-center gap-1 text-accent">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="mt-4 text-gray-600 dark:text-gray-300 flex-1">"This platform saved my life. The 24/7 crisis
+              support and my therapist gave me tools to manage my anxiety. I'm finally myself again."</p>
+            <div class="mt-6 flex items-center gap-3">
+              <img src="/assets/g1.jpg" class="h-12 w-12 rounded-full object-cover">
+              <div>
+                <div class="font-bold text-secondary dark:text-white">Sarah Mitchell</div>
+                <div class="text-sm text-gray-400">Marketing Director</div>
+              </div>
+            </div>
           </div>
-          <h3 class="text-2xl font-bold text-secondary dark:text-white">AI Mental Health Companion</h3>
-          <p class="mt-4 text-gray-500 dark:text-gray-400">24/7 conversational AI that provides evidence-based mental health support, coping strategies, and crisis resources. Trained on clinical data and available in 20+ languages.</p>
-          <ul class="mt-6 space-y-2">
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> <span>Instant mood tracking & insights</span></li>
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> <span>Personalized coping strategies</span></li>
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> <span>Crisis escalation & emergency contacts</span></li>
-          </ul>
-        </div>
-        <div class="rounded-2xl overflow-hidden shadow-xl">
-          <img src="/assets/mental.jpeg" alt="AI Mental Health Assistant" class="w-full object-cover">
-        </div>
-      </div>
-
-      <div class="grid items-center gap-8 lg:grid-cols-2">
-        <div class="order-2 lg:order-1 rounded-2xl overflow-hidden shadow-xl">
-          <img src="/assets/re.jpeg" alt="Therapy Session" class="w-full object-cover">
-        </div>
-        <div class="order-1 lg:order-2">
-          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent">
-<i class="fas fa-user-md text-xl"></i>
+          <div
+            class="rounded-2xl bg-gray-50 p-6 shadow-sm transition hover:shadow-md dark:bg-secondary/60 flex flex-col">
+            <div class="flex items-center gap-1 text-accent">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="mt-4 text-gray-600 dark:text-gray-300 flex-1">"As an HR leader, I've seen countless wellness
+              programs fail. This one works because it's confidential, accessible, and actually helps people heal."</p>
+            <div class="mt-6 flex items-center gap-3">
+              <img src="/assets/b1.jpg" class="h-12 w-12 rounded-full object-cover">
+              <div>
+                <div class="font-bold text-secondary dark:text-white">James Chen</div>
+                <div class="text-sm text-gray-400">VP of People Operations</div>
+              </div>
+            </div>
           </div>
-          <h3 class="text-2xl font-bold text-secondary dark:text-white">Licensed Therapy & Coaching</h3>
-          <p class="mt-4 text-gray-500 dark:text-gray-400">Connect with licensed therapists and certified coaches through video, chat, or phone. Specialized support for anxiety, depression, trauma, and workplace stress.</p>
-          <ul class="mt-6 space-y-2">
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> <span>Unlimited messaging with therapists</span></li>
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> <span>Live video sessions (30/60 min)</span></li>
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> <span>Specialized care for diverse needs</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= HOME 2 - SECTION 4: Testimonials Grid ================= -->
-<section class="bg-white py-20 dark:bg-secondary">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="text-center">
-      <h2 class="text-3xl font-bold text-secondary dark:text-white sm:text-4xl">Real stories, real recovery</h2>
-      <p class="mx-auto mt-4 max-w-2xl text-gray-500 dark:text-gray-400">How mental health support transformed these teams</p>
-    </div>
-
-    <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <div class="rounded-2xl bg-gray-50 p-6 shadow-sm transition hover:shadow-md dark:bg-secondary/60 flex flex-col">
-        <div class="flex items-center gap-1 text-accent">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-        <p class="mt-4 text-gray-600 dark:text-gray-300 flex-1">"This platform saved my life. The 24/7 crisis support and my therapist gave me tools to manage my anxiety. I'm finally myself again."</p>
-        <div class="mt-6 flex items-center gap-3">
-          <img src="/assets/g1.jpg" class="h-12 w-12 rounded-full object-cover">
-          <div>
-            <div class="font-bold text-secondary dark:text-white">Sarah Mitchell</div>
-            <div class="text-sm text-gray-400">Marketing Director</div>
+          <div
+            class="rounded-2xl bg-gray-50 p-6 shadow-sm transition hover:shadow-md dark:bg-secondary/60 flex flex-col">
+            <div class="flex items-center gap-1 text-accent">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="mt-4 text-gray-600 dark:text-gray-300 flex-1">"The meditation library and group sessions helped
+              our entire team manage burnout during a tough quarter. Game-changing support."</p>
+            <div class="mt-6 flex items-center gap-3">
+              <img src="/assets/g2.jpg" class="h-12 w-12 rounded-full object-cover">
+              <div>
+                <div class="font-bold text-secondary dark:text-white">Maria Rodriguez</div>
+                <div class="text-sm text-gray-400">Team Lead, TechCorp</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="rounded-2xl bg-gray-50 p-6 shadow-sm transition hover:shadow-md dark:bg-secondary/60 flex flex-col">
-        <div class="flex items-center gap-1 text-accent">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+    </section>
+
+    <!-- ================= HOME 2 - SECTION 5: Resources & Support ================= -->
+    <section class="bg-gradient-to-r from-accent/5 to-primary/5 py-20 dark:from-secondary/40 dark:to-secondary/40">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold text-secondary dark:text-white sm:text-4xl">Resources for every mind</h2>
+          <p class="mx-auto mt-4 max-w-2xl text-gray-500 dark:text-gray-400">Evidence-based tools and content for every
+            stage of your mental health journey</p>
         </div>
-        <p class="mt-4 text-gray-600 dark:text-gray-300 flex-1">"As an HR leader, I've seen countless wellness programs fail. This one works because it's confidential, accessible, and actually helps people heal."</p>
-        <div class="mt-6 flex items-center gap-3">
-          <img src="/assets/b1.jpg" class="h-12 w-12 rounded-full object-cover">
-          <div>
-            <div class="font-bold text-secondary dark:text-white">James Chen</div>
-            <div class="text-sm text-gray-400">VP of People Operations</div>
+
+        <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div
+            class="group rounded-2xl bg-white p-6 text-center transition hover:shadow-xl dark:bg-secondary flex flex-col">
+            <div
+              class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition">
+              <i class="fas fa-person-walking text-2xl"></i>
+            </div>
+            <h3 class="mt-4 font-bold text-secondary dark:text-white">Guided Meditations</h3>
+            <p class="mt-1 text-sm text-gray-500 flex-1">200+ sessions for stress, sleep & focus</p>
+          </div>
+          <div
+            class="group rounded-2xl bg-white p-6 text-center transition hover:shadow-xl dark:bg-secondary flex flex-col">
+            <div
+              class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition">
+              <i class="fas fa-book text-2xl"></i>
+            </div>
+            <h3 class="mt-4 font-bold text-secondary dark:text-white">Self-Help Articles</h3>
+            <p class="mt-1 text-sm text-gray-500 flex-1">Expert-written guides on 50+ topics</p>
+          </div>
+          <div
+            class="group rounded-2xl bg-white p-6 text-center transition hover:shadow-xl dark:bg-secondary flex flex-col">
+            <div
+              class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition">
+              <i class="fas fa-video text-2xl"></i>
+            </div>
+            <h3 class="mt-4 font-bold text-secondary dark:text-white">Video Workshops</h3>
+            <p class="mt-1 text-sm text-gray-500 flex-1">Live & recorded sessions with experts</p>
+          </div>
+          <div
+            class="group rounded-2xl bg-white p-6 text-center transition hover:shadow-xl dark:bg-secondary flex flex-col">
+            <div
+              class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition">
+              <i class="fas fa-chart-simple text-2xl"></i>
+            </div>
+            <h3 class="mt-4 font-bold text-secondary dark:text-white">Self-Assessments</h3>
+            <p class="mt-1 text-sm text-gray-500 flex-1">Clinically validated screening tools</p>
           </div>
         </div>
       </div>
-      <div class="rounded-2xl bg-gray-50 p-6 shadow-sm transition hover:shadow-md dark:bg-secondary/60 flex flex-col">
-        <div class="flex items-center gap-1 text-accent">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-        <p class="mt-4 text-gray-600 dark:text-gray-300 flex-1">"The meditation library and group sessions helped our entire team manage burnout during a tough quarter. Game-changing support."</p>
-        <div class="mt-6 flex items-center gap-3">
-          <img src="/assets/g2.jpg" class="h-12 w-12 rounded-full object-cover">
-          <div>
-            <div class="font-bold text-secondary dark:text-white">Maria Rodriguez</div>
-            <div class="text-sm text-gray-400">Team Lead, TechCorp</div>
+    </section>
+
+    <!-- ================= HOME 2 - SECTION 6: Pricing + CTA ================= -->
+    <section class="bg-white py-20 dark:bg-secondary">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="rounded-3xl bg-secondary p-8 text-white dark:bg-secondary/80 md:p-12">
+          <div class="grid items-center gap-8 lg:grid-cols-2">
+            <div>
+              <h2 class="text-3xl font-bold sm:text-4xl">Mental health care for every budget</h2>
+              <p class="mt-4 text-gray-300">Join 500+ companies already prioritizing employee mental health with
+                MindCare.</p>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a href="#"
+                  class="inline-flex items-center rounded-lg bg-accent px-6 py-3 font-semibold text-white transition hover:bg-accent/90">
+                  <i class="fas fa-calendar-check mr-2"></i> Book a demo
+                </a>
+                <a href="#"
+                  class="inline-flex items-center rounded-lg border border-white/30 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-sm transition hover:bg-white/20">
+                  <i class="fas fa-download mr-2"></i> Download brochure
+                </a>
+              </div>
+            </div>
+            <div class="relative">
+              <img src="/assets/bf.jpeg" alt="Mental health support team" class="rounded-xl shadow-xl">
+            </div>
+          </div>
+
+          <div class="mt-12 grid gap-6 border-t border-white/10 pt-12 md:grid-cols-3">
+            <div class="flex flex-col">
+              <div class="text-2xl font-bold text-accent">$0</div>
+              <div class="font-semibold mt-1">Free trial</div>
+              <p class="mt-2 text-sm text-gray-400 flex-1">14-day full access. No credit card required.</p>
+            </div>
+            <div class="flex flex-col">
+              <div class="text-2xl font-bold text-accent">$10<span class="text-sm font-normal">/user/mo</span></div>
+              <div class="font-semibold mt-1">Professional plan</div>
+              <p class="mt-2 text-sm text-gray-400 flex-1">For teams up to 500 employees. Includes therapy & coaching.
+              </p>
+            </div>
+            <div class="flex flex-col">
+              <div class="text-2xl font-bold text-accent">Custom</div>
+              <div class="font-semibold mt-1">Enterprise plan</div>
+              <p class="mt-2 text-sm text-gray-400 flex-1">500+ employees. Dedicated support & custom integrations.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= HOME 2 - SECTION 5: Resources & Support ================= -->
-<section class="bg-gradient-to-r from-accent/5 to-primary/5 py-20 dark:from-secondary/40 dark:to-secondary/40">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="text-center">
-      <h2 class="text-3xl font-bold text-secondary dark:text-white sm:text-4xl">Resources for every mind</h2>
-      <p class="mx-auto mt-4 max-w-2xl text-gray-500 dark:text-gray-400">Evidence-based tools and content for every stage of your mental health journey</p>
-    </div>
-
-    <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="group rounded-2xl bg-white p-6 text-center transition hover:shadow-xl dark:bg-secondary flex flex-col">
-        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition">
-          <i class="fas fa-person-walking text-2xl"></i>
-        </div>
-        <h3 class="mt-4 font-bold text-secondary dark:text-white">Guided Meditations</h3>
-        <p class="mt-1 text-sm text-gray-500 flex-1">200+ sessions for stress, sleep & focus</p>
-      </div>
-      <div class="group rounded-2xl bg-white p-6 text-center transition hover:shadow-xl dark:bg-secondary flex flex-col">
-        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition">
-          <i class="fas fa-book text-2xl"></i>
-        </div>
-        <h3 class="mt-4 font-bold text-secondary dark:text-white">Self-Help Articles</h3>
-        <p class="mt-1 text-sm text-gray-500 flex-1">Expert-written guides on 50+ topics</p>
-      </div>
-      <div class="group rounded-2xl bg-white p-6 text-center transition hover:shadow-xl dark:bg-secondary flex flex-col">
-        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition">
-          <i class="fas fa-video text-2xl"></i>
-        </div>
-        <h3 class="mt-4 font-bold text-secondary dark:text-white">Video Workshops</h3>
-        <p class="mt-1 text-sm text-gray-500 flex-1">Live & recorded sessions with experts</p>
-      </div>
-      <div class="group rounded-2xl bg-white p-6 text-center transition hover:shadow-xl dark:bg-secondary flex flex-col">
-        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition">
-          <i class="fas fa-chart-simple text-2xl"></i>
-        </div>
-        <h3 class="mt-4 font-bold text-secondary dark:text-white">Self-Assessments</h3>
-        <p class="mt-1 text-sm text-gray-500 flex-1">Clinically validated screening tools</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= HOME 2 - SECTION 6: Pricing + CTA ================= -->
-<section class="bg-white py-20 dark:bg-secondary">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="rounded-3xl bg-secondary p-8 text-white dark:bg-secondary/80 md:p-12">
-      <div class="grid items-center gap-8 lg:grid-cols-2">
-        <div>
-          <h2 class="text-3xl font-bold sm:text-4xl">Mental health care for every budget</h2>
-          <p class="mt-4 text-gray-300">Join 500+ companies already prioritizing employee mental health with MindCare.</p>
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a href="#" class="inline-flex items-center rounded-lg bg-accent px-6 py-3 font-semibold text-white transition hover:bg-accent/90">
-              <i class="fas fa-calendar-check mr-2"></i> Book a demo
-            </a>
-            <a href="#" class="inline-flex items-center rounded-lg border border-white/30 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-sm transition hover:bg-white/20">
-              <i class="fas fa-download mr-2"></i> Download brochure
-            </a>
-          </div>
-        </div>
-        <div class="relative">
-          <img src="/assets/bf.jpeg" alt="Mental health support team" class="rounded-xl shadow-xl">
-        </div>
-      </div>
-
-      <div class="mt-12 grid gap-6 border-t border-white/10 pt-12 md:grid-cols-3">
-        <div class="flex flex-col">
-          <div class="text-2xl font-bold text-accent">$0</div>
-          <div class="font-semibold mt-1">Free trial</div>
-          <p class="mt-2 text-sm text-gray-400 flex-1">14-day full access. No credit card required.</p>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-2xl font-bold text-accent">$10<span class="text-sm font-normal">/user/mo</span></div>
-          <div class="font-semibold mt-1">Professional plan</div>
-          <p class="mt-2 text-sm text-gray-400 flex-1">For teams up to 500 employees. Includes therapy & coaching.</p>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-2xl font-bold text-accent">Custom</div>
-          <div class="font-semibold mt-1">Enterprise plan</div>
-          <p class="mt-2 text-sm text-gray-400 flex-1">500+ employees. Dedicated support & custom integrations.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
   </main>
 
   <footer class="bg-secondary pt-20 pb-10 text-white">
-  <div class="mx-auto max-w-7xl px-4 lg:px-8">
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-white/10 pb-16">
-      
-      <div>
-        <a href="index.html" class="flex items-center gap-3 mb-6">
-          <span class="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-white shadow-lg">
-            <i class="fas fa-brain text-lg"></i>
-          </span>
-          <div class="leading-tight">
-            <span class="block text-xl font-bold tracking-tight text-accent">MindCare</span>
+    <div class="mx-auto max-w-7xl px-4 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-white/10 pb-16">
+
+        <div>
+          <a href="index.html" class="flex items-center gap-3 mb-6">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-white shadow-lg">
+              <i class="fas fa-brain text-lg"></i>
+            </span>
+            <div class="leading-tight">
+              <span class="block text-xl font-bold tracking-tight text-accent">MindCare</span>
+            </div>
+          </a>
+          <p class="text-gray-400 mb-6">
+            Building resilient teams and fostering a culture of mental wellbeing through science-backed corporate
+            wellness tools.
+          </p>
+          <div class="flex gap-3">
+            <a href="#"
+              class="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent hover:text-secondary transition-all"><i
+                class="fab fa-linkedin-in"></i></a>
+            <a href="#"
+              class="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent hover:text-secondary transition-all"><i
+                class="fab fa-instagram"></i></a>
+            <a href="#"
+              class="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent hover:text-secondary transition-all"><i
+                class="fab fa-twitter"></i></a>
           </div>
-        </a>
-        <p class="text-gray-400 mb-6">
-          Building resilient teams and fostering a culture of mental wellbeing through science-backed corporate wellness tools.
-        </p>
-        <div class="flex gap-3">
-          <a href="#" class="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent hover:text-secondary transition-all"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent hover:text-secondary transition-all"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent hover:text-secondary transition-all"><i class="fab fa-twitter"></i></a>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Navigation</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="index.html" class="block hover:text-accent transition-colors text-accent">Home</a></li>
+            <li><a href="program.html" class="block hover:text-accent transition-colors">Programs</a></li>
+            <li><a href="mindCare.html" class="block hover:text-accent transition-colors">MindCare</a></li>
+            <li><a href="aboutus.html" class="block hover:text-accent transition-colors">About</a></li>
+            <li><a href="contact.html" class="block hover:text-accent transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-bold mb-6">Get in Touch</h4>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center">
+                <i class="fas fa-map-marker-alt text-accent"></i>
+              </div>
+              <div class="text-gray-400">
+                No. 24, Mindset Uk<br>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center">
+                <i class="fas fa-phone text-accent"></i>
+              </div>
+              <div class="text-gray-400">+91 80 1234 5678</div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center">
+                <i class="fas fa-envelope text-accent"></i>
+              </div>
+              <div class="text-gray-400">support@mindcare.io</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-bold mb-6">Weekly Wellbeing</h4>
+          <p class="text-gray-400 mb-4">
+            Get expert tips on preventing burnout and boosting team productivity delivered to your inbox.
+          </p>
+          <form class="space-y-4">
+            <input type="email" placeholder="Work email address"
+              class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-accent focus:outline-none text-white">
+            <button type="submit"
+              class="w-full bg-accent text-white font-bold py-3 rounded-lg hover:opacity-90 transition-colors">
+              Subscribe Now
+            </button>
+          </form>
         </div>
       </div>
 
-      <div>
-        <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Navigation</h4>
-        <ul class="space-y-3 text-sm">
-          <li><a href="index.html" class="block hover:text-accent transition-colors">Home</a></li>
-          <li><a href="program.html" class="block hover:text-accent transition-colors">Programs</a></li>
-          <li><a href="mindCare.html" class="block hover:text-accent transition-colors">MindCare</a></li>
-          <li><a href="aboutus.html" class="block hover:text-accent transition-colors">About</a></li>
-          <li><a href="contact.html" class="block hover:text-accent transition-colors">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="text-lg font-bold mb-6">Get in Touch</h4>
-        <div class="space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center">
-              <i class="fas fa-map-marker-alt text-accent"></i>
-            </div>
-            <div class="text-gray-400">
-              No. 24, Mindset Uk<br>
-            </div>
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center">
-              <i class="fas fa-phone text-accent"></i>
-            </div>
-            <div class="text-gray-400">+91 80 1234 5678</div>
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center">
-              <i class="fas fa-envelope text-accent"></i>
-            </div>
-            <div class="text-gray-400">support@mindcare.io</div>
-          </div>
+      <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
+        <div>© 2026 MindCare Wellness Solutions. All rights reserved.</div>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-accent transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-accent transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-accent transition-colors">Sitemap</a>
         </div>
       </div>
-
-      <div>
-        <h4 class="text-lg font-bold mb-6">Weekly Wellbeing</h4>
-        <p class="text-gray-400 mb-4">
-          Get expert tips on preventing burnout and boosting team productivity delivered to your inbox.
-        </p>
-        <form class="space-y-4">
-          <input type="email" placeholder="Work email address" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-accent focus:outline-none text-white">
-          <button type="submit" class="w-full bg-accent text-white font-bold py-3 rounded-lg hover:opacity-90 transition-colors">
-            Subscribe Now
-          </button>
-        </form>
-      </div>
     </div>
-
-    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
-      <div>© 2026 MindCare Wellness Solutions. All rights reserved.</div>
-      <div class="flex gap-6">
-        <a href="#" class="hover:text-accent transition-colors">Privacy Policy</a>
-        <a href="#" class="hover:text-accent transition-colors">Terms of Service</a>
-        <a href="#" class="hover:text-accent transition-colors">Sitemap</a>
-      </div>
-    </div>
-  </div>
-</footer>
+  </footer>
 
   <script>
     const htmlEl = document.documentElement;
@@ -654,28 +763,29 @@
 
     // Calculator Logic
     function calculateCost() {
-        const sqft = document.getElementById('sqft').value;
-        const grade = document.getElementById('grade').value;
-        const total = document.getElementById('totalCost');
-        
-        if(sqft > 0) {
-            const calculation = sqft * grade;
-            // Animate number
-            let current = 0;
-            const step = calculation / 20;
-            const timer = setInterval(() => {
-                current += step;
-                if(current >= calculation) {
-                    total.innerText = calculation.toLocaleString();
-                    clearInterval(timer);
-                } else {
-                    total.innerText = Math.floor(current).toLocaleString();
-                }
-            }, 30);
-        } else {
-            alert("Please enter a valid area size.");
-        }
+      const sqft = document.getElementById('sqft').value;
+      const grade = document.getElementById('grade').value;
+      const total = document.getElementById('totalCost');
+
+      if (sqft > 0) {
+        const calculation = sqft * grade;
+        // Animate number
+        let current = 0;
+        const step = calculation / 20;
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= calculation) {
+            total.innerText = calculation.toLocaleString();
+            clearInterval(timer);
+          } else {
+            total.innerText = Math.floor(current).toLocaleString();
+          }
+        }, 30);
+      } else {
+        alert("Please enter a valid area size.");
+      }
     }
   </script>
 </body>
+
 </html>
