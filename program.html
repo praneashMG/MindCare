@@ -18,8 +18,8 @@
           colors: {
             primary: '#6FCF97',    // (Mint Green)
             accent: '#4A90E2',     // (Soft Blue)
-            secondary: '#111111',  // Deep Black
-            offWhite: '#F8F9FA'
+            secondary: '#000000',  // Black
+            darkGrey: '#111111'    // Dark Grey
           },
           fontFamily: {
             'display': ['Inter', 'system-ui', 'sans-serif'],
@@ -286,7 +286,7 @@
 
     <!-- ================= PROGRAMS PAGE - SECTION 1: Hero ================= -->
     <section
-      class="relative overflow-hidden bg-gradient-to-br from-secondary to-secondary/95 text-white py-20 md:py-28">
+      class="relative overflow-hidden bg-gradient-to-br from-secondary to-secondary text-white py-20 md:py-28">
       <div class="absolute inset-0 opacity-15">
         <img src="https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg?auto=compress&cs=tinysrgb&w=1600"
           alt="Mental health programs" class="h-full w-full object-cover">
@@ -709,7 +709,7 @@
     </section>
 
     <!-- ================= PROGRAMS PAGE - SECTION 3: Featured Program (Interactive) ================= -->
-    <section class="bg-gradient-to-r from-accent/5 to-primary/5 py-20 dark:from-secondary/40 dark:to-secondary/40">
+    <section class="bg-gradient-to-r from-accent/5 to-primary/5 py-20 dark:bg-secondary dark:from-transparent dark:to-transparent">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="rounded-3xl bg-white p-8 shadow-xl dark:bg-secondary md:p-12">
           <div class="grid items-center gap-8 lg:grid-cols-2">
@@ -745,7 +745,7 @@
               </div>
             </div>
             <div class="relative">
-              <img src="/assets/mer.jpeg" alt="Resilience program" class="rounded-xl shadow-lg">
+              <img src="/assets/ss.webp" alt="Resilience program" class="rounded-xl shadow-lg">
               <div class="absolute -bottom-4 -right-4 rounded-lg bg-accent p-3 text-white shadow-lg">
                 <i class="fas fa-play-circle text-2xl"></i>
               </div>
@@ -814,7 +814,7 @@
     </section>
 
     <!-- ================= PROGRAMS PAGE - SECTION 5: Success Metrics ================= -->
-    <section class="bg-gray-50 py-20 dark:bg-secondary/60">
+    <section class="bg-gray-50 py-20 dark:bg-secondary">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="text-center">
           <h2 class="text-3xl font-bold text-secondary dark:text-white sm:text-4xl">Proven results, real impact</h2>
@@ -856,47 +856,234 @@
       </div>
     </section>
 
-    <!-- ================= PROGRAMS PAGE - SECTION 6: CTA + Pricing ================= -->
-    <section class="bg-white py-20 dark:bg-secondary">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="rounded-3xl bg-secondary p-8 text-white dark:bg-secondary/80 md:p-12">
-          <div class="text-center">
-            <h2 class="text-3xl font-bold sm:text-4xl">Ready to start your mental health journey?</h2>
-            <p class="mx-auto mt-4 max-w-2xl text-gray-300">Join thousands who've transformed their lives with MindCare
-              programs.</p>
-            <div class="mt-8 flex flex-wrap justify-center gap-4">
-              <a href="#"
-                class="inline-flex items-center rounded-lg bg-accent px-6 py-3 font-semibold text-white transition hover:bg-accent/90">
-                <i class="fas fa-clipboard-list mr-2"></i> Take free assessment
-              </a>
-              <a href="#"
-                class="inline-flex items-center rounded-lg border border-white/30 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-sm transition hover:bg-white/20">
-                <i class="fas fa-headset mr-2"></i> Talk to advisor
-              </a>
-            </div>
-          </div>
+   <!-- ================= PROGRAMS PAGE - SECTION 6: FINAL CTA ================= -->
+<section class="relative overflow-hidden bg-white py-24 dark:bg-darkGrey">
 
-          <div class="mt-12 grid gap-6 border-t border-white/10 pt-12 md:grid-cols-3">
-            <div class="text-center flex flex-col">
-              <div class="text-2xl font-bold text-accent">Free</div>
-              <div class="font-semibold mt-1">Basic Access</div>
-              <p class="mt-2 text-sm text-gray-400 flex-1">Meditations & articles</p>
-            </div>
-            <div class="text-center flex flex-col">
-              <div class="text-2xl font-bold text-accent">$49<span class="text-sm font-normal">/mo</span></div>
-              <div class="font-semibold mt-1">Individual Plan</div>
-              <p class="mt-2 text-sm text-gray-400 flex-1">All programs + 1:1 coaching</p>
-            </div>
-            <div class="text-center flex flex-col">
-              <div class="text-2xl font-bold text-accent">Custom</div>
-              <div class="font-semibold mt-1">Team/Enterprise</div>
-              <p class="mt-2 text-sm text-gray-400 flex-1">Bulk discounts + HR dashboard</p>
-            </div>
+  <!-- Background Glow -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-0 left-1/4 h-72 w-72 rounded-full bg-accent/10 blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-primary/10 blur-3xl"></div>
+  </div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <!-- TOP CONTENT -->
+    <div class="text-center">
+      <div
+        class="inline-flex items-center rounded-full border border-accent/20 bg-accent/10 px-5 py-2 text-sm font-semibold text-accent">
+        <i class="fas fa-heart mr-2"></i>
+        Start Your Wellness Journey
+      </div>
+
+      <h2 class="mt-6 text-4xl font-black leading-tight text-secondary dark:text-white sm:text-5xl">
+        Your mental wellness
+        <span class="text-accent">starts today</span>
+      </h2>
+
+      <p class="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-gray-500 dark:text-gray-400">
+        Whether you're managing stress, preventing burnout, or building emotional resilience,
+        MindCare gives you personalized support designed by experts and powered by science.
+      </p>
+    </div>
+
+    <!-- PRICING CARDS -->
+    <div class="mt-20 grid gap-8 lg:grid-cols-3">
+
+      <!-- FREE PLAN -->
+      <div
+        class="group rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-2 hover:shadow-2xl dark:border-white/10 dark:bg-secondary/80">
+
+        <div class="flex items-center justify-between">
+          <h3 class="text-2xl font-bold text-secondary dark:text-white">
+            Starter
+          </h3>
+
+          <div class="rounded-full bg-gray-100 px-4 py-1 text-sm font-semibold text-secondary dark:bg-white/10 dark:text-white">
+            Free
           </div>
         </div>
-      </div>
-    </section>
 
+        <p class="mt-4 text-gray-500 dark:text-gray-400">
+          Perfect for individuals beginning their mental wellness journey.
+        </p>
+
+        <div class="mt-8 text-5xl font-black text-secondary dark:text-white">
+          ₹0
+        </div>
+
+        <ul class="mt-8 space-y-4 text-sm">
+          <li class="flex items-center gap-3">
+            <i class="fas fa-check-circle text-accent"></i>
+            Guided meditations
+          </li>
+
+          <li class="flex items-center gap-3">
+            <i class="fas fa-check-circle text-accent"></i>
+            Mood tracking tools
+          </li>
+
+          <li class="flex items-center gap-3">
+            <i class="fas fa-check-circle text-accent"></i>
+            Weekly wellbeing tips
+          </li>
+
+          <li class="flex items-center gap-3">
+            <i class="fas fa-check-circle text-accent"></i>
+            Community support access
+          </li>
+        </ul>
+
+        <a href="#"
+          class="mt-10 inline-flex w-full items-center justify-center rounded-xl border border-gray-300 px-6 py-3 font-semibold text-secondary transition hover:border-accent hover:bg-accent hover:text-white dark:border-white/10 dark:text-white">
+          Get Started
+        </a>
+      </div>
+
+      <!-- POPULAR PLAN -->
+      <div
+        class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-accent to-blue-600 p-[1px] shadow-2xl scale-105">
+
+        <div class="absolute right-5 top-5 rounded-full bg-white px-4 py-1 text-xs font-bold text-accent shadow">
+          MOST POPULAR
+        </div>
+
+        <div class="rounded-3xl bg-white p-8 dark:bg-secondary">
+
+          <h3 class="text-2xl font-bold text-secondary dark:text-white">
+            Premium Care
+          </h3>
+
+          <p class="mt-4 text-gray-500 dark:text-gray-400">
+            Complete wellness support with expert coaching and advanced programs.
+          </p>
+
+          <div class="mt-8 flex items-end gap-2">
+            <span class="text-5xl font-black text-secondary dark:text-white">
+              ₹1999
+            </span>
+            <span class="mb-1 text-gray-500">
+              /month
+            </span>
+          </div>
+
+          <ul class="mt-8 space-y-4 text-sm">
+            <li class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-accent"></i>
+              Full program access
+            </li>
+
+            <li class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-accent"></i>
+              1-on-1 wellness coaching
+            </li>
+
+            <li class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-accent"></i>
+              Personalized progress reports
+            </li>
+
+            <li class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-accent"></i>
+              Daily guided activities
+            </li>
+
+            <li class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-accent"></i>
+              Priority expert support
+            </li>
+          </ul>
+
+          <a href="#"
+            class="mt-10 inline-flex w-full items-center justify-center rounded-xl bg-accent px-6 py-3 font-semibold text-white transition hover:scale-105 hover:bg-accent/90">
+            Start Premium Plan
+          </a>
+        </div>
+      </div>
+
+      <!-- ENTERPRISE -->
+      <div
+        class="group rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-2 hover:shadow-2xl dark:border-white/10 dark:bg-secondary/80">
+
+        <div class="flex items-center justify-between">
+          <h3 class="text-2xl font-bold text-secondary dark:text-white">
+            Enterprise
+          </h3>
+
+          <div class="rounded-full bg-accent/10 px-4 py-1 text-sm font-semibold text-accent">
+            Teams
+          </div>
+        </div>
+
+        <p class="mt-4 text-gray-500 dark:text-gray-400">
+          Scalable wellness programs built for organizations and growing teams.
+        </p>
+
+        <div class="mt-8 text-5xl font-black text-secondary dark:text-white">
+          Custom
+        </div>
+
+        <ul class="mt-8 space-y-4 text-sm">
+          <li class="flex items-center gap-3">
+            <i class="fas fa-check-circle text-accent"></i>
+            HR analytics dashboard
+          </li>
+
+          <li class="flex items-center gap-3">
+            <i class="fas fa-check-circle text-accent"></i>
+            Team wellbeing reports
+          </li>
+
+          <li class="flex items-center gap-3">
+            <i class="fas fa-check-circle text-accent"></i>
+            Dedicated success manager
+          </li>
+
+          <li class="flex items-center gap-3">
+            <i class="fas fa-check-circle text-accent"></i>
+            Custom wellness workshops
+          </li>
+        </ul>
+
+        <a href="#"
+          class="mt-10 inline-flex w-full items-center justify-center rounded-xl border border-gray-300 px-6 py-3 font-semibold text-secondary transition hover:border-accent hover:bg-accent hover:text-white dark:border-white/10 dark:text-white">
+          Contact Sales
+        </a>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM CTA -->
+    <div
+      class="mt-20 rounded-3xl bg-gradient-to-r from-secondary to-secondary/90 p-10 text-center text-white shadow-2xl">
+
+      <h3 class="text-3xl font-bold">
+        Need help choosing the right program?
+      </h3>
+
+      <p class="mx-auto mt-4 max-w-2xl text-gray-300">
+        Speak with a MindCare wellness advisor and get a personalized recommendation
+        based on your goals and mental wellbeing needs.
+      </p>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+
+        <a href="#"
+          class="inline-flex items-center rounded-xl bg-accent px-8 py-4 font-semibold text-white transition hover:scale-105 hover:bg-accent/90">
+          <i class="fas fa-clipboard-check mr-2"></i>
+          Take Free Assessment
+        </a>
+
+        <a href="#"
+          class="inline-flex items-center rounded-xl border border-white/20 bg-white/10 px-8 py-4 font-semibold text-white backdrop-blur-sm transition hover:bg-white/20">
+          <i class="fas fa-headset mr-2"></i>
+          Talk to an Advisor
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
   </main>
 
   <footer class="bg-secondary pt-20 pb-10 text-white">
