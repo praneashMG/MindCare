@@ -11,6 +11,7 @@
     <script src="tailwind.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         /* --- Root Color Engine (MindCare Theme) --- */
         :root,
@@ -57,6 +58,19 @@
             transition: background-color 0.2s, color 0.2s;
             overflow-x: hidden;
             width: 100%;
+        }
+
+        /* Global Typography Standardization */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600 !important;
+        }
+
+        .sidebar-link, 
+        .text-secondary-text, 
+        .status-badge,
+        p.uppercase,
+        span.uppercase {
+            font-weight: 500 !important;
         }
 
         /* Helpers */
@@ -324,7 +338,7 @@
                         </span>
                         <div class="leading-tight">
                             <span
-                                class="block text-lg sm:text-xl font-bold tracking-tight text-[var(--color-accent)]">MindCare</span>
+                                class="block text-lg sm:text-xl font-semibold tracking-tight text-[var(--color-accent)]">MindCare</span>
                         </div>
                     </a>
                 </div>
@@ -362,7 +376,7 @@
                     class="relative flex items-center gap-1.5 sm:gap-2 pl-1.5 sm:pl-3 border-l border-border rtl:border-l-0 rtl:border-r min-w-0">
                     <div class="relative flex-shrink-0">
                         <div
-                            class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-accent/10 border border-accent flex items-center justify-center text-accent font-bold">
+                            class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-accent/10 border border-accent flex items-center justify-center text-accent font-semibold">
                             <i class="fas fa-user-shield text-xs"></i>
                         </div>
                         <span class="absolute bottom-0 right-0 status-pulse"></span>
@@ -393,7 +407,7 @@
                     <div class="flex lg:hidden justify-between items-center mb-6 px-2">
                         <div class="flex items-center gap-2 text-gold">
                             <i class="fas fa-bars-staggered"></i>
-                            <span class="text-xs font-black uppercase tracking-widest">Admin Menu</span>
+                            <span class="text-xs font-medium uppercase tracking-widest">Admin Menu</span>
                         </div>
                         <button id="close-sidebar" class="p-2 hover:bg-hover rounded-lg text-primary-text">
                             <i class="fas fa-times"></i>
@@ -403,21 +417,21 @@
                     <!-- Mobile Profile Display -->
                     <div class="flex lg:hidden items-center gap-3 mb-6 px-2 pb-6 border-b border-border">
                         <div class="relative flex-shrink-0">
-                            <div class="w-10 h-10 rounded-full bg-accent/10 border border-accent flex items-center justify-center text-accent font-bold">
+                            <div class="w-10 h-10 rounded-full bg-accent/10 border border-accent flex items-center justify-center text-accent font-semibold">
                                 <i class="fas fa-user-shield text-sm"></i>
                             </div>
                             <span class="absolute bottom-0 right-0 status-pulse"></span>
                         </div>
                         <div>
                             <p class="font-semibold text-primary-text leading-tight">Jessica Davis</p>
-                            <p class="text-[10px] text-secondary-text mt-0.5 uppercase tracking-widest font-semibold">HR Admin</p>
+                            <p class="text-[10px] text-secondary-text mt-0.5 uppercase tracking-widest font-medium">HR Admin</p>
                         </div>
                     </div>
 
                     
 
                     <nav class="flex flex-col gap-1">
-                        <p class="text-[10px] uppercase tracking-widest text-secondary-text font-black mt-2 mb-2 px-2">
+                        <p class="text-[10px] uppercase tracking-widest text-secondary-text font-medium mt-2 mb-2 px-2">
                             Main</p>
                         <a href="#" onclick="activateSection('overview')" data-section="overview"
                             class="sidebar-link active">
@@ -435,7 +449,7 @@
                             <span>Therapist Profiles</span>
                         </a>
 
-                        <p class="text-[10px] uppercase tracking-widest text-secondary-text font-black mt-4 mb-2 px-2">
+                        <p class="text-[10px] uppercase tracking-widest text-secondary-text font-medium mt-4 mb-2 px-2">
                             Engagement</p>
                         <a href="#" onclick="activateSection('engagement')" data-section="engagement"
                             class="sidebar-link">
@@ -448,7 +462,7 @@
                             <span>Mental Health Resources</span>
                         </a>
 
-                        <p class="text-[10px] uppercase tracking-widest text-secondary-text font-black mt-4 mb-2 px-2">
+                        <p class="text-[10px] uppercase tracking-widest text-secondary-text font-medium mt-4 mb-2 px-2">
                             Reports</p>
                         <a href="#" onclick="activateSection('reports')" data-section="reports" class="sidebar-link">
                             <i class="fas fa-file-alt w-5"></i>
@@ -458,10 +472,10 @@
                             <i class="fas fa-briefcase w-5"></i>
                             <span>B2B Program Mgmt</span>
                             <span
-                                class="ml-auto bg-accent-light text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">12</span>
+                                class="ml-auto bg-accent-light text-white text-[10px] font-semibold px-1.5 py-0.5 rounded-full">12</span>
                         </a>
 
-                        <p class="text-[10px] uppercase tracking-widest text-secondary-text font-black mt-4 mb-2 px-2">
+                        <p class="text-[10px] uppercase tracking-widest text-secondary-text font-medium mt-4 mb-2 px-2">
                             System</p>
                         <a href="#" onclick="activateSection('settings')" data-section="settings" class="sidebar-link">
                             <i class="fas fa-sliders w-5"></i>
@@ -475,7 +489,7 @@
 
                     <div class="mt-8 pt-4 border-t border-border text-[11px] text-secondary-text">
                         <div class="flex justify-between"><span>System Status</span><span
-                                class="font-bold text-success">Operational</span></div>
+                                class="font-semibold text-success">Operational</span></div>
                         <div class="flex justify-between mt-1.5"><span>Last Backup</span><span
                                 class="font-medium text-gold">2 min ago</span></div>
                         <div class="flex justify-between mt-1.5"><span>Active Employees</span><span
@@ -497,10 +511,10 @@
                             </div>
                             <div class="flex gap-3">
                                 <span
-                                    class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">April
+                                    class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider">April
                                     09, 2026</span>
                                 <span
-                                    class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-1">
+                                    class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider flex items-center gap-1">
                                     <i class="fas fa-circle text-success text-[6px]"></i> Live
                                 </span>
                             </div>
@@ -512,7 +526,7 @@
                         <div class="dashboard-card p-6 reveal">
                             <div class="flex justify-between items-start gap-4">
                                 <div>
-                                    <p class="text-secondary-text text-xs uppercase tracking-wider font-bold">Total
+                                    <p class="text-secondary-text text-xs uppercase tracking-wider font-medium">Total
                                         Employees</p>
                                     <p class="text-3xl font-black mt-2">1,284</p>
                                     <p class="text-success text-xs font-medium mt-2 flex items-center gap-1">
@@ -525,9 +539,9 @@
                                 </div>
                             </div>
                             <div class="mt-4 pt-4 border-t border-border flex gap-4 text-xs">
-                                <span><span class="font-bold">847</span> <span
+                                <span><span class="font-semibold">847</span> <span
                                         class="text-secondary-text">active</span></span>
-                                <span><span class="font-bold">437</span> <span
+                                <span><span class="font-semibold">437</span> <span
                                         class="text-secondary-text">inactive</span></span>
                             </div>
                         </div>
@@ -535,7 +549,7 @@
                         <div class="dashboard-card p-6 reveal">
                             <div class="flex justify-between items-start gap-4">
                                 <div>
-                                    <p class="text-secondary-text text-xs uppercase tracking-wider font-bold">Active
+                                    <p class="text-secondary-text text-xs uppercase tracking-wider font-medium">Active
                                         Participants</p>
                                     <p class="text-3xl font-black mt-2">847</p>
                                     <p class="text-success text-xs font-medium mt-2 flex items-center gap-1">
@@ -558,7 +572,7 @@
                         <div class="dashboard-card p-6 reveal">
                             <div class="flex justify-between items-start gap-4">
                                 <div>
-                                    <p class="text-secondary-text text-xs uppercase tracking-wider font-bold">Burnout
+                                    <p class="text-secondary-text text-xs uppercase tracking-wider font-medium">Burnout
                                         Reduction</p>
                                     <p class="text-3xl font-black mt-2">89%</p>
                                     <p class="text-success text-xs font-medium mt-2 flex items-center gap-1">
@@ -581,7 +595,7 @@
                         <div class="dashboard-card p-6 reveal">
                             <div class="flex justify-between items-start gap-4">
                                 <div>
-                                    <p class="text-secondary-text text-xs uppercase tracking-wider font-bold">Active
+                                    <p class="text-secondary-text text-xs uppercase tracking-wider font-medium">Active
                                         Programs</p>
                                     <p class="text-3xl font-black mt-2">8</p>
                                     <p class="text-success text-xs font-medium mt-2 flex items-center gap-1">
@@ -594,9 +608,9 @@
                                 </div>
                             </div>
                             <div class="mt-4 pt-4 border-t border-border flex gap-4 text-xs">
-                                <span><span class="font-bold">24</span> <span class="text-secondary-text">upcoming
+                                <span><span class="font-semibold">24</span> <span class="text-secondary-text">upcoming
                                         sessions</span></span>
-                                <span><span class="font-bold">156</span> <span
+                                <span><span class="font-semibold">156</span> <span
                                         class="text-secondary-text">completed</span></span>
                             </div>
                         </div>
@@ -608,7 +622,7 @@
                             <div class="flex justify-between items-center mb-6">
                                 <h3 class="font-semibold text-lg">Engagement Overview</h3>
                                 <select
-                                    class="bg-hover border border-border rounded-full px-4 py-2 text-xs font-bold uppercase">
+                                    class="bg-hover border border-border rounded-full px-4 py-2 text-xs font-medium uppercase">
                                     <option>Last 7 Days</option>
                                     <option>Last 30 Days</option>
                                     <option>This Year</option>
@@ -659,7 +673,7 @@
                                         <i class="fas fa-user-plus text-success text-xs"></i>
                                     </div>
                                     <div class="flex-1">
-                                        <p class="text-sm font-bold">New employee enrolled</p>
+                                        <p class="text-sm font-semibold">New employee enrolled</p>
                                         <p class="text-xs text-secondary-text">Sarah Chen · 5 min ago</p>
                                     </div>
                                 </div>
@@ -669,7 +683,7 @@
                                         <i class="fas fa-calendar-plus text-info text-xs"></i>
                                     </div>
                                     <div class="flex-1">
-                                        <p class="text-sm font-bold">Workshop registered</p>
+                                        <p class="text-sm font-semibold">Workshop registered</p>
                                         <p class="text-xs text-secondary-text">Mindfulness Session · 12 min ago</p>
                                     </div>
                                 </div>
@@ -679,7 +693,7 @@
                                         <i class="fas fa-chart-line text-warning text-xs"></i>
                                     </div>
                                     <div class="flex-1">
-                                        <p class="text-sm font-bold">Monthly report generated</p>
+                                        <p class="text-sm font-semibold">Monthly report generated</p>
                                         <p class="text-xs text-secondary-text">Engagement up 8% · 1 hour ago</p>
                                     </div>
                                 </div>
@@ -689,7 +703,7 @@
                                         <i class="fas fa-message text-danger text-xs"></i>
                                     </div>
                                     <div class="flex-1">
-                                        <p class="text-sm font-bold">Support request</p>
+                                        <p class="text-sm font-semibold">Support request</p>
                                         <p class="text-xs text-secondary-text">#T-239 · 2 hours ago</p>
                                     </div>
                                 </div>
@@ -716,7 +730,7 @@
                                     <i class="fas fa-plus mr-1"></i> Schedule Workshop
                                 </button>
                                 <button
-                                    class="px-6 py-3 border border-border rounded-full text-xs font-black uppercase tracking-widest hover:bg-hover">
+                                    class="px-6 py-3 border border-border rounded-full text-xs font-medium uppercase tracking-widest hover:bg-hover">
                                     <i class="fas fa-filter mr-1"></i> Filter
                                 </button>
                             </div>
@@ -729,7 +743,7 @@
                                         <i class="fas fa-spa text-accent text-xl"></i>
                                     </div>
                                     <div>
-                                        <p class="font-black">Mindfulness & Stress Reduction</p>
+                                        <p class="font-semibold">Mindfulness & Stress Reduction</p>
                                         <p class="text-xs text-secondary-text mt-1">Dr. Sarah Johnson · 60 min · 45
                                             registered</p>
                                         <div class="flex gap-3 mt-1 text-xs text-secondary-text">
@@ -748,7 +762,7 @@
                                         <i class="fas fa-chalkboard-user text-accent text-xl"></i>
                                     </div>
                                     <div>
-                                        <p class="font-black">Burnout Prevention for Managers</p>
+                                        <p class="font-semibold">Burnout Prevention for Managers</p>
                                         <p class="text-xs text-secondary-text mt-1">Michael Chen, LCSW · 90 min · 28
                                             registered</p>
                                         <div class="flex gap-3 mt-1 text-xs text-secondary-text">
@@ -767,7 +781,7 @@
                                         <i class="fas fa-heartbeat text-accent text-xl"></i>
                                     </div>
                                     <div>
-                                        <p class="font-black">Resilience Training</p>
+                                        <p class="font-semibold">Resilience Training</p>
                                         <p class="text-xs text-secondary-text mt-1">Dr. Emily Rodriguez · 45 min · 52
                                             registered</p>
                                         <div class="flex gap-3 mt-1 text-xs text-secondary-text">
@@ -794,7 +808,7 @@
                             </h2>
                             <div class="flex gap-3">
                                 <button
-                                    class="px-6 py-3 bg-accent-gradient text-white rounded-full text-xs font-black uppercase tracking-widest shadow-lg">
+                                    class="px-6 py-3 bg-accent-gradient text-white rounded-full text-xs font-medium uppercase tracking-widest shadow-lg">
                                     <i class="fas fa-plus mr-1"></i> Add Therapist
                                 </button>
                             </div>
@@ -804,7 +818,7 @@
                             <div class="bg-hover rounded-2xl p-5 text-center">
                                 <img src="/assets/g1.jpg"
                                     class="w-24 h-24 rounded-full mx-auto object-cover border-2 border-accent">
-                                <h3 class="mt-3 font-black">Dr. Sarah Johnson</h3>
+                                <h3 class="mt-3 font-semibold">Dr. Sarah Johnson</h3>
                                 <p class="text-xs text-accent font-semibold">Clinical Psychologist</p>
                                 <p class="text-xs text-secondary-text mt-2">Anxiety, Stress, Mindfulness</p>
                                 <div class="flex justify-center gap-1 mt-2 text-yellow-500">
@@ -818,7 +832,7 @@
                             <div class="bg-hover rounded-2xl p-5 text-center">
                                 <img src="/assets/b1.jpg"
                                     class="w-24 h-24 rounded-full mx-auto object-cover border-2 border-accent">
-                                <h3 class="mt-3 font-black">Michael Chen, LCSW</h3>
+                                <h3 class="mt-3 font-semibold">Michael Chen, LCSW</h3>
                                 <p class="text-xs text-accent font-semibold">Burnout Specialist</p>
                                 <p class="text-xs text-secondary-text mt-2">Workplace Wellness, Burnout</p>
                                 <div class="flex justify-center gap-1 mt-2 text-yellow-500">
@@ -832,7 +846,7 @@
                             <div class="bg-hover rounded-2xl p-5 text-center">
                                 <img src="/assets/g2.jpg"
                                     class="w-24 h-24 rounded-full mx-auto object-cover border-2 border-accent">
-                                <h3 class="mt-3 font-black">Dr. Emily Rodriguez</h3>
+                                <h3 class="mt-3 font-semibold">Dr. Emily Rodriguez</h3>
                                 <p class="text-xs text-accent font-semibold">Psychiatrist</p>
                                 <p class="text-xs text-secondary-text mt-2">Medication Management, OCD</p>
                                 <div class="flex justify-center gap-1 mt-2 text-yellow-500">
@@ -851,7 +865,7 @@
                 <div id="engagement" class="admin-section hidden">
                     <div class="dashboard-card p-5 sm:p-7 reveal active">
                         <h2
-                            class="text-xl sm:text-2xl font-serif font-bold text-primary-text mb-8 flex items-center gap-2">
+                            class="text-xl sm:text-2xl font-serif font-semibold text-primary-text mb-8 flex items-center gap-2">
                             <span class="text-accent">📈</span> Employee Engagement Tracking
                         </h2>
 
@@ -896,15 +910,15 @@
 
                         <div class="mt-8 pt-6 border-t border-border grid grid-cols-3 gap-4 text-center">
                             <div>
-                                <p class="text-2xl font-bold text-accent">847</p>
+                                <p class="text-2xl font-semibold text-accent">847</p>
                                 <p class="text-xs text-secondary-text">Active Users</p>
                             </div>
                             <div>
-                                <p class="text-2xl font-bold text-accent">2,341</p>
+                                <p class="text-2xl font-semibold text-accent">2,341</p>
                                 <p class="text-xs text-secondary-text">Sessions Completed</p>
                             </div>
                             <div>
-                                <p class="text-2xl font-bold text-accent">4.85</p>
+                                <p class="text-2xl font-semibold text-accent">4.85</p>
                                 <p class="text-xs text-secondary-text">Avg Rating</p>
                             </div>
                         </div>
@@ -916,11 +930,11 @@
                     <div class="dashboard-card p-5 sm:p-7 reveal active">
                         <div class="flex justify-between items-center mb-8">
                             <h2
-                                class="text-xl sm:text-2xl font-serif font-bold text-primary-text flex items-center gap-2">
+                                class="text-xl sm:text-2xl font-serif font-semibold text-primary-text flex items-center gap-2">
                                 <span class="text-accent">📚</span> Mental Health Resources
                             </h2>
                             <button
-                                class="px-6 py-3 bg-accent-gradient text-white rounded-full text-xs font-black uppercase tracking-widest shadow-lg">
+                                class="px-6 py-3 bg-accent-gradient text-white rounded-full text-xs font-semibold uppercase tracking-widest shadow-lg">
                                 <i class="fas fa-upload mr-1"></i> Upload Resource
                             </button>
                         </div>
@@ -963,7 +977,7 @@
                     <div class="dashboard-card p-5 sm:p-7 reveal active">
                         <div class="flex justify-between items-center mb-8">
                             <h2
-                                class="text-xl sm:text-2xl font-serif font-bold text-primary-text flex items-center gap-2">
+                                class="text-xl sm:text-2xl font-serif font-semibold text-primary-text flex items-center gap-2">
                                 <span class="text-accent">📊</span> Participation Reports
                             </h2>
                          
@@ -971,12 +985,12 @@
 
                         <div class="grid md:grid-cols-2 gap-6">
                             <div class="dashboard-card p-5">
-                                <h3 class="font-black mb-4">Engagement by Department</h3>
+                                <h3 class="font-semibold mb-4">Engagement by Department</h3>
                                 <div class="space-y-3">
                                     <div>
                                         <div class="flex justify-between text-sm">
                                             <span>Engineering</span>
-                                            <span class="font-bold">72%</span>
+                                            <span class="font-semibold">72%</span>
                                         </div>
                                         <div class="w-full h-1.5 bg-border rounded-full mt-1">
                                             <div class="h-full bg-accent rounded-full" style="width: 72%"></div>
@@ -985,7 +999,7 @@
                                     <div>
                                         <div class="flex justify-between text-sm">
                                             <span>Marketing</span>
-                                            <span class="font-bold">81%</span>
+                                            <span class="font-semibold">81%</span>
                                         </div>
                                         <div class="w-full h-1.5 bg-border rounded-full mt-1">
                                             <div class="h-full bg-accent rounded-full" style="width: 81%"></div>
@@ -994,7 +1008,7 @@
                                     <div>
                                         <div class="flex justify-between text-sm">
                                             <span>Sales</span>
-                                            <span class="font-bold">64%</span>
+                                            <span class="font-semibold">64%</span>
                                         </div>
                                         <div class="w-full h-1.5 bg-border rounded-full mt-1">
                                             <div class="h-full bg-accent rounded-full" style="width: 64%"></div>
@@ -1003,7 +1017,7 @@
                                     <div>
                                         <div class="flex justify-between text-sm">
                                             <span>HR</span>
-                                            <span class="font-bold">88%</span>
+                                            <span class="font-semibold">88%</span>
                                         </div>
                                         <div class="w-full h-1.5 bg-border rounded-full mt-1">
                                             <div class="h-full bg-accent rounded-full" style="width: 88%"></div>
@@ -1012,7 +1026,7 @@
                                 </div>
                             </div>
                             <div class="dashboard-card p-5">
-                                <h3 class="font-black mb-4">Quick Export</h3>
+                                <h3 class="font-semibold mb-4">Quick Export</h3>
                                 <div class="space-y-3">
                                     <button
                                         class="w-full py-3 bg-hover rounded-xl text-sm font-medium text-left px-4 flex justify-between items-center">
@@ -1040,11 +1054,11 @@
                     <div class="dashboard-card p-5 sm:p-7 reveal active">
                         <div class="flex justify-between items-center mb-8">
                             <h2
-                                class="text-xl sm:text-2xl font-serif font-bold text-primary-text flex items-center gap-2">
+                                class="text-xl sm:text-2xl font-serif font-semibold text-primary-text flex items-center gap-2">
                                 <span class="text-accent">🏢</span> B2B Program Management
                             </h2>
                             <button
-                                class="px-6 py-3 bg-accent-gradient text-white rounded-full text-xs font-black uppercase tracking-widest shadow-lg">
+                                class="px-6 py-3 bg-accent-gradient text-white rounded-full text-xs font-semibold uppercase tracking-widest shadow-lg">
                                 <i class="fas fa-plus mr-1"></i> Add Client
                             </button>
                         </div>
@@ -1052,7 +1066,7 @@
                         <div class="space-y-4">
                             <div class="flex items-center justify-between p-4 bg-hover rounded-2xl">
                                 <div>
-                                    <p class="font-black">TechFlow Inc.</p>
+                                    <p class="font-semibold">TechFlow Inc.</p>
                                     <p class="text-xs text-secondary-text mt-1">342 employees · Active since Jan 2026
                                     </p>
                                 </div>
@@ -1063,7 +1077,7 @@
                             </div>
                             <div class="flex items-center justify-between p-4 bg-hover rounded-2xl">
                                 <div>
-                                    <p class="font-black">ScaleUp Solutions</p>
+                                    <p class="font-semibold">ScaleUp Solutions</p>
                                     <p class="text-xs text-secondary-text mt-1">128 employees · Active since Feb 2026
                                     </p>
                                 </div>
@@ -1074,7 +1088,7 @@
                             </div>
                             <div class="flex items-center justify-between p-4 bg-hover rounded-2xl">
                                 <div>
-                                    <p class="font-black">InnovateCo</p>
+                                    <p class="font-semibold">InnovateCo</p>
                                     <p class="text-xs text-secondary-text mt-1">89 employees · Pending onboarding</p>
                                 </div>
                                 <div class="flex gap-2">
@@ -1090,24 +1104,24 @@
                 <div id="settings" class="admin-section hidden">
                     <div class="dashboard-card p-5 sm:p-7 reveal active">
                         <h2
-                            class="text-xl sm:text-2xl font-serif font-bold text-primary-text mb-8 flex items-center gap-2">
+                            class="text-xl sm:text-2xl font-serif font-semibold text-primary-text mb-8 flex items-center gap-2">
                             <span class="text-accent">⚙️</span> Settings & Configuration
                         </h2>
 
                         <div class="space-y-8">
                             <div>
-                                <h3 class="font-black text-lg mb-4 pb-2 border-b border-border">General Settings</h3>
+                                <h3 class="font-semibold text-lg mb-4 pb-2 border-b border-border">General Settings</h3>
                                 <div class="grid md:grid-cols-2 gap-6">
                                     <div>
                                         <label
-                                            class="text-xs uppercase tracking-wider font-bold text-secondary-text block mb-2">Organization
+                                            class="text-xs uppercase tracking-wider font-semibold text-secondary-text block mb-2">Organization
                                             Name</label>
                                         <input type="text" value="MindCare Wellness Solutions"
                                             class="w-full bg-hover border border-border rounded-xl px-4 py-3 text-primary-text">
                                     </div>
                                     <div>
                                         <label
-                                            class="text-xs uppercase tracking-wider font-bold text-secondary-text block mb-2">Contact
+                                            class="text-xs uppercase tracking-wider font-semibold text-secondary-text block mb-2">Contact
                                             Email</label>
                                         <input type="email" value="hr@mindcare.io"
                                             class="w-full bg-hover border border-border rounded-xl px-4 py-3 text-primary-text">
@@ -1116,11 +1130,11 @@
                             </div>
 
                             <div>
-                                <h3 class="font-black text-lg mb-4 pb-2 border-b border-border">System Preferences</h3>
+                                <h3 class="font-semibold text-lg mb-4 pb-2 border-b border-border">System Preferences</h3>
                                 <div class="space-y-4">
                                     <div class="flex items-center justify-between p-4 bg-hover rounded-2xl">
                                         <div>
-                                            <p class="font-bold">Email Notifications</p>
+                                            <p class="font-semibold">Email Notifications</p>
                                             <p class="text-xs text-secondary-text">Receive alerts about workshop
                                                 registrations</p>
                                         </div>
@@ -1130,7 +1144,7 @@
                                     </div>
                                     <div class="flex items-center justify-between p-4 bg-hover rounded-2xl">
                                         <div>
-                                            <p class="font-bold">Weekly Reports</p>
+                                            <p class="font-semibold">Weekly Reports</p>
                                             <p class="text-xs text-secondary-text">Auto-generate engagement summary
                                                 every Monday</p>
                                         </div>
@@ -1143,10 +1157,10 @@
 
                             <div class="pt-4 flex gap-4">
                                 <button
-                                    class="bg-accent-gradient text-white px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest shadow-xl">Save
+                                    class="bg-accent-gradient text-white px-8 py-3 rounded-full text-xs font-semibold uppercase tracking-widest shadow-xl">Save
                                     Changes</button>
                                 <button
-                                    class="border border-border px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:bg-hover">Cancel</button>
+                                    class="border border-border px-8 py-3 rounded-full text-xs font-semibold uppercase tracking-widest hover:bg-hover">Cancel</button>
                             </div>
                         </div>
                     </div>
@@ -1159,19 +1173,19 @@
                             class="w-20 h-20 mx-auto bg-red-100 dark:bg-red-900/20 rounded-full flex items-center justify-center text-red-500 text-3xl mb-6">
                             <i class="fas fa-door-open"></i>
                         </div>
-                        <h2 class="text-2xl font-serif font-bold text-primary-text tracking-tighter">Terminate Admin
+                        <h2 class="text-2xl font-serif font-semibold text-primary-text tracking-tighter">Terminate Admin
                             Session?</h2>
                         <p class="text-secondary-text mt-3 text-sm leading-relaxed italic">All unsaved changes will be
                             lost.</p>
                         <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
                             <a href="login.html">
                                 <button
-                                    class="bg-red-500 hover:bg-red-600 text-white font-black uppercase tracking-widest px-8 py-3 rounded-full text-[10px] transition shadow-lg shadow-red-200 dark:shadow-none">
+                                    class="bg-red-500 hover:bg-red-600 text-white font-semibold uppercase tracking-widest px-8 py-3 rounded-full text-[10px] transition shadow-lg shadow-red-200 dark:shadow-none">
                                     Terminate
                                 </button>
                             </a>
                             <button onclick="activateSection('overview')"
-                                class="bg-hover border border-border px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition">
+                                class="bg-hover border border-border px-8 py-3 rounded-full text-[10px] font-semibold uppercase tracking-widest transition">
                                 Cancel
                             </button>
                         </div>
@@ -1184,13 +1198,13 @@
                     <div class="flex items-center gap-4 text-center sm:text-left">
                         <span class="w-3 h-3 bg-white rounded-full animate-ping flex-shrink-0"></span>
                         <div>
-                            <p class="font-black text-lg tracking-tighter uppercase">Admin System Online</p>
+                            <p class="font-semibold text-lg tracking-tighter uppercase">Admin System Online</p>
                             <p class="text-xs text-white/70 italic">Secure connection · 256-bit encryption active</p>
                         </div>
                     </div>
                     <div class="flex items-center gap-3">
                         <span
-                            class="bg-white/20 backdrop-blur-md px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest">1,284
+                            class="bg-white/20 backdrop-blur-md px-6 py-2.5 rounded-full text-[10px] font-semibold uppercase tracking-widest">1,284
                             Active Users</span>
                     </div>
                 </div>
@@ -1198,9 +1212,9 @@
                 <!-- FOOTER -->
                 <footer
                     class="mt-12 text-center text-[10px] text-secondary-text border-t border-border pt-8 pb-12 w-full">
-                    <p class="uppercase tracking-[0.3em] font-black opacity-40">© 2026 MindCare · HR Admin Control Panel
+                    <p class="uppercase tracking-[0.3em] font-semibold opacity-40">© 2026 MindCare · HR Admin Control Panel
                         v2.4</p>
-                    <div class="flex justify-center gap-8 mt-4 font-bold uppercase opacity-60">
+                    <div class="flex justify-center gap-8 mt-4 font-semibold uppercase opacity-60">
                         <span class="hover:text-accent cursor-pointer transition">System Logs</span>
                         <span class="hover:text-accent cursor-pointer transition">Audit Trail</span>
                         <span class="hover:text-accent cursor-pointer transition">Security</span>
